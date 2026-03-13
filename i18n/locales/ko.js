@@ -25,13 +25,16 @@ window.I18N_LOCALES.ko = {
       "close": "닫기",
       "permanent_upgrades": "영구 업그레이드",
       "exotic_imports": "특수 임프 수입",
+      "exotic_imports_desc_prefix": "특수 임프 수입은 한 번 구매하면 영구적으로 해금됩니다. 각 칸마다",
+      "exotic_imports_desc_suffix": "확률로 등장하며 일반 적보다 더 좋은 전리품을 제공합니다. 임프를 처치해 쌓이는 중첩 배수는 포털 시 초기화되지만, 임프 자체를 다시 해금할 필요는 없습니다.",
       "other_goodies": "기타 혜택",
       "spawns_world": "월드에서 등장",
       "spawns_maps": "맵에서 등장",
       "buy_bone_portal": "뼈 포털 구매 (뼈 100개)",
       "bone_portal_desc": "최고 기록 런에서 획득한 헬륨 양만큼 자동으로 획득합니다",
       "buy_heirloom": "가보 구매 (뼈 30개)",
-      "heirloom_desc": "최고 지역 기준으로 위 확률에 따라 가보 1개를 획득합니다"
+      "heirloom_desc": "최고 지역 기준으로 위 확률에 따라 가보 1개를 획득합니다",
+      "menu_button": "뼈 상인"
     }
   }
 };

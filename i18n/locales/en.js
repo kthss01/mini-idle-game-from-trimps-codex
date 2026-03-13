@@ -25,13 +25,16 @@ window.I18N_LOCALES.en = {
       "close": "Close",
       "permanent_upgrades": "Permanent Upgrades",
       "exotic_imports": "Exotic Imp-orts",
+      "exotic_imports_desc_prefix": "Exotic Imp-orts will be unlocked permanently once purchased. Each has a",
+      "exotic_imports_desc_suffix": "chance to spawn per cell and better loot than normal enemies. Any stacking multipliers from killing Imp-orts reset on Portal but the imps do not have to be unlocked again.",
       "other_goodies": "Other Goodies",
       "spawns_world": "Spawns in World",
       "spawns_maps": "Spawns in Maps",
       "buy_bone_portal": "Buy Bone Portal (100 bones)",
       "bone_portal_desc": "Automatically gain helium equal to the amount you earned on your best run",
       "buy_heirloom": "Buy Heirloom (30 bones)",
-      "heirloom_desc": "Get one Heirloom at the chances above, based on highest zone"
+      "heirloom_desc": "Get one Heirloom at the chances above, based on highest zone",
+      "menu_button": "Bone Trader"
     }
   }
 };
