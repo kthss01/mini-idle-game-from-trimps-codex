@@ -17,6 +17,21 @@ window.I18N_LOCALES.en = {
       "show_equality": "Show Equality",
       "start_fighting": "Start Fighting"
     },
+    "resources": {
+      "food": "Food",
+      "wood": "Wood",
+      "metal": "Metal",
+      "science": "Science",
+      "fragments": "Fragments",
+      "gems": "Gems",
+      "helium": "Helium"
+    },
+    "actions": {
+      "gather": "Gather",
+      "chop": "Chop",
+      "mine": "Mine",
+      "research": "Research"
+    },
     "bone_trader": {
       "title": "Bone Trader",
       "owned_prefix": "You have",

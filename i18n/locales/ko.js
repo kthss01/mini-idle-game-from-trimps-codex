@@ -17,6 +17,21 @@ window.I18N_LOCALES.ko = {
       "show_equality": "평등 보기",
       "start_fighting": "전투 시작"
     },
+    "resources": {
+      "food": "식량",
+      "wood": "목재",
+      "metal": "금속",
+      "science": "과학",
+      "fragments": "파편",
+      "gems": "보석",
+      "helium": "헬륨"
+    },
+    "actions": {
+      "gather": "채집",
+      "chop": "벌목",
+      "mine": "채굴",
+      "research": "연구"
+    },
     "bone_trader": {
       "title": "뼈 상인",
       "owned_prefix": "보유 수량",
