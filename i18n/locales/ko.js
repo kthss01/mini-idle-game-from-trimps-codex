@@ -32,6 +32,28 @@ window.I18N_LOCALES.ko = {
       "bone_portal_desc": "최고 기록 런에서 획득한 헬륨 양만큼 자동으로 획득합니다",
       "buy_heirloom": "가보 구매 (뼈 30개)",
       "heirloom_desc": "최고 지역 기준으로 위 확률에 따라 가보 1개를 획득합니다"
+    },
+    "resources": {
+      "food": { "title": "식량", "action": "채집" },
+      "wood": { "title": "목재", "action": "벌목" },
+      "metal": { "title": "금속", "action": "채굴" },
+      "science": { "title": "과학", "action": "연구" },
+      "fragments": { "title": "파편" },
+      "gems": { "title": "보석" },
+      "helium": { "title": "헬륨" }
+    },
+    "trimps": {
+      "employed": "고용됨",
+      "check_traps": "덫 확인",
+      "trapping": "포획 중"
+    },
+    "log": {
+      "filters": {
+        "story": "스토리",
+        "loot": "전리품",
+        "unlocks": "해금",
+        "combat": "전투"
+      }
     }
   }
 };

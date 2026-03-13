@@ -32,6 +32,28 @@ window.I18N_LOCALES.en = {
       "bone_portal_desc": "Automatically gain helium equal to the amount you earned on your best run",
       "buy_heirloom": "Buy Heirloom (30 bones)",
       "heirloom_desc": "Get one Heirloom at the chances above, based on highest zone"
+    },
+    "resources": {
+      "food": { "title": "Food", "action": "Gather" },
+      "wood": { "title": "Wood", "action": "Chop" },
+      "metal": { "title": "Metal", "action": "Mine" },
+      "science": { "title": "Science", "action": "Research" },
+      "fragments": { "title": "Fragments" },
+      "gems": { "title": "Gems" },
+      "helium": { "title": "Helium" }
+    },
+    "trimps": {
+      "employed": "employed",
+      "check_traps": "Check Traps",
+      "trapping": "Trapping"
+    },
+    "log": {
+      "filters": {
+        "story": "Story",
+        "loot": "Loot",
+        "unlocks": "Unlocks",
+        "combat": "Combat"
+      }
     }
   }
 };

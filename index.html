@@ -168,7 +168,7 @@
 					<div class="col-xs-6 maxH">
 						<div id="food" class="playerGather">
 							<div id="boneShrineBtn" style="display: none" class="isEmpty noselect" onmouseover="tooltip('Bone Shrine', null, event)" onclick="game.permaBoneBonuses.boosts.consume()" onmouseout="tooltip('hide')"></div>
-							<span class="title">Food</span>
+							<span class="title" data-i18n="ui.resources.food.title">Food</span>
 							<br/>
 							<span class="ownedArea bdHover" onclick="getMaxResources('Food')"><span id="foodOwned">0</span> / <span id="foodMax"></span></span>
 							<br/>
@@ -179,7 +179,7 @@
 							</div>
 							<div class="row collectRow">
 								<div class="col-xs-6">
-									<div id="foodCollectBtn" class="workBtn workColorOff pointer noselect" onclick="setGather('food')">Gather</div>
+									<div id="foodCollectBtn" class="workBtn workColorOff pointer noselect" onclick="setGather('food')" data-i18n="ui.resources.food.action">Gather</div>
 								</div>
 								<div class="col-xs-6">
 									<span class="psText sizeSecRegular pointer noselect" id="foodPs" onclick="getPsString('food')">+0/sec</span>
@@ -190,7 +190,7 @@
 
 					<div class="col-xs-6 maxH">
 						<div id="wood" class="playerGather" style="visibility: hidden;">
-							<span class="title">Wood</span>
+							<span class="title" data-i18n="ui.resources.wood.title">Wood</span>
 							<br/>
 							<span class="ownedArea bdHover" onclick="getMaxResources('Wood')"><span id="woodOwned">0</span> / <span id="woodMax"></span></span>
 							<br/>
@@ -202,7 +202,7 @@
 
 							<div class="row collectRow">
 								<div class="col-xs-6">
-									<div id="woodCollectBtn" class="workBtn workColorOff pointer noselect" onclick="setGather('wood')">Chop</div>
+									<div id="woodCollectBtn" class="workBtn workColorOff pointer noselect" onclick="setGather('wood')" data-i18n="ui.resources.wood.action">Chop</div>
 								</div>
 								<div class="col-xs-6">
 									<span class="psText sizeSecRegular pointer noselect" id="woodPs" onclick="getPsString('wood')">+0/sec</span>
@@ -214,7 +214,7 @@
 				<div class="row resourceRow">
 					<div class="col-xs-6 maxH">
 						<div id="metal" class="playerGather" style="visibility: hidden;">
-							<span class="title">Metal</span>
+							<span class="title" data-i18n="ui.resources.metal.title">Metal</span>
 							<br/>
 							<span class="ownedArea bdHover" onclick="getMaxResources('Metal')"><span id="metalOwned">0</span> / <span id="metalMax"></span></span>
 							<br/>
@@ -225,7 +225,7 @@
 							</div>
 							<div class="row collectRow">
 								<div class="col-xs-6">
-									<div id="metalCollectBtn" class="workBtn workColorOff pointer noselect" onclick="setGather('metal')">Mine</div>
+									<div id="metalCollectBtn" class="workBtn workColorOff pointer noselect" onclick="setGather('metal')" data-i18n="ui.resources.metal.action">Mine</div>
 								</div>
 								<div class="col-xs-6">
 									<span class="psText sizeSecRegular pointer noselect" id="metalPs" onclick="getPsString('metal')">+0/sec</span>
@@ -235,13 +235,13 @@
 					</div>
 					<div class="col-xs-6 maxH">
 						<div id="science" class="playerGather" style="visibility: hidden;">
-							<span class="title">Science</span>
+							<span class="title" data-i18n="ui.resources.science.title">Science</span>
 							<br/>
 							<span class="ownedArea"><span id="scienceOwned">0</span></span>
 							<br/>
 							<div class="row collectRow">
 								<div class="col-xs-6">
-									<div id="scienceCollectBtn" class="workBtn workColorOff pointer noselect" onclick="setGather('science')">Research</div>
+									<div id="scienceCollectBtn" class="workBtn workColorOff pointer noselect" onclick="setGather('science')" data-i18n="ui.resources.science.action">Research</div>
 								</div>
 								<div class="col-xs-6">
 									<span class="psText sizeSecRegular pointer noselect" id="sciencePs" onclick="getPsString('science')">+0/sec</span>
@@ -253,21 +253,21 @@
 			</div>
 			<div class="col-xs-1" id="miscColumn">
 				<div id="fragments" class="playerGather playerGatherSm" style="visibility: hidden;">
-					<span class="title">Fragments</span>
+					<span class="title" data-i18n="ui.resources.fragments.title">Fragments</span>
 					<br/>
 					<span class="ownedArea"><span id="fragmentsOwned">0</span></span>
 					<br/>
 					<span class="psText sizeSecRegular pointer noselect" id="fragmentsPs" style="display: none" onclick="getPsString('fragments')">+0/sec</span>
 				</div>
 				<div id="gems" class="playerGather playerGatherSm" style="visibility: hidden;">
-					<span class="title">Gems</span>
+					<span class="title" data-i18n="ui.resources.gems.title">Gems</span>
 					<br/>
 					<span class="ownedArea"><span id="gemsOwned">0</span></span>
 					<br/>
 					<span class="psText sizeSecRegular pointer noselect" id="gemsPs" style="display: none" onclick="getPsString('gems')">+0/sec</span>
 				</div>
 				<div id="helium" class="playerGather playerGatherSm" style="display: none">
-					<span id="heliumName" class="title">Helium</span>
+					<span id="heliumName" class="title" data-i18n="ui.resources.helium.title">Helium</span>
 					<br/>
 					<span class="ownedArea"><span id="heliumOwned">0</span></span>
 					<br/>
@@ -306,11 +306,11 @@
 						<br/>
 					</div>
 					<div id="empHide" style="visibility: hidden">
-						<span id="trimpsEmployed">0</span>/<span id="maxEmployed">0</span> employed
+						<span id="trimpsEmployed">0</span>/<span id="maxEmployed">0</span> <span data-i18n="ui.trimps.employed">employed</span>
 					</div>
 					<div id="trapArea">
-						<div id="trimpsCollectBtn" class="workBtn workColorOff pointer noSelect" onclick="setGather('trimps')">Check&nbsp;Traps&nbsp;(<span id="trimpTrapText">1</span>)</div>
-						<div id="trimpsCollecting" class="collecting" style="display: none">Trapping (<span id="trimpTrapText2">1</span>)</div>
+						<div id="trimpsCollectBtn" class="workBtn workColorOff pointer noSelect" onclick="setGather('trimps')"><span data-i18n="ui.trimps.check_traps">Check Traps</span>&nbsp;(<span id="trimpTrapText">1</span>)</div>
+						<div id="trimpsCollecting" class="collecting" style="display: none"><span data-i18n="ui.trimps.trapping">Trapping</span> (<span id="trimpTrapText2">1</span>)</div>
 						<div class="progress" id="trappingProgress">
 							<div class="progress-bar" id="trappingBar" role="progressbar"></div>
 						</div>
@@ -321,16 +321,16 @@
 				<div id="logContainer">
 					<div class="btn-group btn-group-justified" id="logBtnGroup" role="group">
 						<div class="btn-group" role="group">
-							<button id="StoryFilter" onclick="filterMessage('Story')" type="button" class="btn btn-success logFlt">Story</button>
+							<button id="StoryFilter" onclick="filterMessage('Story')" type="button" class="btn btn-success logFlt" data-i18n="ui.log.filters.story">Story</button>
 						</div>
 						<div class="btn-group" role="group">
-							<button id="LootFilter" onclick="filterMessage('Loot')" type="button" class="btn btn-success logFlt">Loot</button>
+							<button id="LootFilter" onclick="filterMessage('Loot')" type="button" class="btn btn-success logFlt" data-i18n="ui.log.filters.loot">Loot</button>
 						</div>
 						<div class="btn-group" role="group">
-							<button id="UnlocksFilter" onclick="filterMessage('Unlocks')" type="button" class="btn btn-success logFlt">Unlocks</button>
+							<button id="UnlocksFilter" onclick="filterMessage('Unlocks')" type="button" class="btn btn-success logFlt" data-i18n="ui.log.filters.unlocks">Unlocks</button>
 						</div>
 						<div class="btn-group" role="group">
-							<button id="CombatFilter" type="button" onclick="filterMessage('Combat')" class="btn btn-success logFlt">Combat</button>
+							<button id="CombatFilter" type="button" onclick="filterMessage('Combat')" class="btn btn-success logFlt" data-i18n="ui.log.filters.combat">Combat</button>
 						</div>
 						<div id="logConfigHolder" class="btn-group" role="group">
 							<button id="logConfigBtn" type="button" onclick="tooltip('Message Config', null, 'update')" class="btn btn-default logFlt"><span class='glyphicon glyphicon-cog'></span></button>
