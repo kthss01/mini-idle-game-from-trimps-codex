@@ -25,7 +25,13 @@ window.I18N_LOCALES.en = {
       "close": "Close",
       "permanent_upgrades": "Permanent Upgrades",
       "exotic_imports": "Exotic Imp-orts",
-      "other_goodies": "Other Goodies"
+      "other_goodies": "Other Goodies",
+      "spawns_world": "Spawns in World",
+      "spawns_maps": "Spawns in Maps",
+      "buy_bone_portal": "Buy Bone Portal (100 bones)",
+      "bone_portal_desc": "Automatically gain helium equal to the amount you earned on your best run",
+      "buy_heirloom": "Buy Heirloom (30 bones)",
+      "heirloom_desc": "Get one Heirloom at the chances above, based on highest zone"
     }
   }
 };

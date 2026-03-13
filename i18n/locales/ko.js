@@ -25,7 +25,13 @@ window.I18N_LOCALES.ko = {
       "close": "닫기",
       "permanent_upgrades": "영구 업그레이드",
       "exotic_imports": "특수 임프 수입",
-      "other_goodies": "기타 혜택"
+      "other_goodies": "기타 혜택",
+      "spawns_world": "월드에서 등장",
+      "spawns_maps": "맵에서 등장",
+      "buy_bone_portal": "뼈 포털 구매 (뼈 100개)",
+      "bone_portal_desc": "최고 기록 런에서 획득한 헬륨 양만큼 자동으로 획득합니다",
+      "buy_heirloom": "가보 구매 (뼈 30개)",
+      "heirloom_desc": "최고 지역 기준으로 위 확률에 따라 가보 1개를 획득합니다"
     }
   }
 };
