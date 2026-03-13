@@ -31,7 +31,12 @@ window.I18N_LOCALES.ko = {
       "buy_bone_portal": "뼈 포털 구매 (뼈 100개)",
       "bone_portal_desc": "최고 기록 런에서 획득한 헬륨 양만큼 자동으로 획득합니다",
       "buy_heirloom": "가보 구매 (뼈 30개)",
-      "heirloom_desc": "최고 지역 기준으로 위 확률에 따라 가보 1개를 획득합니다"
+      "heirloom_desc": "최고 지역 기준으로 위 확률에 따라 가보 1개를 획득합니다",
+      "open_button": "뼈 상인"
+    },
+    "stats": {
+      "close": "닫기",
+      "trimps_info": "트림프 정보"
     }
   }
 };

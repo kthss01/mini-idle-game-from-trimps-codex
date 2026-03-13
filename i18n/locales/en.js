@@ -31,7 +31,12 @@ window.I18N_LOCALES.en = {
       "buy_bone_portal": "Buy Bone Portal (100 bones)",
       "bone_portal_desc": "Automatically gain helium equal to the amount you earned on your best run",
       "buy_heirloom": "Buy Heirloom (30 bones)",
-      "heirloom_desc": "Get one Heirloom at the chances above, based on highest zone"
+      "heirloom_desc": "Get one Heirloom at the chances above, based on highest zone",
+      "open_button": "Bone Trader"
+    },
+    "stats": {
+      "close": "Close",
+      "trimps_info": "Trimps Info"
     }
   }
 };
