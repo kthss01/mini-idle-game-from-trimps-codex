@@ -14,10 +14,17 @@
   "ui.offline.show_equality": "Show Equality",
   "ui.offline.start_fighting": "Start Fighting",
   "ui.bone_trader.title": "Bone Trader",
+  "ui.bone_trader.owned_prefix": "You have",
   "ui.bone_trader.source": "You can earn bones as you progress through the world by killing Skeletimps and Megaskeletimps.",
   "ui.bone_trader.flavor": "The Bone Trader trades bones for... bonuses",
   "ui.bone_trader.close": "Close",
   "ui.bone_trader.permanent_upgrades": "Permanent Upgrades",
   "ui.bone_trader.exotic_imports": "Exotic Imp-orts",
-  "ui.bone_trader.other_goodies": "Other Goodies"
+  "ui.bone_trader.spawns_world": "Spawns in World",
+  "ui.bone_trader.spawns_maps": "Spawns in Maps",
+  "ui.bone_trader.other_goodies": "Other Goodies",
+  "ui.bone_trader.buy_bone_portal": "Buy Bone Portal (100 bones)",
+  "ui.bone_trader.bone_portal_desc": "Automatically gain helium equal to the amount you earned on your best run",
+  "ui.bone_trader.buy_heirloom": "Buy Heirloom (30 bones)",
+  "ui.bone_trader.heirloom_desc": "Get one Heirloom at the chances above, based on highest zone"
 }
