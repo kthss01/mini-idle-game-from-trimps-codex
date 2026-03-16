@@ -35,6 +35,19 @@ window.I18N_LOCALES.en = {
       "buy_heirloom": "Buy Heirloom (30 bones)",
       "heirloom_desc": "Get one Heirloom at the chances above, based on highest zone",
       "menu_button": "Bone Trader"
+    },
+    "resources": {
+      "food": "Food",
+      "wood": "Wood",
+      "metal": "Metal",
+      "science": "Science",
+      "fragments": "Fragments",
+      "action": {
+        "gather": "Gather",
+        "chop": "Chop",
+        "mine": "Mine",
+        "research": "Research"
+      }
     }
   }
 };

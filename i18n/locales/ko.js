@@ -35,6 +35,19 @@ window.I18N_LOCALES.ko = {
       "buy_heirloom": "가보 구매 (뼈 30개)",
       "heirloom_desc": "최고 지역 기준으로 위 확률에 따라 가보 1개를 획득합니다",
       "menu_button": "뼈 상인"
+    },
+    "resources": {
+      "food": "식량",
+      "wood": "나무",
+      "metal": "금속",
+      "science": "과학",
+      "fragments": "조각",
+      "action": {
+        "gather": "채집",
+        "chop": "벌목",
+        "mine": "채굴",
+        "research": "연구"
+      }
     }
   }
 };
