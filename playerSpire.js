@@ -211,8 +211,11 @@ var playerSpire = {
         return price;
     },
     presetTooltip: function(slot){
-        var title = "Trap Layout " + slot;
-        var text = "<b>This saved layout contains:</b><br/><br/>";
+        var title = i18n.t('ui.spire.preset.title', { slot: slot });
+        var text = i18n.t('ui.spire.preset.contains_header');
+        var escapeForTooltipUpdate = function(str){
+            return str.replace(/\\/g, '\\\\').replace(/"/g, '\\"');
+        };
         var traps = {};
         var layout = this["savedLayout" + slot];
         var hasTraps = false;
@@ -229,50 +232,53 @@ var playerSpire = {
         for (var item in traps){
             if (traps[item] == 0) continue;
             var color = playerSpireTraps[item].color;
-            text += "<span class='playerSpireTooltipTrapName' style='background-color: " + color + "'>" + item + "&nbsp;x" + traps[item] + "</span> ";
+            text += i18n.t('ui.spire.preset.trap_chip', { color: color, trap: item, count: traps[item] });
         }
         text += "<br/><br/>";
-        text += "Total Cost: " + prettify(cost) + " Rs<br/>Value of Current Traps: " + prettify(curCost) + " Rs<br/>";
+        text += i18n.t('ui.spire.preset.cost_summary_html', { total: prettify(cost), current: prettify(curCost) });
         var dif = (curCost - cost);
-        if (dif < 0) text += "Remaining Cost: " + prettify(Math.abs(dif));
-        else text += "Refund: " + prettify(dif);
-        text += " Rs";
-        if (!hasTraps) text = "This layout is currently empty. You can save your current setup to this layout, and load it later!";
-        else if (this['layout' + slot + 'Note'].length) text += "<br/><br/><b>You wanted to remind yourself:</b><br/>" + this['layout' + slot + 'Note'];
+        if (dif < 0) text += i18n.t('ui.spire.preset.remaining_cost', { amount: prettify(Math.abs(dif)) });
+        else text += i18n.t('ui.spire.preset.refund', { amount: prettify(dif) });
+        if (!hasTraps) text = i18n.t('ui.spire.preset.empty_layout');
+        else if (this['layout' + slot + 'Note'].length) text += i18n.t('ui.spire.preset.note_html', { note: this['layout' + slot + 'Note'] });
         text += "<br/>";
         var noLoad = false;
         if (dif < 0 && this.runestones < Math.abs(dif)){
-            text += "<span class='red'>You cannot afford to load this Trap layout.</span>";
+            text += i18n.t('ui.spire.preset.cannot_afford');
             noLoad = true;
         }
         else if (layout.length > this.layout.length){
-            text += "<span class='red'>You don't have enough Floors available in your Spire to load this layout.</span>";
+            text += i18n.t('ui.spire.preset.not_enough_floors');
             noLoad = true;
         }
-        text += "<br/><br/><div class='spirePresetBtns'><span onclick='tooltip(\"confirm\", null, \"update\", \"Are you sure you want to save your current Spire layout to Preset " + slot + "? This will overwrite your currently saved layout.<br/><br/>If you want, you can also type a note to your future self below!<br/><br/><input maxlength=\\\"250\\\" style=\\\"width: 100%\\\" id=\\\"spireLayoutNoteInput\\\"/><br/>\", \"playerSpire.saveLayout(" + slot + ")\", \"Save to Layout " + slot + "?\")'>Save Current Layout Here</span>";
+        var saveConfirmBody = escapeForTooltipUpdate(i18n.t('ui.spire.preset.save_confirm_body_html', { slot: slot }));
+        var saveConfirmTitle = escapeForTooltipUpdate(i18n.t('ui.spire.preset.save_confirm_title', { slot: slot }));
+        var loadConfirmBody = escapeForTooltipUpdate(i18n.t('ui.spire.preset.load_confirm_body', { slot: slot }));
+        var loadConfirmTitle = escapeForTooltipUpdate(i18n.t('ui.spire.preset.load_confirm_title', { slot: slot }));
+        text += "<br/><br/><div class='spirePresetBtns'><span onclick='tooltip(\"confirm\", null, \"update\", \"" + saveConfirmBody + "\", \"playerSpire.saveLayout(" + slot + ")\", \"" + saveConfirmTitle + "\")'>" + i18n.t('ui.spire.preset.save_current_layout_here') + "</span>";
         if (hasTraps && layout.length <= this.layout.length && !noLoad)
-            text += "<span onclick='tooltip(\"confirm\", null, \"update\", \"Are you sure you want to load layout " + slot + "? This will remove all Traps and Towers currently placed in your Spire!\", \"playerSpire.loadLayout(" + slot + ")\", \"Load Layout " + slot + "?\")'>Load This Layout</span>";
+            text += "<span onclick='tooltip(\"confirm\", null, \"update\", \"" + loadConfirmBody + "\", \"playerSpire.loadLayout(" + slot + ")\", \"" + loadConfirmTitle + "\")'>" + i18n.t('ui.spire.preset.load_this_layout') + "</span>";
         text += "</div>";
         tooltip(title, 'customText', 'lock', text, "", "center");
     },
     settingsTooltip: function(){
         var text = "<div id='spireSettingsTooltip'>";
-        text += "<b style='margin-bottom: 1vw'>Floating Combat Text</b>";
-        text += "<span class='spireOption'>Make Static:" + buildNiceCheckbox('spirefctStatic', '', this.settings.fctStatic) + "</span>";
-        text += "<span class='spireOption'>Trap Damage: " + buildNiceCheckbox('spirefctTrap', '', this.settings.fctTrap) + "</span>";
+        text += "<b style='margin-bottom: 1vw'>" + i18n.t('ui.spire.settings.floating_combat_text') + "</b>";
+        text += "<span class='spireOption'>" + i18n.t('ui.spire.settings.make_static') + buildNiceCheckbox('spirefctStatic', '', this.settings.fctStatic) + "</span>";
+        text += "<span class='spireOption'>" + i18n.t('ui.spire.settings.trap_damage') + " " + buildNiceCheckbox('spirefctTrap', '', this.settings.fctTrap) + "</span>";
         if (!playerSpireTraps.Poison.locked)
-            text += "<span class='spireOption'>Poison Tick: " + buildNiceCheckbox('spirefctPoison', '', this.settings.fctPoison) + "</span>";
-        text += "<span class='spireOption'>Runestones: " + buildNiceCheckbox('spirefctRs', '', this.settings.fctRs) + "</span>";
-        text += "<b style='margin-top: 0; margin-bottom: 1vw'>Visual Settings</b>";
-        text += "<span class='spireOption'>Trap Icons: " + buildNiceCheckbox('spiretrapIcons', '', this.settings.trapIcons) + "</span>";
-        text += "<span class='spireOption'>Enemy Icons: " + buildNiceCheckbox('spireenemyIcons', '', this.settings.enemyIcons) + "</span>";
-        text += "<span class='spireOption'>Chill Effect: " + buildNiceCheckbox('spirechillGradient', '', this.settings.chillGradient) + "</span>";
+            text += "<span class='spireOption'>" + i18n.t('ui.spire.settings.poison_tick') + " " + buildNiceCheckbox('spirefctPoison', '', this.settings.fctPoison) + "</span>";
+        text += "<span class='spireOption'>" + i18n.t('ui.spire.settings.runestones') + " " + buildNiceCheckbox('spirefctRs', '', this.settings.fctRs) + "</span>";
+        text += "<b style='margin-top: 0; margin-bottom: 1vw'>" + i18n.t('ui.spire.settings.visual_settings') + "</b>";
+        text += "<span class='spireOption'>" + i18n.t('ui.spire.settings.trap_icons') + " " + buildNiceCheckbox('spiretrapIcons', '', this.settings.trapIcons) + "</span>";
+        text += "<span class='spireOption'>" + i18n.t('ui.spire.settings.enemy_icons') + " " + buildNiceCheckbox('spireenemyIcons', '', this.settings.enemyIcons) + "</span>";
+        text += "<span class='spireOption'>" + i18n.t('ui.spire.settings.chill_effect') + " " + buildNiceCheckbox('spirechillGradient', '', this.settings.chillGradient) + "</span>";
         if (!playerSpireTraps.Lightning.locked)
-        text += "<span class='spireOption'>Shock Effect: " + buildNiceCheckbox('spireshockEffect', '', this.settings.shockEffect) + "</span>";
-        text += "<span class='spireOption'>Health as %: " + buildNiceCheckbox('spirepercentHealth', '', this.settings.percentHealth) + "</span>";
-        text += "<span class='spireOption'>Faded Enemies: " + buildNiceCheckbox('spireenemyFade', '', this.settings.enemyFade) + "</span>";
+        text += "<span class='spireOption'>" + i18n.t('ui.spire.settings.shock_effect') + " " + buildNiceCheckbox('spireshockEffect', '', this.settings.shockEffect) + "</span>";
+        text += "<span class='spireOption'>" + i18n.t('ui.spire.settings.health_as_percent') + " " + buildNiceCheckbox('spirepercentHealth', '', this.settings.percentHealth) + "</span>";
+        text += "<span class='spireOption'>" + i18n.t('ui.spire.settings.faded_enemies') + " " + buildNiceCheckbox('spireenemyFade', '', this.settings.enemyFade) + "</span>";
         text += "</div>";
-        tooltip("Spire Settings", 'customText', 'lock', text, "<span class='btn btn-info' onclick='playerSpire.saveSettings()'>Save</span><span class='btn btn-danger' onclick='cancelTooltip()'>Cancel</span>", "hi", "hi");
+        tooltip(i18n.t('ui.spire.settings.title'), 'customText', 'lock', text, "<span class='btn btn-info' onclick='playerSpire.saveSettings()'>" + i18n.t('ui.spire.settings.save') + "</span><span class='btn btn-danger' onclick='cancelTooltip()'>" + i18n.t('ui.spire.settings.cancel') + "</span>", "hi", "hi");
     },
     saveSettings: function(){
         for (var item in this.settings){
