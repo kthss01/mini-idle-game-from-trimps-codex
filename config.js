@@ -3187,7 +3187,7 @@ var toReturn = {
 				if (this.trinkets + amt > cap) amt = cap - this.trinkets;
 				this.trinkets += amt;
 				game.stats.runetrinkets.value += amt;
-				message("You found " + amt + " Runetrinket" + needAnS(amt) + "!", "Loot", "*link4", "runetrinket", "runetrinket");
+				message(i18n.t("ui.message.runetrinket.found", { amount: amt, suffix: needAnS(amt) }), "Loot", "*link4", "runetrinket", "runetrinket");
 				if (this.trinkets >= 7500) giveSingleAchieve("Heavy Trinker");
 			},
 			onNextWorld: function(){
@@ -3461,7 +3461,7 @@ var toReturn = {
 				for (var x = 0; x < this.heldBooks; x++){
 					unlockUpgrade("Speedscience");
 				}
-				message("You can research science again!", "Notices");
+				message(i18n.t("ui.message.science.research_again"), "Notices");
 				if (game.global.sLevel >= 4) {
 					if (game.buildings.Warpstation.craftTime > 0){
 						game.buildings.Warpstation.craftTime = 0;

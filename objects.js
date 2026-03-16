@@ -591,7 +591,7 @@ var alchObj = {
             return;
         }
         text += "</div>";
-        tooltip('confirm', null, 'update', text, 'alchObj.save()', 'Alchemy', 'Save and Close')
+        tooltip('confirm', null, 'update', text, 'alchObj.save()', i18n.t('ui.menu.alchemy.title'), i18n.t('ui.menu.alchemy.save_and_close'))
     },
     autoCraft: function(){
         //called once every 2 seconds after alchemy is unlocked or during challenge
@@ -4480,7 +4480,7 @@ var autoBattle = {
         if (itemsElem){
             scrollTop = itemsElem.scrollTop;
         }
-		if (!(itemsOnly && itemsElem)) { cancelTooltip(); tooltip('confirm', null, 'update', text, '', 'Spire Assault', 'Close', false, true)}
+		if (!(itemsOnly && itemsElem)) { cancelTooltip(); tooltip('confirm', null, 'update', text, '', i18n.t('ui.menu.spire_assault.title'), i18n.t('ui.menu.close'), false, true)}
         if (!(updateOnly && statsOnly)) this.updatePopupBtns();
         if (scrollTop > 0){
             itemsElem = document.getElementById('autoItemsDiv');

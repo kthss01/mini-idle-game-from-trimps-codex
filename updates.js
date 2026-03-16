@@ -6290,11 +6290,11 @@ function displayPerksBtn(){
 	var btn = document.getElementById("pastUpgradesBtn");
 	if (game.global.totalPortals == 0){
 		btn.className = "btn";
-		btn.innerHTML = "???";
+		btn.innerHTML = i18n.t("ui.menu.perks.unknown");
 	}
 	else {
 		btn.className = "btn btn-primary";
-		btn.innerHTML = "View Perks";
+		btn.innerHTML = i18n.t("ui.menu.perks.view");
 	}
 }
 
@@ -6618,9 +6618,9 @@ function toggleSetting(setting, elem, fromPortal, updateOnly, backwards, fromHot
 		if ((forHover || forTracker) && ((!one && !achievement.showAll && displayNumber > achievement.finished) || (one && (achievement.filterLevel() < achievement.filters[displayNumber] && !achievement.finished[displayNumber])))) {
 			document.getElementById("achievement" + location).style.display = "block";
 			document.getElementById("achievement" + location + "IconContainer").innerHTML = '<span class="achieveTier' + achievement.tiers[displayNumber] + ' icomoon icon-locked achievementPopupIcon"></span>';
-			titleElem.innerHTML = "Locked";
+			titleElem.innerHTML = i18n.t("ui.message.achievement.locked");
 			titleElem.className = 'achieveTier' + achievement.tiers[displayNumber];
-			document.getElementById("achievement" + location + "Description").innerHTML = "Locked";
+			document.getElementById("achievement" + location + "Description").innerHTML = i18n.t("ui.message.achievement.locked");
 			document.getElementById("achievement" + location + "Reward").innerHTML = '<b>Reward:</b> +' + game.tierValues[achievement.tiers[displayNumber]] + "% Damage";
 			prog.innerHTML = "";
 			return;
@@ -6634,22 +6634,22 @@ function toggleSetting(setting, elem, fromPortal, updateOnly, backwards, fromHot
 		document.getElementById("achievement" + location + "Reward").innerHTML = '<b>Reward:</b> +' + game.tierValues[achievement.tiers[displayNumber]] + "% Damage";
 		if ((forHover || forTracker) && typeof achievement.progress !== 'undefined' && (typeof achievement.highest === 'undefined' || (achievement.highest > 0 || achievement.finished > 0))){
 			if (!one && achievement.tiers.length == achievement.finished){
-				prog.innerHTML = "Row Finished! (" + achievement.progress(displayNumber) + ")";
+				prog.innerHTML = i18n.t("ui.message.achievement.row_finished_progress", { progress: achievement.progress(displayNumber) });
 			}
 			else{
 				if (achievement.timed && displayNumber == achievement.finished){
-					if (achievement.u != game.global.universe) prog.innerHTML = "You're in the wrong Universe! " + achievement.progress(displayNumber);
-					else if (achievement.evaluate() >= achievement.breakpoints[displayNumber]) prog.innerHTML = "Progress: Too slow! " + achievement.progress(displayNumber);
-					else prog.innerHTML = "Progress: " + achievement.progress(displayNumber);
+					if (achievement.u != game.global.universe) prog.innerHTML = i18n.t("ui.message.achievement.wrong_universe_progress", { progress: achievement.progress(displayNumber) });
+					else if (achievement.evaluate() >= achievement.breakpoints[displayNumber]) prog.innerHTML = i18n.t("ui.message.achievement.progress_too_slow", { progress: achievement.progress(displayNumber) });
+					else prog.innerHTML = i18n.t("ui.message.achievement.progress", { progress: achievement.progress(displayNumber) });
 				}
 				else{
-					prog.innerHTML = "Progress: " + achievement.progress(displayNumber);
+					prog.innerHTML = i18n.t("ui.message.achievement.progress", { progress: achievement.progress(displayNumber) });
 				}
 			}
 		}
 		else
 			if (!one && achievement.tiers.length == achievement.finished){
-				prog.innerHTML = "Row Finished!";
+				prog.innerHTML = i18n.t("ui.message.achievement.row_finished");
 			}
 			else prog.innerHTML = "";
 	}
