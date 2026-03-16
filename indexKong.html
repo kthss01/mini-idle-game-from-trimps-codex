@@ -586,7 +586,7 @@ var kongregate = parent.kongregateAPI.getAPI();
 										<div class="col-xs-3 lowPad">								
 											<div id="autoGoldenBtn" onmouseover="tooltip('AutoGold', null, event)" onmouseout="tooltip('hide')" class="pointer noselect settingBtn0 autoUpgradeBtn toggleConfigBtn">
 												<div id='autoGoldenText' onclick="toggleAutoGolden()">AutoGold</div>
-												<div id="goldConfig" aria-label="Configure Auto Golden" onclick="archoGolden.popup()"><span class="glyphicon glyphicon-cog"></span></div>
+												<div id="goldConfig" data-i18n-attr="aria-label:ui.aria.configure_auto_golden" onclick="archoGolden.popup()"><span class="glyphicon glyphicon-cog"></span></div>
 											</div>
 										</div>
 										<div class="col-xs-3 lowPad">
@@ -967,11 +967,11 @@ var kongregate = parent.kongregateAPI.getAPI();
 									</div>
 									<br/>
 									<select id="biomeAdvMapsSelect" class="advSelect" onchange="updateMapCost()">
-										<option value="Random">Random</option>
-										<option value="Mountain">Mountain</option>
-										<option value="Forest">Forest</option>
-										<option value="Sea">Sea</option>
-										<option value="Depths">Depths</option>
+										<option value="Random" data-i18n="ui.maps.biome.random">Random</option>
+										<option value="Mountain" data-i18n="ui.maps.biome.mountain">Mountain</option>
+										<option value="Forest" data-i18n="ui.maps.biome.forest">Forest</option>
+										<option value="Sea" data-i18n="ui.maps.biome.sea">Sea</option>
+										<option value="Depths" data-i18n="ui.maps.biome.depths">Depths</option>
 									</select>
 								</div>
 							</div>
@@ -1023,7 +1023,7 @@ var kongregate = parent.kongregateAPI.getAPI();
 							<div id="selectedMapContainer" class="row">
 								<div id="selectedMapCol" class="col-xs-3 lowPad">
 									<div id="selectedMapName"></div><br/>
-									<div id="mapCreditsLeft" title="Earn 1 Credit for each zone you clear while on this challenge"></div>
+									<div id="mapCreditsLeft" data-i18n-attr="title:ui.maps.map_credits_title"></div>
 								</div>
 
 								<div id="mapStatsCol3" class="col-xs-5 lowPad">

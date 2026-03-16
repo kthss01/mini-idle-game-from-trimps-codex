@@ -64,6 +64,20 @@ window.I18N_LOCALES.ko = {
       "info_line_5": "shift+/ 툴팁을 사용하려면 NVDA + 8을 켜고 NVDA 설정 > browse mode에서 \"trap all command gestures from reaching the document.\"를 비활성화하세요.",
       "info_line_6": "게임 설정의 \"Show Screen Read Info.\"를 통해 이 안내를 표시/숨김할 수 있습니다."
     },
+    "aria": {
+      "configure_displayed_messages": "표시 메시지 구성",
+      "buy_tabs": "구매 탭",
+      "features_tabs": "기능 탭",
+      "configure_auto_golden": "자동 황금 업그레이드 구성",
+      "formation": {
+        "none": "전투 대형 없음",
+        "heap": "힙",
+        "dominance": "지배",
+        "barrier": "방벽",
+        "scryer": "정찰",
+        "wind": "바람"
+      }
+    },
     "kong": {
       "page_title": "Trimps 5.10.1 (콩그리게이트 버전)",
       "shell_title": "콩그리게이트 게임 셸"
@@ -223,7 +237,15 @@ window.I18N_LOCALES.ko = {
       "spire": "첨탑",
       "spire_number": "첨탑 {num}",
       "floor": " {floor}층",
-      "zone": "지역"
+      "zone": "지역",
+      "map_credits_title": "이 도전에서 지역을 클리어할 때마다 크레딧 1개를 획득",
+      "biome": {
+        "random": "무작위",
+        "mountain": "산악",
+        "forest": "숲",
+        "sea": "바다",
+        "depths": "심해"
+      }
     },
     "challenges": {
       "hypothermia": {
