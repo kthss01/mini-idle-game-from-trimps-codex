@@ -5,6 +5,22 @@
 - 상태(status) 값: `new`, `translated`, `reviewed`, `in-game-verified`
 - 우선순위 정렬: 상시 UI > 전투/맵 흐름 > 도전과제/이벤트 > 장문 스토리
 
+## 도메인 작업 보드
+도메인 기준 작업 단위는 아래 필드를 반드시 채워 관리합니다.
+
+| domain | scope prefix | assignee | due-date | status | translated | reviewed | in-game-verified |
+|---|---|---|---|---|---|---|---|
+| maps | `ui.maps.*` | @unassigned | 2026-03-31 | todo | [ ] | [ ] | [ ] |
+| challenges | `ui.challenges.*` | @unassigned | 2026-03-31 | todo | [ ] | [ ] | [ ] |
+| heirloom | `ui.heirloom.*` | @unassigned | 2026-03-31 | todo | [ ] | [ ] | [ ] |
+| story | `ui.story.*` | @unassigned | 2026-03-31 | todo | [ ] | [ ] | [ ] |
+| spire | `ui.spire.*` | @unassigned | 2026-03-31 | todo | [ ] | [ ] | [ ] |
+
+상태 규칙:
+- `status`: `todo` → `in-progress` → `done` (차단 이슈가 있으면 `blocked`)
+- 완료 조건: `translated`, `reviewed`, `in-game-verified` 체크가 모두 완료되어야 `done` 처리
+
+
 ## 상시 UI
 
 | key | en | ko | source | runtime files | status |
