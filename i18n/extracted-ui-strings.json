@@ -150,5 +150,10 @@
   "ui.tooltip.confirm.im_scared": "I'm Scared",
   "ui.screen_reader.page_title": "Trimps 5.10.1 (Screen Reader version)",
   "ui.kong.page_title": "Trimps 5.10.1 (Kongregate Version)",
-  "ui.kong.shell_title": "Kongregate Game Shell"
+  "ui.kong.shell_title": "Kongregate Game Shell",
+  "ui.maps.biome.random": "Random",
+  "ui.maps.biome.mountain": "Mountain",
+  "ui.maps.biome.forest": "Forest",
+  "ui.maps.biome.sea": "Sea",
+  "ui.maps.biome.depths": "Depths"
 }
