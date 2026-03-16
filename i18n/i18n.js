@@ -32,12 +32,32 @@
     });
   }
 
+  function syncLocaleControls() {
+    document.querySelectorAll('[data-locale-control]').forEach(function (el) {
+      if (el.tagName === 'SELECT' || el.tagName === 'INPUT') {
+        el.value = activeLocale;
+      }
+    });
+  }
+
+  function bindLocaleControls() {
+    document.querySelectorAll('[data-locale-control]').forEach(function (el) {
+      if (el.dataset.localeBound === 'true') return;
+      el.addEventListener('change', function (event) {
+        setLocale(event.target.value);
+      });
+      el.dataset.localeBound = 'true';
+    });
+  }
+
   function setLocale(locale) {
     if (!window.I18N_LOCALES[locale]) return;
     activeLocale = locale;
     window.localStorage.setItem('trimps.locale', locale);
     document.documentElement.lang = locale;
     applyI18nToDom(document);
+    syncLocaleControls();
+    window.dispatchEvent(new CustomEvent('i18n:localeChanged', { detail: { locale: activeLocale } }));
   }
 
   function detectLocale() {
@@ -56,5 +76,7 @@
 
   document.addEventListener('DOMContentLoaded', function () {
     setLocale(detectLocale());
+    bindLocaleControls();
+    syncLocaleControls();
   });
 })();

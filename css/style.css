@@ -7668,3 +7668,14 @@ label {
   .numFormatTooltip > tbody > tr > td {
 	padding-right: .5vw;
   }
+
+.settingLocaleControl {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5vw;
+	margin: 0.4vw 0 0.5vw;
+}
+
+.settingLocaleControl select {
+	color: #111;
+}

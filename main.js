@@ -20599,3 +20599,26 @@ function keyTooltip(keyEvent, what, isItIn, event, textString, attachFunction, n
 		else tooltip(what, isItIn, "screenRead", ...Object.values(arguments).slice(3,))
 	}
 }
+
+window.addEventListener('i18n:localeChanged', function () {
+	if (window.i18n && typeof window.i18n.applyI18nToDom === 'function') {
+		window.i18n.applyI18nToDom(document);
+	}
+
+	var tooltipElem = document.getElementById('tooltipDiv');
+	if (tooltipElem && tooltipElem.style.display === 'block' && typeof tooltipUpdateFunction === 'function') {
+		tooltipUpdateFunction();
+	}
+
+	var settingsElem = document.getElementById('settingsHere');
+	if (settingsElem && settingsElem.style.display === 'block' && typeof settingTab === 'function') {
+		var activeSettingTab = document.querySelector('#settingsTabs .tabSelected, #settingsTabs .settingTab.tabSelected');
+		if (activeSettingTab && activeSettingTab.id && activeSettingTab.id.endsWith('Tab')) {
+			settingTab(activeSettingTab.id.replace('Tab', ''));
+		}
+	}
+
+	if (typeof drawAllSettings === 'function') {
+		drawAllSettings();
+	}
+});

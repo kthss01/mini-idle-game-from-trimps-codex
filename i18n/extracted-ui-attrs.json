@@ -158,5 +158,9 @@
   "ui.bone_trader.menu_button": {
     "text": "Bone Trader",
     "title": null
+  },
+  "ui.settings.language.label": {
+    "text": "Language:",
+    "title": null
   }
 }

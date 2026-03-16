@@ -1,6 +1,11 @@
 window.I18N_LOCALES = window.I18N_LOCALES || {};
 window.I18N_LOCALES.ko = {
   "ui": {
+    "settings": {
+      "language": {
+        "label": "언어:"
+      }
+    },
     "offline": {
       "title": "오프라인 진행분을 계산하는 중...",
       "starting": "시작 중...",
