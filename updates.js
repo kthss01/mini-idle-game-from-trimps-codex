@@ -1469,7 +1469,7 @@ function tooltip(what, isItIn, event, textString, attachFunction, numCheck, rena
 	if (what == "Import Perks"){
 		if (game.global.challengeActive == "Hypothermia"){
 			var portalStoryElem = document.getElementById('portalStory');
-			if (portalStoryElem) portalStoryElem.innerHTML = "<span style='color: red'>You cannot change your perks while on the Hypothermia Challenge!</span>";
+			if (portalStoryElem) portalStoryElem.innerHTML = i18n.t('ui.message.challenge.hypothermia.perks_locked_html');
 			return;
 		}
 		tooltipText = "Import your perks from a text string!<br/><br/><textarea spellcheck='false' id='perkImportBox' style='width: 100%' rows='5'></textarea>";

@@ -491,7 +491,7 @@ var alchObj = {
         else{
             game.herbs[resource].owned += amt;
         }
-        message("You found " + prettify(amt) + " " + resource + "!", "Loot", "*leaf3", "alchemy", "alchemy");
+        message(i18n.t('ui.message.challenge.alchemy.herb_found', { amount: prettify(amt), resource: resource }), "Loot", "*leaf3", "alchemy", "alchemy");
         this.openPopup(true);
     },
     canAffordPotion: function(potionName){
@@ -910,7 +910,7 @@ var autoBattle = {
     firstUnlock: function(){
         this.load();
         tooltip('hide');
-        tooltip('confirm', null, 'update', "<i>\"As you approach the infinitely tall Spire, a Trimp rushes out and embraces Scruffy. Scruffy introduces you to Huffy, who seems to have also realized that Druopitee is kind of a prick. Huffy lets you know that he managed to destroy the Corruption device at the top, but that it was now crawling with horrible shadowy enemies. Huffy lets you know that he is shielded from the Portal inside the Spire, but that even when you Portal and forget him, he can use your subconscious to help direct him in cleansing the Spire and finding artifacts to make your Trimps stronger.\"</i><br/><br/>You've finally made it to Huffy and the first Spire in this Universe. Huffy needs your help removing all of the Enemies! Check out the new tab titled 'SA' to get started.<br/><br/><b>A tip for once you're in</b>: Huffy has figured out how to put on Pants and a Sword but is struggling beyond that. Click two other items to equip them ASAP!", null, 'Spire Assault Unlocked!', 'Continue', false, true);
+        tooltip('confirm', null, 'update', i18n.t('ui.tooltip.spire_assault.unlock.body'), null, i18n.t('ui.tooltip.spire_assault.unlock.title'), i18n.t('ui.tooltip.spire_assault.unlock.continue'), false, true);
     },
     savePreset: function(slot){
         this.presets[slot] = [];
@@ -3772,7 +3772,7 @@ var autoBattle = {
         swapClass("auto", downBtnColor, downBtn);
         swapClass("auto", upBtnColor, upBtn);
         swapClass("auto", autoBtnColor, autoBtn);
-        autoBtn.innerHTML = "AutoLevel " + ((this.autoLevel) ? "On" : "Off");
+        autoBtn.innerHTML = i18n.t('ui.spire_assault.auto_level_status', { status: (this.autoLevel) ? i18n.t('ui.spire_assault.on') : i18n.t('ui.spire_assault.off') });
     },
     swapPopup: function(to){
         if (to == "rings" && !this.oneTimers.The_Ring.owned) return;
@@ -3802,7 +3802,7 @@ var autoBattle = {
         if (zone < item.zone) return;
         //completed contract
         item.owned = true;
-        message("You have fulfilled your Contract, and Huffy has gained access to " + this.cleanName(this.activeContract) + "!", "Notices");
+        message(i18n.t('ui.message.challenge.spire_assault.contract_fulfilled', { contract: this.cleanName(this.activeContract) }), "Notices");
         this.activeContract = "";
         this.popup(false,false,true);
     },
@@ -3863,7 +3863,7 @@ var autoBattle = {
         text += "<li>The Dust reward formula is (1 + ((EnemyLevel - 1) * 5)) * (1.19^(EnemyLevel - 1))</li>";
         text += "<li>The Spire Assault window can be opened with hotkey \"i\"</li>";
         text += "</ul>";
-        tooltip('confirm', null, 'update', text, 'autoBattle.popup()', "Spire Assault Help/FAQ", 'Back to Spire Assault', true);
+        tooltip('confirm', null, 'update', text, 'autoBattle.popup()', i18n.t('ui.tooltip.spire_assault.help.title'), i18n.t('ui.tooltip.spire_assault.help.back_button'), true);
         var elem = document.getElementById('tooltipDiv');
         swapClass('tooltipExtra', 'tooltipExtraLg', elem);
         elem.style.top = "10%";
@@ -5185,14 +5185,14 @@ var u2Mutations = {
         reward = calcHeirloomBonus("Staff", "SeedDrop", reward);
         game.global.mutatedSeeds += reward;
         if (typeof game.global.messages.Loot.seeds === 'undefined') game.global.messages.Loot.seeds = true;
-        message("You found " + prettify(reward) + " Mutated Seed" + needAnS(reward) + nullText + " on that " + this.getName(cell.u2Mutation) + " enemy!", 'Loot', null, 'seedMessage', 'seeds', null, 'background-color: ' + this.getColor(cell.u2Mutation));
+        message(i18n.t('ui.message.challenge.mutations.seeds_found', { amount: prettify(reward), plural: needAnS(reward), nullifier_text: nullText, enemy: this.getName(cell.u2Mutation) }), 'Loot', null, 'seedMessage', 'seeds', null, 'background-color: ' + this.getColor(cell.u2Mutation));
         game.stats.mutatedSeeds.value += reward;
         checkAchieve("mutatedSeeds");
         if (!game.global.runningChallengeSquared){
             var radonPct = rewardMult * 0.25;
             if (u2Mutations.tree.Radon.purchased) radonPct *= 1.25;
             var radonReward = rewardResource("helium", 1, 99, false, radonPct);
-            message("You were able to take " + prettify(radonReward) + " Radon Vials from that Mutated Enemy!", "Loot", heliumIcon(true), 'helium', 'helium');
+            message(i18n.t('ui.message.challenge.mutations.radon_vials_found', { amount: prettify(radonReward) }), "Loot", heliumIcon(true), 'helium', 'helium');
         }
 
         if (this.open) {
