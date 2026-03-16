@@ -253,6 +253,43 @@ window.I18N_LOCALES.en = {
       "off": "Off",
       "auto_level_status": "AutoLevel {status}"
     },
+    "spire": {
+      "preset": {
+        "title": "Trap Layout {slot}",
+        "contains_header": "<b>This saved layout contains:</b><br/><br/>",
+        "trap_chip": "<span class='playerSpireTooltipTrapName' style='background-color: {color}'>{trap}&nbsp;x{count}</span> ",
+        "cost_summary_html": "Total Cost: {total} Rs<br/>Value of Current Traps: {current} Rs<br/>",
+        "remaining_cost": "Remaining Cost: {amount} Rs",
+        "refund": "Refund: {amount} Rs",
+        "empty_layout": "This layout is currently empty. You can save your current setup to this layout, and load it later!",
+        "note_html": "<br/><br/><b>You wanted to remind yourself:</b><br/>{note}",
+        "cannot_afford": "<span class='red'>You cannot afford to load this Trap layout.</span>",
+        "not_enough_floors": "<span class='red'>You don't have enough Floors available in your Spire to load this layout.</span>",
+        "save_confirm_body_html": "Are you sure you want to save your current Spire layout to Preset {slot}? This will overwrite your currently saved layout.<br/><br/>If you want, you can also type a note to your future self below!<br/><br/><input maxlength=\"250\" style=\"width: 100%\" id=\"spireLayoutNoteInput\"/><br/>",
+        "save_confirm_title": "Save to Layout {slot}?",
+        "load_confirm_body": "Are you sure you want to load layout {slot}? This will remove all Traps and Towers currently placed in your Spire!",
+        "load_confirm_title": "Load Layout {slot}?",
+        "save_current_layout_here": "Save Current Layout Here",
+        "load_this_layout": "Load This Layout"
+      },
+      "settings": {
+        "title": "Spire Settings",
+        "floating_combat_text": "Floating Combat Text",
+        "make_static": "Make Static:",
+        "trap_damage": "Trap Damage:",
+        "poison_tick": "Poison Tick:",
+        "runestones": "Runestones:",
+        "visual_settings": "Visual Settings",
+        "trap_icons": "Trap Icons:",
+        "enemy_icons": "Enemy Icons:",
+        "chill_effect": "Chill Effect:",
+        "shock_effect": "Shock Effect:",
+        "health_as_percent": "Health as %:",
+        "faded_enemies": "Faded Enemies:",
+        "save": "Save",
+        "cancel": "Cancel"
+      }
+    },
     "message": {
       "challenge": {
         "alchemy": {

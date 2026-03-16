@@ -190,6 +190,42 @@
 | ui.tooltip.spire_assault.unlock.continue | Continue | 계속 | runtime | objects.js | translated |
 | ui.tooltip.spire_assault.unlock.title | Spire Assault Unlocked! | 첨탑 강습 해금! | runtime | objects.js | translated |
 
+## Spire
+
+| key | en | ko | source | runtime files | status |
+|---|---|---|---|---|---|
+| ui.spire.preset.title | Trap Layout {slot} | 함정 배치 {slot} | runtime | playerSpire.js | translated |
+| ui.spire.preset.contains_header | <b>This saved layout contains:</b><br/><br/> | <b>이 저장된 배치에는 다음이 포함됩니다:</b><br/><br/> | runtime | playerSpire.js | translated |
+| ui.spire.preset.trap_chip | <span class='playerSpireTooltipTrapName' style='background-color: {color}'>{trap}&nbsp;x{count}</span>  | <span class='playerSpireTooltipTrapName' style='background-color: {color}'>{trap}&nbsp;x{count}</span>  | runtime | playerSpire.js | translated |
+| ui.spire.preset.cost_summary_html | Total Cost: {total} Rs<br/>Value of Current Traps: {current} Rs<br/> | 총 비용: {total} Rs<br/>현재 함정 가치: {current} Rs<br/> | runtime | playerSpire.js | translated |
+| ui.spire.preset.remaining_cost | Remaining Cost: {amount} Rs | 남은 비용: {amount} Rs | runtime | playerSpire.js | translated |
+| ui.spire.preset.refund | Refund: {amount} Rs | 환급: {amount} Rs | runtime | playerSpire.js | translated |
+| ui.spire.preset.empty_layout | This layout is currently empty. You can save your current setup to this layout, and load it later! | 이 배치는 현재 비어 있습니다. 현재 구성을 이 배치에 저장하고 나중에 불러올 수 있습니다! | runtime | playerSpire.js | translated |
+| ui.spire.preset.note_html | <br/><br/><b>You wanted to remind yourself:</b><br/>{note} | <br/><br/><b>스스로에게 남긴 메모:</b><br/>{note} | runtime | playerSpire.js | translated |
+| ui.spire.preset.cannot_afford | <span class='red'>You cannot afford to load this Trap layout.</span> | <span class='red'>이 함정 배치를 불러올 런스톤이 부족합니다.</span> | runtime | playerSpire.js | translated |
+| ui.spire.preset.not_enough_floors | <span class='red'>You don't have enough Floors available in your Spire to load this layout.</span> | <span class='red'>이 배치를 불러오기에 첨탑 층수가 부족합니다.</span> | runtime | playerSpire.js | translated |
+| ui.spire.preset.save_confirm_body_html | Are you sure you want to save your current Spire layout to Preset {slot}? This will overwrite your currently saved layout.<br/><br/>If you want, you can also type a note to your future self below!<br/><br/><input maxlength=\"250\" style=\"width: 100%\" id=\"spireLayoutNoteInput\"/><br/> | 현재 첨탑 배치를 프리셋 {slot}에 저장하시겠습니까? 기존 저장 배치를 덮어씁니다.<br/><br/>원한다면 아래에 미래의 자신에게 남길 메모를 입력할 수 있습니다!<br/><br/><input maxlength=\"250\" style=\"width: 100%\" id=\"spireLayoutNoteInput\"/><br/> | runtime | playerSpire.js | translated |
+| ui.spire.preset.save_confirm_title | Save to Layout {slot}? | 배치 {slot}에 저장할까요? | runtime | playerSpire.js | translated |
+| ui.spire.preset.load_confirm_body | Are you sure you want to load layout {slot}? This will remove all Traps and Towers currently placed in your Spire! | 배치 {slot}을(를) 불러오시겠습니까? 현재 첨탑에 배치된 모든 함정과 타워가 제거됩니다! | runtime | playerSpire.js | translated |
+| ui.spire.preset.load_confirm_title | Load Layout {slot}? | 배치 {slot}을(를) 불러올까요? | runtime | playerSpire.js | translated |
+| ui.spire.preset.save_current_layout_here | Save Current Layout Here | 현재 배치 저장 | runtime | playerSpire.js | translated |
+| ui.spire.preset.load_this_layout | Load This Layout | 이 배치 불러오기 | runtime | playerSpire.js | translated |
+| ui.spire.settings.title | Spire Settings | 첨탑 설정 | runtime | playerSpire.js | translated |
+| ui.spire.settings.floating_combat_text | Floating Combat Text | 전투 떠다니는 텍스트 | runtime | playerSpire.js | translated |
+| ui.spire.settings.make_static | Make Static: | 고정 표시: | runtime | playerSpire.js | translated |
+| ui.spire.settings.trap_damage | Trap Damage: | 함정 피해: | runtime | playerSpire.js | translated |
+| ui.spire.settings.poison_tick | Poison Tick: | 독 틱 피해: | runtime | playerSpire.js | translated |
+| ui.spire.settings.runestones | Runestones: | 런스톤: | runtime | playerSpire.js | translated |
+| ui.spire.settings.visual_settings | Visual Settings | 시각 설정 | runtime | playerSpire.js | translated |
+| ui.spire.settings.trap_icons | Trap Icons: | 함정 아이콘: | runtime | playerSpire.js | translated |
+| ui.spire.settings.enemy_icons | Enemy Icons: | 적 아이콘: | runtime | playerSpire.js | translated |
+| ui.spire.settings.chill_effect | Chill Effect: | 냉기 효과: | runtime | playerSpire.js | translated |
+| ui.spire.settings.shock_effect | Shock Effect: | 감전 효과: | runtime | playerSpire.js | translated |
+| ui.spire.settings.health_as_percent | Health as %: | 체력을 %로: | runtime | playerSpire.js | translated |
+| ui.spire.settings.faded_enemies | Faded Enemies: | 희미한 적: | runtime | playerSpire.js | translated |
+| ui.spire.settings.save | Save | 저장 | runtime | playerSpire.js | translated |
+| ui.spire.settings.cancel | Cancel | 취소 | runtime | playerSpire.js | translated |
+
 ## 기타
 
 | key | en | ko | source | runtime files | status |

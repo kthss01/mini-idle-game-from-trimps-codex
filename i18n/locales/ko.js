@@ -253,6 +253,43 @@ window.I18N_LOCALES.ko = {
       "off": "꺼짐",
       "auto_level_status": "자동 레벨 {status}"
     },
+    "spire": {
+      "preset": {
+        "title": "함정 배치 {slot}",
+        "contains_header": "<b>이 저장된 배치에는 다음이 포함됩니다:</b><br/><br/>",
+        "trap_chip": "<span class='playerSpireTooltipTrapName' style='background-color: {color}'>{trap}&nbsp;x{count}</span> ",
+        "cost_summary_html": "총 비용: {total} Rs<br/>현재 함정 가치: {current} Rs<br/>",
+        "remaining_cost": "남은 비용: {amount} Rs",
+        "refund": "환급: {amount} Rs",
+        "empty_layout": "이 배치는 현재 비어 있습니다. 현재 구성을 이 배치에 저장하고 나중에 불러올 수 있습니다!",
+        "note_html": "<br/><br/><b>스스로에게 남긴 메모:</b><br/>{note}",
+        "cannot_afford": "<span class='red'>이 함정 배치를 불러올 런스톤이 부족합니다.</span>",
+        "not_enough_floors": "<span class='red'>이 배치를 불러오기에 첨탑 층수가 부족합니다.</span>",
+        "save_confirm_body_html": "현재 첨탑 배치를 프리셋 {slot}에 저장하시겠습니까? 기존 저장 배치를 덮어씁니다.<br/><br/>원한다면 아래에 미래의 자신에게 남길 메모를 입력할 수 있습니다!<br/><br/><input maxlength=\"250\" style=\"width: 100%\" id=\"spireLayoutNoteInput\"/><br/>",
+        "save_confirm_title": "배치 {slot}에 저장할까요?",
+        "load_confirm_body": "배치 {slot}을(를) 불러오시겠습니까? 현재 첨탑에 배치된 모든 함정과 타워가 제거됩니다!",
+        "load_confirm_title": "배치 {slot}을(를) 불러올까요?",
+        "save_current_layout_here": "현재 배치 저장",
+        "load_this_layout": "이 배치 불러오기"
+      },
+      "settings": {
+        "title": "첨탑 설정",
+        "floating_combat_text": "전투 떠다니는 텍스트",
+        "make_static": "고정 표시:",
+        "trap_damage": "함정 피해:",
+        "poison_tick": "독 틱 피해:",
+        "runestones": "런스톤:",
+        "visual_settings": "시각 설정",
+        "trap_icons": "함정 아이콘:",
+        "enemy_icons": "적 아이콘:",
+        "chill_effect": "냉기 효과:",
+        "shock_effect": "감전 효과:",
+        "health_as_percent": "체력을 %로:",
+        "faded_enemies": "희미한 적:",
+        "save": "저장",
+        "cancel": "취소"
+      }
+    },
     "message": {
       "challenge": {
         "alchemy": {
