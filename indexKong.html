@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
 
-	<title>Trimps 5.10.1 (Kongregate Version)</title>
+	<title data-i18n="ui.kong.page_title">Trimps 5.10.1 (Kongregate Version)</title>
 	<meta name="description" content="Trimps">
 	<meta name="author" content="Greensatellite">
     <link rel="stylesheet" href="css/bootstrap.css">
@@ -40,17 +40,17 @@ var kongregate = parent.kongregateAPI.getAPI();
 	</noscript>
 	<div id="offlineWrapper">
 		<div id="offlineInnerWrapper">
-			<div id="offlineTitle">
+			<div id="offlineTitle" data-i18n="ui.offline.title">
 				Making up lost time...
 			</div>
 			<div id="offlineProgressWrapper" class='progress'>
-				<span id='offlineProgressText'>Starting...</span>
+				<span id='offlineProgressText' data-i18n="ui.offline.starting">Starting...</span>
 				<div class="progress-bar" role="progressbar" id="offlineProgress">&nbsp;</div>
 			</div>
 			<div class='row'>
 				<div class='col-xs-3'>
-					<div id='offlineZoneNumber'>Zone</div>
-					<div id='offlineCellNumber'>Cell </div>
+					<div id='offlineZoneNumber' data-i18n="ui.offline.zone">Zone</div>
+					<div id='offlineCellNumber' data-i18n="ui.offline.cell">Cell </div>
 				</div>
 				<div class='col-xs-9'>
 					<div id='offlineExtraInfo'></div>
@@ -58,24 +58,24 @@ var kongregate = parent.kongregateAPI.getAPI();
 			</div>
 			<div class='row'>
 				<div id='offlineMapBtns' class='col-xs-6'>
-					<div id='offlineMapText' style='text-align: center;'>Wanna run a map?</div>
+					<div id='offlineMapText' style='text-align: center;' data-i18n="ui.offline.run_map">Wanna run a map?</div>
 					<div id='offlineMapBtnsInner'>
-						<span id="offlineMapBtn0" class="offlineMapBtn btn btn-md btn-success" onclick="offlineProgress.runFirstMap(0);">World Level Map</span>
-						<span id="offlineMapBtn1" class="offlineMapBtn btn btn-md btn-success" onclick="offlineProgress.runFirstMap(-1);">-1 Level map</span>
-						<span id="offlineMapBtn2" class="offlineMapBtn btn btn-md btn-success" onclick="offlineProgress.runFirstMap(-2);">-2 Level map</span>
-						<span id="offlineMapBtn3" class="offlineMapBtn btn btn-md btn-success" onclick="offlineProgress.runFirstMap(-3);">-3 Level map</span>
+						<span id="offlineMapBtn0" class="offlineMapBtn btn btn-md btn-success" onclick="offlineProgress.runFirstMap(0);" data-i18n="ui.offline.world_level_map">World Level Map</span>
+						<span id="offlineMapBtn1" class="offlineMapBtn btn btn-md btn-success" onclick="offlineProgress.runFirstMap(-1);" data-i18n="ui.offline.minus1_map">-1 Level map</span>
+						<span id="offlineMapBtn2" class="offlineMapBtn btn btn-md btn-success" onclick="offlineProgress.runFirstMap(-2);" data-i18n="ui.offline.minus2_map">-2 Level map</span>
+						<span id="offlineMapBtn3" class="offlineMapBtn btn btn-md btn-success" onclick="offlineProgress.runFirstMap(-3);" data-i18n="ui.offline.minus3_map">-3 Level map</span>
 					</div>
 				</div>
 				<div id='offlineZoneBtns' class='col-xs-6'>
 					<div id='offlineInMapDescription' style='text-align: center;'></div>
-					<span id='offlineZoneBtn' onclick="offlineProgress.leaveMap();" class="offlineExtraBtn btn btn-md btn-primary">Back to World</span>
+					<span id='offlineZoneBtn' onclick="offlineProgress.leaveMap();" class="offlineExtraBtn btn btn-md btn-primary" data-i18n="ui.offline.back_to_world">Back to World</span>
 				</div>
 				<div id='offlineExtraBtnsContainer' class='col-xs-6' style='position: absolute; left: 50%; width: 25%;'>
 					<div id='offlineTimeOffline'></div>
-					<div class='btn btn-lg btn-info offlineExtraBtn' onclick="tooltip('Lost Time', null, 'update');">What is This?!</div>
-					<div class='btn btn-lg btn-danger offlineExtraBtn' onclick='offlineProgress.finish()'>Stop Here</div>
-					<div class='btn btn-lg btn-warning offlineExtraBtn' id='offlineEqualityBtn' onclick='offlineProgress.showEquality()'>Show Equality</div>
-					<div class='btn btn-lg btn-primary offlineExtraBtn' id='offlineFightBtn' onclick='offlineProgress.fightClicked()'>Start Fighting</div>
+					<div class='btn btn-lg btn-info offlineExtraBtn' onclick="tooltip('Lost Time', null, 'update');" data-i18n="ui.offline.what_is_this">What is This?!</div>
+					<div class='btn btn-lg btn-danger offlineExtraBtn' onclick='offlineProgress.finish()' data-i18n="ui.offline.stop_here">Stop Here</div>
+					<div class='btn btn-lg btn-warning offlineExtraBtn' id='offlineEqualityBtn' onclick='offlineProgress.showEquality()' data-i18n="ui.offline.show_equality">Show Equality</div>
+					<div class='btn btn-lg btn-primary offlineExtraBtn' id='offlineFightBtn' onclick='offlineProgress.fightClicked()' data-i18n="ui.offline.start_fighting">Start Fighting</div>
 					<div id='offlineFormations'></div>
 					<div id='offlineSettingContainer'></div>
 					<div id='offlineEffective'></div>
@@ -894,7 +894,7 @@ var kongregate = parent.kongregateAPI.getAPI();
 							</div>
 							<div class="battleSideBtnContainer" style="display: none" id="boneBtnContainer">
 								<span class="btn btn-default fightBtn" id="boneBtn" onclick="showBones()">
-									<span id="boneBtnText">Bone Trader</span>
+									<span id="boneBtnText" data-i18n="ui.bone_trader.menu_button">Bone Trader</span>
 								</span>
 							</div>
 							<div class="battleSideBtnContainer" style="display: none" id="finishDailyBtnContainer">
@@ -1109,25 +1109,25 @@ var kongregate = parent.kongregateAPI.getAPI();
 						Save <span id="saveIndicator"></span><span id="playFabIndicator"></span>
 					</td>
 					<td class="btn btn-info" onclick="tooltip('Export', null, 'update')">
-						<div>Export</div>
+						<div data-i18n="ui.settings_menu.export">Export</div>
 					</td>
 					<td class="btn btn-info" onclick="tooltip('Import', null, 'update')">
-						<div>Import</div>
+						<div data-i18n="ui.settings_menu.import">Import</div>
 					</td>
 					<td class="btn btn-success" onclick="toggleStats()">
-						<div>Stats</div>
+						<div data-i18n="ui.settings_menu.stats">Stats</div>
 					</td>
 					<td class="btn tealColor" onclick="toggleAchievementWindow()">
-						<div>Achieves</div>
+						<div data-i18n="ui.settings_menu.achieves">Achieves</div>
 					</td>
 					<td class="btn btn-default" onclick="toggleSettingsMenu()">
-						<div id='settingsText'>Settings</div>
+						<div id='settingsText' data-i18n="ui.settings_menu.settings">Settings</div>
 					</td>
 					<td class="btn" id="pastUpgradesBtn" onclick="viewPortalUpgrades()">
 						
 					</td>
 					<td class="btn btn-new" onclick="window.open('updates.html', '_blank')">
-							V <span id="versionNumber"></span> | What's New 
+							<span data-i18n-html="ui.settings_menu.whats_new">V <span id="versionNumber"></span> | What's New</span> 
 					</td>
 					<td id="portalTimer" class="timerNotPaused" onclick="toggleSetting('pauseGame')">
 						<span id="portalTime">&nbsp;</span>&nbsp;&nbsp;<span style='font-size: 0.85em; line-height: 0.85em;' class='icomoon icon-pause3'></span>&nbsp;
@@ -1137,26 +1137,26 @@ var kongregate = parent.kongregateAPI.getAPI();
 			<div id="settingsHere" style="display: none">
 				<div id='searchSettingsWindow'>
 					<div id='settingTitleBar'>
-						<div class='noselect optionContainer settingsBtn tealColor settingTypeBtn' onclick='toggleSettingSection(false)'>Browse All</div>
-						<span id='searchSettingsTitle'>Choose a Category Below, or Search for a Setting/Keyword:</span>&nbsp;
+						<div class='noselect optionContainer settingsBtn tealColor settingTypeBtn' onclick='toggleSettingSection(false)' data-i18n="ui.settings_menu.browse_all">Browse All</div>
+						<span id='searchSettingsTitle' data-i18n="ui.settings_menu.search_title">Choose a Category Below, or Search for a Setting/Keyword:</span>&nbsp;
 						<input id='searchSettings' onkeyup='searchSettings(this)' /><br/>
 						<div id='settingsTabs'>
 							<ul class="nav nav-tabs nav-justified">
-								<li role="presentation" style='display: none' id='NewTab' onclick="settingTab('New')" class="tabNotSelected settingTab"><a>New</a></li>
-								<li role="presentation" id='GeneralTab' onclick="settingTab('General')" class="tabNotSelected settingTab"><a>General</a></li>
-								<li role="presentation" id='PerformanceTab' onclick="settingTab('Performance')" class="tabNotSelected settingTab"><a>Performance</a></li>
-								<li role="presentation"  id='QOLTab' onclick="settingTab('QOL')" class="tabNotSelected settingTab"><a>Quality of Life</a></li>
-								<li role="presentation"  id='AlertsTab' onclick="settingTab('Alerts')" class="tabNotSelected settingTab"><a>Pop-ups and Alerts</a></li>
-								<li role="presentation"  id='LayoutTab' onclick="settingTab('Layout')" class="tabNotSelected settingTab"><a>Layout</a></li>
-								<li role="presentation"  id='OtherTab' onclick="settingTab('Other')" class="tabNotSelected settingTab"><a>Other</a></li>
-								<li role="presentation"  id='HotkeyTab' onclick="tooltip('Hotkeys', null, 'update')" class="tabNotSelected settingTab"><a>Hotkeys</a></li>
+								<li role="presentation" style='display: none' id='NewTab' onclick="settingTab('New')" class="tabNotSelected settingTab"><a data-i18n="ui.settings_tabs.new">New</a></li>
+								<li role="presentation" id='GeneralTab' onclick="settingTab('General')" class="tabNotSelected settingTab"><a data-i18n="ui.settings_tabs.general">General</a></li>
+								<li role="presentation" id='PerformanceTab' onclick="settingTab('Performance')" class="tabNotSelected settingTab"><a data-i18n="ui.settings_tabs.performance">Performance</a></li>
+								<li role="presentation"  id='QOLTab' onclick="settingTab('QOL')" class="tabNotSelected settingTab"><a data-i18n="ui.settings_tabs.qol">Quality of Life</a></li>
+								<li role="presentation"  id='AlertsTab' onclick="settingTab('Alerts')" class="tabNotSelected settingTab"><a data-i18n="ui.settings_tabs.alerts">Pop-ups and Alerts</a></li>
+								<li role="presentation"  id='LayoutTab' onclick="settingTab('Layout')" class="tabNotSelected settingTab"><a data-i18n="ui.settings_tabs.layout">Layout</a></li>
+								<li role="presentation"  id='OtherTab' onclick="settingTab('Other')" class="tabNotSelected settingTab"><a data-i18n="ui.settings_tabs.other">Other</a></li>
+								<li role="presentation"  id='HotkeyTab' onclick="tooltip('Hotkeys', null, 'update')" class="tabNotSelected settingTab"><a data-i18n="ui.settings_tabs.hotkeys">Hotkeys</a></li>
 							</ul>
 						</div>
 					</div>					
 					<div id='settingSearchResults'></div>
 				</div>
 				<div id="allSettings" style="display: none">
-					<div class='noselect optionContainer settingsBtn tealColor' onclick='toggleSettingSection(true)'>Back to Search</div>
+					<div class='noselect optionContainer settingsBtn tealColor' onclick='toggleSettingSection(true)' data-i18n="ui.settings_menu.back_to_search">Back to Search</div>
 					<div id="allSettingsHere"></div>
 				</div>
 			</div>

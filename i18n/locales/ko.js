@@ -55,6 +55,7 @@ window.I18N_LOCALES.ko = {
       }
     },
     "screen_reader": {
+      "page_title": "Trimps 5.10.1 (스크린 리더 버전)",
       "info_title": "스크린 리더 정보",
       "info_line_1": "이 게임은 툴팁에 추가 정보를 표시하는 여러 가지 방법을 사용합니다.",
       "info_line_2": "shift+/는 모든 요소에서 작동하지만 포커스와 NVDA 설정이 필요합니다. 추가 정보가 있는 모든 요소는 tab으로 포커스할 수 있습니다.",
@@ -62,6 +63,10 @@ window.I18N_LOCALES.ko = {
       "info_line_4": "별도의 정보 버튼을 활성화할 수도 있으며, enter로 반응합니다.",
       "info_line_5": "shift+/ 툴팁을 사용하려면 NVDA + 8을 켜고 NVDA 설정 > browse mode에서 \"trap all command gestures from reaching the document.\"를 비활성화하세요.",
       "info_line_6": "게임 설정의 \"Show Screen Read Info.\"를 통해 이 안내를 표시/숨김할 수 있습니다."
+    },
+    "kong": {
+      "page_title": "Trimps 5.10.1 (콩그리게이트 버전)",
+      "shell_title": "콩그리게이트 게임 셸"
     },
     "tabs": {
       "all": "전체",

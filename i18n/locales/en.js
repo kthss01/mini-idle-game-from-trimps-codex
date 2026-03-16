@@ -55,6 +55,7 @@ window.I18N_LOCALES.en = {
       }
     },
     "screen_reader": {
+      "page_title": "Trimps 5.10.1 (Screen Reader version)",
       "info_title": "Screen Reader Information",
       "info_line_1": "This game uses several different ways to show additional information in tooltips.",
       "info_line_2": "shift+/ will work on all elements, but requires focus, and specific NVDA settings. All elements with additional information are focusable with tab.",
@@ -62,6 +63,10 @@ window.I18N_LOCALES.en = {
       "info_line_4": "You can also enable separate info buttons, which will respond to enter.",
       "info_line_5": "To enable shift+/ tooltips, Turn NVDA + 8 on, and disable NVDA: Settings > browse mode: Disable \"trap all command gestures from reaching the document.\"",
       "info_line_6": "You can show/hide this information via the game setting \"Show Screen Read Info.\""
+    },
+    "kong": {
+      "page_title": "Trimps 5.10.1 (Kongregate Version)",
+      "shell_title": "Kongregate Game Shell"
     },
     "tabs": {
       "all": "All",
