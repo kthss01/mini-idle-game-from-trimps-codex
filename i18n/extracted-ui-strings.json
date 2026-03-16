@@ -65,5 +65,6 @@
   "ui.map.spire": "Spire",
   "ui.map.spire_number": "Spire {num}",
   "ui.map.floor": " Floor {floor}",
-  "ui.map.zone": "Zone"
+  "ui.map.zone": "Zone",
+  "ui.settings.language.label": "Language:"
 }

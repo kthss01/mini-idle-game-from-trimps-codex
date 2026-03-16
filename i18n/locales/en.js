@@ -1,6 +1,11 @@
 window.I18N_LOCALES = window.I18N_LOCALES || {};
 window.I18N_LOCALES.en = {
   "ui": {
+    "settings": {
+      "language": {
+        "label": "Language:"
+      }
+    },
     "offline": {
       "title": "Making up lost time...",
       "starting": "Starting...",

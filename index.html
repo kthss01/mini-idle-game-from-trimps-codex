@@ -1037,6 +1037,13 @@
 						<div class='noselect optionContainer settingsBtn tealColor settingTypeBtn' onclick='toggleSettingSection(false)'>Browse All</div>
 						<span id='searchSettingsTitle'>Choose a Category Below, or Search for a Setting/Keyword:</span>&nbsp;
 						<input id='searchSettings' onkeyup='searchSettings(this)' /><br/>
+						<div id='localeControlRow' class='settingLocaleControl'>
+							<label for='localeSelect' data-i18n='ui.settings.language.label'>Language:</label>
+							<select id='localeSelect' data-locale-control aria-label='Language'>
+								<option value='en'>EN</option>
+								<option value='ko'>KR</option>
+							</select>
+						</div>
 						<div id='settingsTabs'>
 							<ul class="nav nav-tabs nav-justified">
 								<li role="presentation" style='display: none' id='NewTab' onclick="settingTab('New')" class="tabNotSelected settingTab"><a>New</a></li>
