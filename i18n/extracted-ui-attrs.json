@@ -155,12 +155,228 @@
     "text": "Fragments",
     "title": null
   },
+  "ui.queue.auto_traps_off": {
+    "text": "AutoTraps Off",
+    "title": null
+  },
+  "ui.queue.build": {
+    "text": "Build",
+    "title": null
+  },
+  "ui.queue.empty": {
+    "text": "Nothing in queue...",
+    "title": null
+  },
+  "ui.tabs.all": {
+    "text": "All",
+    "title": null
+  },
+  "ui.tabs.buildings": {
+    "text": "Buildings",
+    "title": null
+  },
+  "ui.tabs.jobs": {
+    "text": "Jobs",
+    "title": null
+  },
+  "ui.tabs.upgrades": {
+    "text": "Upgrades",
+    "title": null
+  },
+  "ui.tabs.equipment": {
+    "text": "Equipment",
+    "title": null
+  },
+  "ui.tabs.mastery": {
+    "text": "Mastery",
+    "title": null
+  },
+  "ui.tabs.equality": {
+    "text": "Equality",
+    "title": null
+  },
+  "ui.tabs.nature": {
+    "text": "Nature",
+    "title": null
+  },
+  "ui.tabs.spire": {
+    "text": "Spire",
+    "title": null
+  },
+  "ui.tabs.alchemy": {
+    "text": "Alchemy",
+    "title": null
+  },
+  "ui.panels.buildings": {
+    "text": "Buildings",
+    "title": null
+  },
+  "ui.automation.auto_structure": {
+    "text": "AutoStructure",
+    "title": null
+  },
+  "ui.automation.auto_storage": {
+    "text": "AutoStorage",
+    "title": null
+  },
+  "ui.panels.jobs": {
+    "text": "Jobs",
+    "title": null
+  },
+  "ui.automation.auto_jobs": {
+    "text": "AutoJobs",
+    "title": null
+  },
+  "ui.jobs.fire": {
+    "text": "Fire",
+    "title": null
+  },
+  "ui.battle.fight": {
+    "text": "Fight",
+    "title": null
+  },
+  "ui.battle.auto_fight_off": {
+    "text": "AutoFight Off",
+    "title": null
+  },
+  "ui.battle.maps": {
+    "text": "Maps",
+    "title": null
+  },
+  "ui.battle.void_maps": {
+    "text": "Void Maps",
+    "title": null
+  },
+  "ui.battle.portal": {
+    "text": "Portal",
+    "title": null
+  },
+  "ui.battle.repeat_off": {
+    "text": "Repeat Off",
+    "title": null
+  },
+  "ui.battle.heirlooms": {
+    "text": "Heirlooms",
+    "title": null
+  },
   "ui.bone_trader.menu_button": {
     "text": "Bone Trader",
     "title": null
   },
+  "ui.battle.finish_daily": {
+    "text": "Finish Daily",
+    "title": null
+  },
+  "ui.battle.exit_spire": {
+    "text": "Exit Spire",
+    "title": null
+  },
+  "ui.settings_menu.save": {
+    "text": "Save",
+    "title": null
+  },
+  "ui.settings_menu.export": {
+    "text": "Export",
+    "title": null
+  },
+  "ui.settings_menu.import": {
+    "text": "Import",
+    "title": null
+  },
+  "ui.settings_menu.stats": {
+    "text": "Stats",
+    "title": null
+  },
+  "ui.settings_menu.achieves": {
+    "text": "Achieves",
+    "title": null
+  },
+  "ui.settings_menu.settings": {
+    "text": "Settings",
+    "title": null
+  },
+  "ui.settings_menu.whats_new": {
+    "text": "V <span id=\"versionNumber\"></span> | What's New",
+    "title": null
+  },
+  "ui.settings_menu.browse_all": {
+    "text": "Browse All",
+    "title": null
+  },
+  "ui.settings_menu.search_title": {
+    "text": "Choose a Category Below, or Search for a Setting/Keyword:",
+    "title": null
+  },
   "ui.settings.language.label": {
     "text": "Language:",
+    "title": null
+  },
+  "ui.settings_tabs.new": {
+    "text": "New",
+    "title": null
+  },
+  "ui.settings_tabs.general": {
+    "text": "General",
+    "title": null
+  },
+  "ui.settings_tabs.performance": {
+    "text": "Performance",
+    "title": null
+  },
+  "ui.settings_tabs.qol": {
+    "text": "Quality of Life",
+    "title": null
+  },
+  "ui.settings_tabs.alerts": {
+    "text": "Pop-ups and Alerts",
+    "title": null
+  },
+  "ui.settings_tabs.layout": {
+    "text": "Layout",
+    "title": null
+  },
+  "ui.settings_tabs.other": {
+    "text": "Other",
+    "title": null
+  },
+  "ui.settings_tabs.hotkeys": {
+    "text": "Hotkeys",
+    "title": null
+  },
+  "ui.settings_menu.back_to_search": {
+    "text": "Back to Search",
+    "title": null
+  },
+  "ui.screen_reader.info_title": {
+    "text": "Screen Reader Information",
+    "title": null
+  },
+  "ui.screen_reader.info_line_1": {
+    "text": "This game uses several different ways to show additional information in tooltips.",
+    "title": null
+  },
+  "ui.screen_reader.info_line_2": {
+    "text": "shift+/ will work on all elements, but requires focus, and specific NVDA settings. All elements with additional information are focusable with tab.",
+    "title": null
+  },
+  "ui.screen_reader.info_line_3": {
+    "text": "shift+enter works only on button elements, not clickable. It does not require focus.",
+    "title": null
+  },
+  "ui.screen_reader.info_line_4": {
+    "text": "You can also enable separate info buttons, which will respond to enter.",
+    "title": null
+  },
+  "ui.screen_reader.info_line_5": {
+    "text": "To enable shift+/ tooltips, Turn NVDA + 8 on, and disable NVDA: Settings > browse mode: Disable \"trap all command gestures from reaching the document.\"",
+    "title": null
+  },
+  "ui.screen_reader.info_line_6": {
+    "text": "You can show/hide this information via the game setting \"Show Screen Read Info.\"",
+    "title": null
+  },
+  "ui.menu.upgrades_research_first": {
+    "text": "Upgrades<br></br>(Research first)",
     "title": null
   }
 }

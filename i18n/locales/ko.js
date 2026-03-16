@@ -54,6 +54,77 @@ window.I18N_LOCALES.ko = {
         "research": "연구"
       }
     },
+    "screen_reader": {
+      "info_title": "스크린 리더 정보",
+      "info_line_1": "이 게임은 툴팁에 추가 정보를 표시하는 여러 가지 방법을 사용합니다.",
+      "info_line_2": "shift+/는 모든 요소에서 작동하지만 포커스와 NVDA 설정이 필요합니다. 추가 정보가 있는 모든 요소는 tab으로 포커스할 수 있습니다.",
+      "info_line_3": "shift+enter는 클릭 가능한 요소가 아닌 button 요소에서만 동작하며, 포커스가 필요하지 않습니다.",
+      "info_line_4": "별도의 정보 버튼을 활성화할 수도 있으며, enter로 반응합니다.",
+      "info_line_5": "shift+/ 툴팁을 사용하려면 NVDA + 8을 켜고 NVDA 설정 > browse mode에서 \"trap all command gestures from reaching the document.\"를 비활성화하세요.",
+      "info_line_6": "게임 설정의 \"Show Screen Read Info.\"를 통해 이 안내를 표시/숨김할 수 있습니다."
+    },
+    "tabs": {
+      "all": "전체",
+      "buildings": "건물",
+      "jobs": "직업",
+      "upgrades": "업그레이드",
+      "equipment": "장비",
+      "mastery": "숙련",
+      "equality": "평등",
+      "nature": "자연",
+      "spire": "첨탑",
+      "alchemy": "연금술"
+    },
+    "queue": {
+      "auto_traps_off": "자동 함정 꺼짐",
+      "build": "건설",
+      "empty": "대기열이 비어 있습니다..."
+    },
+    "panels": {
+      "buildings": "건물",
+      "jobs": "직업"
+    },
+    "automation": {
+      "auto_structure": "자동 건설",
+      "auto_storage": "자동 저장소",
+      "auto_jobs": "자동 직업"
+    },
+    "jobs": {
+      "fire": "해고"
+    },
+    "battle": {
+      "fight": "전투",
+      "auto_fight_off": "자동 전투 꺼짐",
+      "maps": "맵",
+      "void_maps": "공허 맵",
+      "portal": "포털",
+      "repeat_off": "반복 꺼짐",
+      "heirlooms": "가보",
+      "finish_daily": "일일 종료",
+      "exit_spire": "첨탑 나가기"
+    },
+    "settings_menu": {
+      "save": "저장",
+      "export": "내보내기",
+      "import": "가져오기",
+      "stats": "통계",
+      "achieves": "업적",
+      "settings": "설정",
+      "whats_new": "V <span id=\"versionNumber\"></span> | 새로운 소식",
+      "browse_all": "전체 보기",
+      "search_title": "아래에서 카테고리를 선택하거나 설정/키워드를 검색하세요:",
+      "back_to_search": "검색으로 돌아가기"
+    },
+    "settings_tabs": {
+      "new": "새 항목",
+      "general": "일반",
+      "performance": "성능",
+      "qol": "편의 기능",
+      "alerts": "팝업 및 알림",
+      "layout": "레이아웃",
+      "other": "기타",
+      "hotkeys": "단축키"
+    },
     "alert": {
       "holiday": {
         "loaded_event": "{holiday} 이벤트를 불러왔습니다!",
