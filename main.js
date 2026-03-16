@@ -10812,10 +10812,10 @@ function mapsClicked(confirmed) {
         return;
     }
     if (game.global.fighting && !game.global.preMapsActive) {
-		message("Waiting to travel until your soldiers are finished.", "Notices");
+		message(i18n.t("ui.alert.map.waiting_for_soldiers"), "Notices");
 
 		document.getElementById("mapsBtn").className = "btn btn-warning fightBtn shrinkBtnText";
-		document.getElementById("mapsBtnText").innerHTML = "Abandon Soldiers";
+		document.getElementById("mapsBtnText").innerHTML = i18n.t("ui.map.abandon_soldiers");
 	}
     if (game.global.preMapsActive) {
         mapsSwitch();
@@ -10850,7 +10850,7 @@ function mapsSwitch(updateOnly, fromRecycle) {
 	if (game.global.currentMapId !== "") currentMapObj = getCurrentMapObject();
 	var mapsBtnText = document.getElementById("mapsBtnText");
 	var recycleBtn = document.getElementById("recycleMapBtn");
-	recycleBtn.innerHTML = "Recycle Map";
+	recycleBtn.innerHTML = i18n.t("ui.map.recycle_map");
 	document.getElementById("mapsBtn").className = "btn btn-warning fightBtn";
 	document.getElementById('togglemapAtZone2').style.display = (game.global.canMapAtZone) ? "block" : "none";
     if (game.global.preMapsActive) {
@@ -10873,17 +10873,17 @@ function mapsSwitch(updateOnly, fromRecycle) {
         document.getElementById("grid").style.display = "none";
         document.getElementById("preMaps").style.display = "block";
         toggleMapGridHtml();
-        mapsBtnText.innerHTML = "World";
+        mapsBtnText.innerHTML = i18n.t("ui.map.world");
         if (game.global.lookingAtMap && !game.global.currentMapId) selectMap(game.global.lookingAtMap, true);
 		else if (game.global.currentMapId === "") {
 			clearMapDescription();
 		} 
 		else {
             selectMap(game.global.currentMapId, true);
-            document.getElementById("selectMapBtn").innerHTML = "Continue";
+            document.getElementById("selectMapBtn").innerHTML = i18n.t("ui.map.continue");
             document.getElementById("selectMapBtn").style.visibility = "visible";
             recycleBtn.style.visibility = "visible";
-			if (currentMapObj.noRecycle) recycleBtn.innerHTML = "Abandon Map";
+			if (currentMapObj.noRecycle) recycleBtn.innerHTML = i18n.t("ui.map.abandon_map");
 		}
 	}
 	else if (game.global.mapsActive) {
@@ -10945,20 +10945,20 @@ function toggleMapGridHtml(on, currentMapObj){
 	if (!on) return;
 	var innerText = game.global.mapBonus;
 	if (game.talents.mapBattery.purchased && game.global.mapBonus == 10) innerText = "<span class='mapBonus10'>" + innerText + "</span>";
-	document.getElementById("mapsBtnText").innerHTML = (game.global.mapBonus) ? "Maps (" + innerText + ")" : "Maps";
+	document.getElementById("mapsBtnText").innerHTML = (game.global.mapBonus) ? i18n.t("ui.map.maps_with_bonus", { bonus: innerText }) : i18n.t("ui.map.maps");
 	document.getElementById("mapBonus").innerHTML = "";
 	document.getElementById("battleHeadContainer").style.display = "block";
 	if (!currentMapObj) return;
 	var worldNumElem = document.getElementById("worldNumber");
 	worldNumElem.style.display = 'inline';
-	worldNumElem.innerHTML = "<br/>Lv: " + currentMapObj.level;
+	worldNumElem.innerHTML = i18n.t("ui.map.level_with_prefix", { level: currentMapObj.level });
 	document.getElementById("worldName").innerHTML = currentMapObj.name;
 }
 
 function clearMapDescription(){
 	document.getElementById("selectMapBtn").style.visibility = "hidden";
 	document.getElementById("recycleMapBtn").style.visibility = "hidden";
-	document.getElementById("selectedMapName").innerHTML = "Select a Map!";
+	document.getElementById("selectedMapName").innerHTML = i18n.t("ui.map.select_a_map");
 	document.getElementById("mapStatsSize").innerHTML = "";
 	document.getElementById("mapStatsDifficulty").innerHTML = "";
 	document.getElementById("mapStatsLoot").innerHTML = "";
@@ -10967,7 +10967,7 @@ function clearMapDescription(){
 }
 
 function setNonMapBox(){
-	document.getElementById("mapsBtnText").innerHTML = "Maps";
+	document.getElementById("mapsBtnText").innerHTML = i18n.t("ui.map.maps");
 	if (game.global.totalVoidMaps > 0) addVoidAlert();
 	var worldNumElem = document.getElementById("worldNumber");
 	worldNumElem.style.display = (game.global.spireActive) ? 'none' : 'inline';
@@ -10975,9 +10975,9 @@ function setNonMapBox(){
 	var mapBonus = document.getElementById("mapBonus");
 	var bonus = game.global.mapBonus;
 	if (game.talents.mapBattery.purchased && bonus == 10) bonus *= 2;
-	if (bonus > 0) mapBonus.innerHTML = prettify(bonus * 20) + "% Map Bonus";
+	if (bonus > 0) mapBonus.innerHTML = i18n.t("ui.map.map_bonus", { bonus: prettify(bonus * 20) });
 	else mapBonus.innerHTML = "";
-	document.getElementById("worldName").innerHTML = (game.global.spireActive) ? ((checkIfSpireWorld(true) == 1) ? "Spire" : "Spire " + romanNumeral(checkIfSpireWorld(true))) + (game.global.universe == 2 ? " Floor " + game.global.spireLevel : "") : "Zone";	
+	document.getElementById("worldName").innerHTML = (game.global.spireActive) ? ((checkIfSpireWorld(true) == 1) ? i18n.t("ui.map.spire") : i18n.t("ui.map.spire_number", { num: romanNumeral(checkIfSpireWorld(true)) })) + (game.global.universe == 2 ? i18n.t("ui.map.floor", { floor: game.global.spireLevel }) : "") : i18n.t("ui.map.zone");	
 }
 
 function repeatClicked(updateOnly){

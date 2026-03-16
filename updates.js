@@ -1160,7 +1160,7 @@ function tooltip(what, isItIn, event, textString, attachFunction, numCheck, rena
 		if (!game.global.autoUpgradesAvailable) tooltipText += "<br/><br/><span class='planetBreakMessage'><b>Your Trimps seem to understand that they'll need to help out more, and you realize how to permanently use them to automate upgrades!<b></span><br/>";
 		costText = "<span class='planetBreakDescription'><span class='bad'>Trimp breed speed reduced by a factor of 10. 20% of enemy damage can now penetrate your block.</span><span class='good'> You have unlocked a new upgrade to learn a Formation. Helium harvested per Zone is increased by a factor of 5. Equipment cost is dramatically cheaper. Creating modified maps is now cheaper, and your scientists have found new ways to improve maps! You have access to the 'Trimp' challenge!<span></span>";
 		if (game.global.challengeActive == "Corrupted") costText += "<br/><br/><span class='corruptedBadGuyName'>Looks like the Corruption is starting early...</span>";
-		costText += "<hr/><div class='maxCenter'><div class='btn btn-info' id='confirmTooltipBtn' role=button tabindex=0 onclick='cancelTooltip()'>I'll be fine</div><div class='btn btn-danger' onclick='cancelTooltip(); message(\"Sorry\", \"Notices\")'>I'm Scared</div></div>"
+		costText += "<hr/><div class='maxCenter'><div class='btn btn-info' id='confirmTooltipBtn' role=button tabindex=0 onclick='cancelTooltip()'>" + i18n.t("ui.tooltip.confirm.im_fine") + "</div><div class='btn btn-danger' onclick='cancelTooltip(); message(i18n.t(\"ui.alert.generic.sorry\"), \"Notices\")'>" + i18n.t("ui.tooltip.confirm.im_scared") + "</div></div>"
 		game.global.lockTooltip = true;
 		elem.style.left = "33.75%";
 		elem.style.top = "25%";
@@ -1301,7 +1301,7 @@ function tooltip(what, isItIn, event, textString, attachFunction, numCheck, rena
 	}
 	if (what == "Reset"){
 		tooltipText = "Are you sure you want to reset? This will really actually reset your game. You won't get anything cool. It will be gone. <b style='color: red'>This is not the soft-reset you're looking for. This will delete your save.</b>";
-		costText="<div class='maxCenter'><div class='btn btn-danger' onclick='resetGame(false, true);unlockTooltip();tooltip(\"hide\")'>Delete Save</div> <div class='btn btn-info' role=button tabindex=0 onclick='cancelTooltip()'>Cancel</div></div>";
+		costText="<div class='maxCenter'><div class='btn btn-danger' onclick='resetGame(false, true);unlockTooltip();tooltip(\"hide\")'>" + i18n.t("ui.menu.delete_save") + "</div> <div class='btn btn-info' role=button tabindex=0 onclick='cancelTooltip()'>" + i18n.t("ui.menu.cancel") + "</div></div>";
 		game.global.lockTooltip = true;
 		elem.style.left = "33.75%";
 		elem.style.top = "25%";
@@ -4228,7 +4228,7 @@ function resetGame(keepPortal, resetting) {
 	document.getElementById("buyCol").style.visibility = "hidden";
 	document.getElementById("unempHide").style.visibility = "hidden";
 	document.getElementById("empHide").style.visibility = "hidden";
-	document.getElementById("upgradesTitleSpan").innerHTML = "Upgrades<br/>(Research first)";
+	document.getElementById("upgradesTitleSpan").innerHTML = i18n.t("ui.menu.upgrades_research_first");
 	document.getElementById("science").style.visibility = "hidden";
 	document.getElementById("battleContainer").style.visibility = "hidden";
 	document.getElementById("pauseFight").style.display = "none";
@@ -4263,12 +4263,12 @@ function resetGame(keepPortal, resetting) {
 	document.getElementById("respecPortalBtn").style.display = "none";
 	document.getElementById("battleHeadContainer").style.display = "block";
 	document.getElementById("mapsCreateRow").style.display = "none";
-	document.getElementById("worldName").innerHTML = "Zone";
+	document.getElementById("worldName").innerHTML = i18n.t("ui.map.zone");
 	document.getElementById("wrapper").style.background = "url(css/bg2.png) center repeat-x";
 	document.getElementById("wrapper").className = "wrapperUnbroken"
 	document.getElementById("turkimpBuff").style.display = "none";
 	document.getElementById("statsBtnRow").style.display = "block";
-	document.getElementById("mapsBtnText").innerHTML = "Maps";
+	document.getElementById("mapsBtnText").innerHTML = i18n.t("ui.map.maps");
 	document.getElementById("mapBonus").innerHTML = "";
 	document.getElementById("roboTrimpTurnsLeft").innerHTML = "";
 	swapClass("shriekState", "shriekStateCooldown", document.getElementById("chainHolder"));
@@ -4295,7 +4295,7 @@ function resetGame(keepPortal, resetting) {
 	document.getElementById("swapToCurrentChallengeBtn").style.display = "none";
 	document.getElementById('autoGoldenBtn').style.display = "none";
 	document.getElementById('scienceCollectBtn').style.display = "block";
-	document.getElementById('trimpsBreedingTitle').innerHTML = "breeding";
+	document.getElementById('trimpsBreedingTitle').innerHTML = i18n.t("ui.menu.breeding");
 	document.getElementById('alchemyTab').style.display = 'none';
 	document.getElementById("energyShield").style.width = "0%";
 	document.getElementById("energyShieldLayer").style.width = "0%";
@@ -4816,7 +4816,7 @@ function resetGame(keepPortal, resetting) {
 		for (var heirItem in heirloomStuff){
 			game.global[heirItem] = heirloomStuff[heirItem];
 		}
-		if (game.global.totalPortals == 1) message("Use of the portal has created a chance for the Void to seep into your world. Be alert.", "Story", null, "voidMessage");
+		if (game.global.totalPortals == 1) message(i18n.t("ui.alert.story.void_seep"), "Story", null, "voidMessage");
 		if (game.stats.totalHeirlooms.valueTotal > 0) document.getElementById("heirloomBtnContainer").style.display = "block";
 		recalculateHeirloomBonuses();
 		game.global.voidMaxLevel = voidMaxLevel;
@@ -5030,7 +5030,7 @@ function enableImprovedAutoStorage(){
 function applyS1(){
 	if (game.global.challengeActive != "Scientist") game.resources.science.owned += 5000;
 	fadeIn("science", 10);
-	document.getElementById("upgradesTitleSpan").innerHTML = "Upgrades";
+	document.getElementById("upgradesTitleSpan").innerHTML = i18n.t("ui.menu.upgrades");
 	game.resources.wood.owned += 100;
 	game.resources.food.owned += 100;
 	game.buildings.Trap.owned += 10;
