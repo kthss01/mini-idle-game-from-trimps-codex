@@ -336,7 +336,7 @@
 							<button id="CombatFilter"  onclick="filterMessage('Combat')" class="btn btn-success logFlt">Combat</button>
 						</div>
 						<div id="logConfigHolder" class="btn-group" role="group">
-							<button aria-label="Configure Displayed Messages" id="logConfigBtn" onclick="tooltip('Message Config', null, 'update')" class="btn btn-default logFlt"><span class='glyphicon glyphicon-cog'></span></button>
+							<button data-i18n-attr="aria-label:ui.aria.configure_displayed_messages" id="logConfigBtn" onclick="tooltip('Message Config', null, 'update')" class="btn btn-default logFlt"><span class='glyphicon glyphicon-cog'></span></button>
 						</div>						
 					</div>
 					<div id="achievementTracker">
@@ -388,14 +388,14 @@
 				</div>
 				<div id="outerBuyContainer">	
 				<div id="buyTabs">
-					<ul id="buyTabsUl" class="nav nav-tabs nav-justified buyTabsUl" aria-label="Buy Tabs">
+					<ul id="buyTabsUl" class="nav nav-tabs nav-justified buyTabsUl" data-i18n-attr="aria-label:ui.aria.buy_tabs">
 						<li id="allTab" onclick="filterTabs('all')" class="tabNotSelected buyTab"><a id="allA" data-i18n="ui.tabs.all">All</a></li>
 						<li id="buildingsTab" onclick="filterTabs('buildings')" class="tabNotSelected buyTab"><a id="buildingsA"><span id="buildingsAlert" class="alert badge"></span><span data-i18n="ui.tabs.buildings">Buildings</span></a></li>
 						<li id="jobsTab" style="visibility: hidden" onclick="filterTabs('jobs')" class="tabNotSelected buyTab"><a id="jobsA"><span id="jobsAlert" class="alert badge"></span><span data-i18n="ui.tabs.jobs">Jobs</span></a></li>
 						<li id="upgradesTab" style="visibility: hidden" onclick="filterTabs('upgrades')" class="tabNotSelected buyTab"><a id="upgradesA"><span id="upgradesAlert" class="alert badge"></span><span data-i18n="ui.tabs.upgrades">Upgrades</span></a></li>
 						<li id="equipmentTab" style="visibility: hidden" onclick="filterTabs('equipment')" class="tabNotSelected buyTab"><a id="equipmentA"><span id="equipmentAlert" class="alert badge"></span><span data-i18n="ui.tabs.equipment">Equipment</span></a></li>		
 					</ul>
-					<ul id="buyTabsUl2" class="nav nav-tabs nav-justified buyTabsUl" aria-label="Features Tabs">
+					<ul id="buyTabsUl2" class="nav nav-tabs nav-justified buyTabsUl" data-i18n-attr="aria-label:ui.aria.features_tabs">
 						<li id="talentsTab" style='display: none' onclick="filterTabs('talents')" class="tabNotSelected buyTab" ><a id="talentA"><span id="talentsAlert" class="alert badge"></span><span id="mutatorsAlert" class="alert badge"></span><span id='MasteryTabName'>Mastery</span><span id="talentsEssenceTotal"></span></a></li>		
 						<li id="equalityTab" style='display: none'  onclick="tooltip('Scale Equality Scaling', null, 'update', true)" class="tabNotSelected equalityTabScaling buyTab" ><a id="equalityA">Equality</a></li>		
 						<li id="natureTab" style='display: none'  onclick="filterTabs('nature')" class="tabNotSelected buyTab empowerTabNone" ><a id="natureA">Nature</a></li>		
@@ -489,7 +489,7 @@
 										<div class="col-xs-3 lowPad">								
 											<div id="autoGoldenBtn"  class="pointer noselect settingBtn0 autoUpgradeBtn toggleConfigBtn">
 												<div id='autoGoldenText' onclick="toggleAutoGolden()">AutoGold</div>
-												<div id="goldConfig" aria-label="Configure Auto Golden" onclick="archoGolden.popup()"><span class="glyphicon glyphicon-cog"></span></div>
+												<div id="goldConfig" data-i18n-attr="aria-label:ui.aria.configure_auto_golden" onclick="archoGolden.popup()"><span class="glyphicon glyphicon-cog"></span></div>
 											</div>
 										</div>
 										<div class="col-xs-3 lowPad">
@@ -665,32 +665,32 @@
 										<div class="row noPad" style="padding-right: 15px;">
 											<form name="FormationInput">
 											<div id='form0Container' class="formFifth noPad">
-												<input type="radio" name="formations" aria-label="No Formation" class="formationBtn pointer formationStateDisabled" onclick="setFormation('0')" id="formation0" value="0">
+												<input type="radio" name="formations" data-i18n-attr="aria-label:ui.aria.formation.none" class="formationBtn pointer formationStateDisabled" onclick="setFormation('0')" id="formation0" value="0">
 													
 												</input>
 											</div>
 											<div id='form1Container' class="formFifth noPad">
-												<input type="radio" name="formations"  aria-label="Heap" class="formationBtn pointer formationStateDisabled" onclick="setFormation('1')" id="formation1" value="1">
+												<input type="radio" name="formations"  data-i18n-attr="aria-label:ui.aria.formation.heap" class="formationBtn pointer formationStateDisabled" onclick="setFormation('1')" id="formation1" value="1">
 													
 												</input>
 											</div>
 											<div id='form2Container' class="formFifth noPad">
-												<input type="radio" name="formations" aria-label="Dominance" class="formationBtn pointer formationStateDisabled" onclick="setFormation('2')" id="formation2" value="2">
+												<input type="radio" name="formations" data-i18n-attr="aria-label:ui.aria.formation.dominance" class="formationBtn pointer formationStateDisabled" onclick="setFormation('2')" id="formation2" value="2">
 													
 												</input>										
 											</div>
 											<div id='form3Container' class="formFifth noPad">
-												<input type="radio" name="formations" aria-label="Barrier" class="formationBtn pointer formationStateDisabled" onclick="setFormation('3')" id="formation3" value="3">
+												<input type="radio" name="formations" data-i18n-attr="aria-label:ui.aria.formation.barrier" class="formationBtn pointer formationStateDisabled" onclick="setFormation('3')" id="formation3" value="3">
 													
 												</dinputiv>											
 											</div>
 											<div id='form4Container' class="formFifth noPad">
-												<input type="radio" name="formations" aria-label="Scryer"class="formationBtn pointer formationStateDisabled" onclick="setFormation('4')" id="formation4" value="4">
+												<input type="radio" name="formations" data-i18n-attr="aria-label:ui.aria.formation.scryer"class="formationBtn pointer formationStateDisabled" onclick="setFormation('4')" id="formation4" value="4">
 													
 												</input>											
 											</div>
 											<div id='form5Container' class="formSixth noPad">
-												<input type="radio" name="formations" aria-label="Wind" class="formationBtn pointer formationStateDisabled" onclick="setFormation('5')" id="formation5" value="5">
+												<input type="radio" name="formations" data-i18n-attr="aria-label:ui.aria.formation.wind" class="formationBtn pointer formationStateDisabled" onclick="setFormation('5')" id="formation5" value="5">
 													
 												</input>											
 											</div>
@@ -874,11 +874,11 @@
 									</div>
 									<br/>
 									<select id="biomeAdvMapsSelect" class="advSelect" onchange="updateMapCost()">
-										<option value="Random">Random</option>
-										<option value="Mountain">Mountain</option>
-										<option value="Forest">Forest</option>
-										<option value="Sea">Sea</option>
-										<option value="Depths">Depths</option>
+										<option value="Random" data-i18n="ui.maps.biome.random">Random</option>
+										<option value="Mountain" data-i18n="ui.maps.biome.mountain">Mountain</option>
+										<option value="Forest" data-i18n="ui.maps.biome.forest">Forest</option>
+										<option value="Sea" data-i18n="ui.maps.biome.sea">Sea</option>
+										<option value="Depths" data-i18n="ui.maps.biome.depths">Depths</option>
 									</select>
 								</div>
 							</div>
@@ -930,7 +930,7 @@
 							<div id="selectedMapContainer" class="row">
 								<div id="selectedMapCol" class="col-xs-3 lowPad">
 									<div id="selectedMapName"></div><br/>
-									<div id="mapCreditsLeft" aria-label="Earn 1 Credit for each zone you clear while on this challenge"></div>
+									<div id="mapCreditsLeft" data-i18n-attr="aria-label:ui.maps.map_credits_title"></div>
 								</div>
 
 								<div id="mapStatsCol3" class="col-xs-5 lowPad">

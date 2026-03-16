@@ -64,6 +64,20 @@ window.I18N_LOCALES.en = {
       "info_line_5": "To enable shift+/ tooltips, Turn NVDA + 8 on, and disable NVDA: Settings > browse mode: Disable \"trap all command gestures from reaching the document.\"",
       "info_line_6": "You can show/hide this information via the game setting \"Show Screen Read Info.\""
     },
+    "aria": {
+      "configure_displayed_messages": "Configure Displayed Messages",
+      "buy_tabs": "Buy Tabs",
+      "features_tabs": "Features Tabs",
+      "configure_auto_golden": "Configure Auto Golden",
+      "formation": {
+        "none": "No Formation",
+        "heap": "Heap",
+        "dominance": "Dominance",
+        "barrier": "Barrier",
+        "scryer": "Scryer",
+        "wind": "Wind"
+      }
+    },
     "kong": {
       "page_title": "Trimps 5.10.1 (Kongregate Version)",
       "shell_title": "Kongregate Game Shell"
@@ -223,7 +237,15 @@ window.I18N_LOCALES.en = {
       "spire": "Spire",
       "spire_number": "Spire {num}",
       "floor": " Floor {floor}",
-      "zone": "Zone"
+      "zone": "Zone",
+      "map_credits_title": "Earn 1 Credit for each zone you clear while on this challenge",
+      "biome": {
+        "random": "Random",
+        "mountain": "Mountain",
+        "forest": "Forest",
+        "sea": "Sea",
+        "depths": "Depths"
+      }
     },
     "challenges": {
       "hypothermia": {

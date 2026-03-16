@@ -33,6 +33,17 @@
     target.querySelectorAll('[data-i18n-title]').forEach(function (el) {
       el.title = t(el.getAttribute('data-i18n-title'));
     });
+    target.querySelectorAll('[data-i18n-attr]').forEach(function (el) {
+      var map = el.getAttribute('data-i18n-attr') || '';
+      map.split(',').forEach(function (entry) {
+        var parts = entry.split(':');
+        if (parts.length < 2) return;
+        var attrName = parts.shift().trim();
+        var key = parts.join(':').trim();
+        if (!attrName || !key) return;
+        el.setAttribute(attrName, t(key));
+      });
+    });
   }
 
   function syncLocaleControls() {
