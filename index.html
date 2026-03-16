@@ -372,31 +372,31 @@
 							<span id="buildSpeed"></span>
 						</div>
 						<div class="col-xs-3 lowPad">
-							<div id="autoTrapBtn" style="display: none" onclick="toggleAutoTrap()" class="pointer noselect colorDanger autoUpgradeBtn">AutoTraps Off</div>
+							<div id="autoTrapBtn" style="display: none" onclick="toggleAutoTrap()" class="pointer noselect colorDanger autoUpgradeBtn" data-i18n="ui.queue.auto_traps_off">AutoTraps Off</div>
 						</div>
 						<div class="col-xs-3">
-							<div id="buildingsCollectBtn" onclick="setGather('buildings')" class="workBtn workColorOff pointer noselect">Build</div>
+							<div id="buildingsCollectBtn" onclick="setGather('buildings')" class="workBtn workColorOff pointer noselect" data-i18n="ui.queue.build">Build</div>
 						</div>
 					</div>
 					<div class="queue niceScroll" id="buildingsQueue">
-						<span id='noQueue'>Nothing in queue...</span><div id="queueItemsHere"></div>
+						<span id='noQueue' data-i18n="ui.queue.empty">Nothing in queue...</span><div id="queueItemsHere"></div>
 					</div>
 				</div>
 				<div id="outerBuyContainer">	
 				<div id="buyTabs">
 					<ul id="buyTabsUl" class="nav nav-tabs nav-justified buyTabsUl">
-						<li role="presentation" id="allTab" onclick="filterTabs('all')" class="tabNotSelected buyTab"><a id="allA">All</a></li>
-						<li role="presentation" id="buildingsTab" onclick="filterTabs('buildings')" class="tabNotSelected buyTab"><a id="buildingsA"><span id="buildingsAlert" class="alert badge"></span>Buildings</a></li>
-						<li role="presentation" id="jobsTab" style="visibility: hidden" onclick="filterTabs('jobs')" class="tabNotSelected buyTab"><a id="jobsA"><span id="jobsAlert" class="alert badge"></span>Jobs</a></li>
-						<li role="presentation" id="upgradesTab" style="visibility: hidden" onclick="filterTabs('upgrades')" class="tabNotSelected buyTab"><a id="upgradesA"><span id="upgradesAlert" class="alert badge"></span>Upgrades</a></li>
-						<li role="presentation" id="equipmentTab" style="visibility: hidden" onclick="filterTabs('equipment')" class="tabNotSelected buyTab"><a id="equipmentA"><span id="equipmentAlert" class="alert badge"></span>Equipment</a></li>		
+						<li role="presentation" id="allTab" onclick="filterTabs('all')" class="tabNotSelected buyTab"><a id="allA" data-i18n="ui.tabs.all">All</a></li>
+						<li role="presentation" id="buildingsTab" onclick="filterTabs('buildings')" class="tabNotSelected buyTab"><a id="buildingsA"><span id="buildingsAlert" class="alert badge"></span><span data-i18n="ui.tabs.buildings">Buildings</span></a></li>
+						<li role="presentation" id="jobsTab" style="visibility: hidden" onclick="filterTabs('jobs')" class="tabNotSelected buyTab"><a id="jobsA"><span id="jobsAlert" class="alert badge"></span><span data-i18n="ui.tabs.jobs">Jobs</span></a></li>
+						<li role="presentation" id="upgradesTab" style="visibility: hidden" onclick="filterTabs('upgrades')" class="tabNotSelected buyTab"><a id="upgradesA"><span id="upgradesAlert" class="alert badge"></span><span data-i18n="ui.tabs.upgrades">Upgrades</span></a></li>
+						<li role="presentation" id="equipmentTab" style="visibility: hidden" onclick="filterTabs('equipment')" class="tabNotSelected buyTab"><a id="equipmentA"><span id="equipmentAlert" class="alert badge"></span><span data-i18n="ui.tabs.equipment">Equipment</span></a></li>		
 					</ul>
 					<ul id="buyTabsUl2" class="nav nav-tabs nav-justified buyTabsUl">
-						<li role="presentation" id="talentsTab" style='display: none' onclick="filterTabs('talents')" class="tabNotSelected buyTab" onmouseover="tooltip('Mastery', null, event)" onmouseout="tooltip('hide')"><a id="talentA"><span id="talentsAlert" class="alert badge"></span><span id="mutatorsAlert" class="alert badge"></span><span id='MasteryTabName'>Mastery</span><span id="talentsEssenceTotal"></span></a></li>		
-						<li role="presentation" id="equalityTab" style='display: none'  onclick="tooltip('Scale Equality Scaling', null, 'update', true)" class="tabNotSelected equalityTabScaling buyTab" onmouseover="tooltip('Equality Scaling', null, event, true)" onmouseout="tooltip('hide')"><a id="equalityA">Equality</a></li>		
-						<li role="presentation" id="natureTab" style='display: none'  onclick="filterTabs('nature')" class="tabNotSelected buyTab empowerTabNone" onmouseover="tooltip('Empowerments of Nature', null, event)" onmouseout="tooltip('hide')"><a id="natureA">Nature</a></li>		
-						<li role="presentation" id="playerSpireTab" style='display: none' onclick="playerSpire.openPopup()" class="tabNotSelected buyTab pausedSpireNo"><a id="spireA">Spire</a></li>
-						<li role="presentation" id="alchemyTab" style='display: none' onclick="alchObj.openPopup()" class="tabNotSelected buyTab alchTabNone"><a id="alchemyA">Alchemy</a></li>
+						<li role="presentation" id="talentsTab" style='display: none' onclick="filterTabs('talents')" class="tabNotSelected buyTab" onmouseover="tooltip('Mastery', null, event)" onmouseout="tooltip('hide')"><a id="talentA"><span id="talentsAlert" class="alert badge"></span><span id="mutatorsAlert" class="alert badge"></span><span id='MasteryTabName' data-i18n="ui.tabs.mastery">Mastery</span><span id="talentsEssenceTotal"></span></a></li>		
+						<li role="presentation" id="equalityTab" style='display: none'  onclick="tooltip('Scale Equality Scaling', null, 'update', true)" class="tabNotSelected equalityTabScaling buyTab" onmouseover="tooltip('Equality Scaling', null, event, true)" onmouseout="tooltip('hide')"><a id="equalityA" data-i18n="ui.tabs.equality">Equality</a></li>		
+						<li role="presentation" id="natureTab" style='display: none'  onclick="filterTabs('nature')" class="tabNotSelected buyTab empowerTabNone" onmouseover="tooltip('Empowerments of Nature', null, event)" onmouseout="tooltip('hide')"><a id="natureA" data-i18n="ui.tabs.nature">Nature</a></li>		
+						<li role="presentation" id="playerSpireTab" style='display: none' onclick="playerSpire.openPopup()" class="tabNotSelected buyTab pausedSpireNo"><a id="spireA" data-i18n="ui.tabs.spire">Spire</a></li>
+						<li role="presentation" id="alchemyTab" style='display: none' onclick="alchObj.openPopup()" class="tabNotSelected buyTab alchTabNone"><a id="alchemyA" data-i18n="ui.tabs.alchemy">Alchemy</a></li>
 						<li role="presentation" id="autoBattleTab" style='display: none' onclick="autoBattle.popup()" class="tabNotSelected buyTab abTabNone"><a id="autoBattleA">SA</a></li>
 					</ul>
 				</div>
@@ -433,17 +433,17 @@
 								<div id="buildingsTitleDiv" class="titleDiv">
 									<div class="row">
 										<div class="col-xs-3" style="padding-right: 5px">
-											<span id="buildingsTitleSpan" class="titleSpan">Buildings</span>
+											<span id="buildingsTitleSpan" class="titleSpan" data-i18n="ui.panels.buildings">Buildings</span>
 										</div>
 										<div class="col-xs-3 lowPad">&nbsp;</div>
 										<div class="col-xs-3 lowPad">
 											<div id="autoStructureBtn" onmouseover='tooltip("AutoStructure", null, event)' onmouseout='tooltip("hide")' class="toggleConfigBtn pointer noselect colorDanger autoUpgradeBtn">
-												<div id='autoStructureText' onclick="toggleAutoStructure()">AutoStructure</div><div onclick="tooltip('Configure AutoStructure', null, 'update')">
+												<div id='autoStructureText' onclick="toggleAutoStructure()" data-i18n="ui.automation.auto_structure">AutoStructure</div><div onclick="tooltip('Configure AutoStructure', null, 'update')">
 													<span class='glyphicon glyphicon-cog'></span></div>
 											</div>
 										</div>
 										<div class="col-xs-3" style="padding-left: 5px">
-											<div id="autoStorageBtn" class="pointer noselect colorDanger autoUpgradeBtn" onmouseover="tooltip('AutoStorage', 'customText', event, 'Enabling this will cause your Trimps to automatically add a storage building to the queue if you reach max capacity. This will work on and offline if enabled.')" onmouseout="tooltip('hide')" onclick="toggleAutoStorage()">AutoStorage</div>
+											<div id="autoStorageBtn" class="pointer noselect colorDanger autoUpgradeBtn" onmouseover="tooltip('AutoStorage', 'customText', event, 'Enabling this will cause your Trimps to automatically add a storage building to the queue if you reach max capacity. This will work on and offline if enabled.')" onmouseout="tooltip('hide')" onclick="toggleAutoStorage()" data-i18n="ui.automation.auto_storage">AutoStorage</div>
 										</div>
 									</div>
 								</div>
@@ -454,19 +454,19 @@
 								<div id="jobsTitleDiv" class="titleDiv" style="display: none">
 									<div class="row">
 										<div class="col-xs-3" style="padding-right: 5px">
-											<span id="jobsTitleSpan" class="titleSpan">Jobs</span>
+											<span id="jobsTitleSpan" class="titleSpan" data-i18n="ui.panels.jobs">Jobs</span>
 										</div>
 										<div class="col-xs-3 lowPad">
 											<span id="jobsTitleUnemployed" class="titleSpan"></span>
 										</div>
 										<div class="col-xs-3 lowPad">
 											<div id="autoJobsBtn" onmouseover='tooltip("AutoJobs", null, event)' onmouseout='tooltip("hide")' class="toggleConfigBtn pointer noselect colorDanger autoUpgradeBtn">
-												<div id='autoJobsText' onclick="toggleAutoJobs()">AutoJobs</div><div onclick="tooltip('Configure AutoJobs', null, 'update')">
+												<div id='autoJobsText' onclick="toggleAutoJobs()" data-i18n="ui.automation.auto_jobs">AutoJobs</div><div onclick="tooltip('Configure AutoJobs', null, 'update')">
 													<span class='glyphicon glyphicon-cog'></span></div>
 											</div>
 										</div>
 										<div class="col-xs-3" style="padding-left: 5px">
-											<div id="fireBtn" class="pointer noselect fireBtnNotFiring" onclick="fireMode()" onmouseover="tooltip('Fire Trimps',null,event)" onmouseout="tooltip('hide')">Fire</div>
+											<div id="fireBtn" class="pointer noselect fireBtnNotFiring" onclick="fireMode()" onmouseover="tooltip('Fire Trimps',null,event)" onmouseout="tooltip('hide')" data-i18n="ui.jobs.fire">Fire</div>
 										</div>
 									</div>
 								</div>
@@ -755,38 +755,38 @@
 									<span id="worldName">Zone</span> <span id="worldNumber">1</span><br/><span id="mapBonus"></span>
 							</div>
 							<div class="battleSideBtnContainer">
-								<span class="btn btn-primary fightBtn" id="fightBtn" onmouseover="tooltip('Fight',null,event)" onmouseout="tooltip('hide')" onclick="fightManual()">
+								<span class="btn btn-primary fightBtn" id="fightBtn" onmouseover="tooltip('Fight',null,event)" onmouseout="tooltip('hide')" onclick="fightManual()" data-i18n="ui.battle.fight">
 									Fight
 								</span>
 							</div>
 							<div class="battleSideBtnContainer">
-								<span class="btn btn-danger fightBtn" id="pauseFight" onmouseover="tooltip('AutoFight',null,event)" onmouseout="tooltip('hide')" onclick="pauseFight()" style="display: none">
+								<span class="btn btn-danger fightBtn" id="pauseFight" onmouseover="tooltip('AutoFight',null,event)" onmouseout="tooltip('hide')" onclick="pauseFight()" style="display: none" data-i18n="ui.battle.auto_fight_off">
 									AutoFight Off
 								</span>
 							</div>
 							<div class="battleSideBtnContainer">
 								<div id="mapsBtn" class="btn btn-warning fightBtn" onmouseover="tooltip('Maps', null, event)" onmouseout="tooltip('hide')" style="display: none">
-									<div id='mapsBtnText' onclick="mapsClicked()">Maps</div><div onclick="tooltip('Configure Maps', null, 'update')">
+									<div id='mapsBtnText' onclick="mapsClicked()" data-i18n="ui.battle.maps">Maps</div><div onclick="tooltip('Configure Maps', null, 'update')">
 										<span class='glyphicon glyphicon-cog'></span></div>
 								</div>
 							</div>
 							<div class="battleSideBtnContainer">
-								<span class="btn voidMessage fightBtn" id="voidMapsBtn" onclick="toggleVoidMaps()" style="display: none">
+								<span class="btn voidMessage fightBtn" id="voidMapsBtn" onclick="toggleVoidMaps()" style="display: none" data-i18n="ui.battle.void_maps">
 									Void Maps
 								</span>
 							</div>
 							<div class="battleSideBtnContainer">
-								<span class="btn btn-info fightBtn" id="portalBtn" onmouseover="tooltip('Portal', null, event)" onmouseout="tooltip('hide')" onclick="portalClicked()" style="display: none">
+								<span class="btn btn-info fightBtn" id="portalBtn" onmouseover="tooltip('Portal', null, event)" onmouseout="tooltip('hide')" onclick="portalClicked()" style="display: none" data-i18n="ui.battle.portal">
 									Portal
 								</span>
 							</div>
 							<div class="battleSideBtnContainer">
-								<span class="btn btn-danger fightBtn" id="repeatBtn" onmouseover="tooltip('Repeat Map', null, event)" onmouseout="tooltip('hide')" onclick = "repeatClicked()" style="display: none">
+								<span class="btn btn-danger fightBtn" id="repeatBtn" onmouseover="tooltip('Repeat Map', null, event)" onmouseout="tooltip('hide')" onclick = "repeatClicked()" style="display: none" data-i18n="ui.battle.repeat_off">
 									Repeat Off
 								</span>
 							</div>
 							<div class="battleSideBtnContainer" style="display: none" id="heirloomBtnContainer">
-								<span id="heirloomsBtn" class="btn fightBtn heirloomsBtnColor" onclick="toggleHeirlooms()">Heirlooms</span>
+								<span id="heirloomsBtn" class="btn fightBtn heirloomsBtnColor" onclick="toggleHeirlooms()" data-i18n="ui.battle.heirlooms">Heirlooms</span>
 							</div>
 							<div class="battleSideBtnContainer" style="display: none" id="boneBtnContainer">
 								<span class="btn btn-default fightBtn" id="boneBtnMain" onclick="showBones()">
@@ -794,12 +794,12 @@
 								</span>
 							</div>							
 							<div class="battleSideBtnContainer" style="display: none" id="finishDailyBtnContainer">
-								<span class="btn btn-success fightBtn" id="finishDailyBtn" onclick="tooltip('Finish Daily', null, 'update')">
+								<span class="btn btn-success fightBtn" id="finishDailyBtn" onclick="tooltip('Finish Daily', null, 'update')" data-i18n="ui.battle.finish_daily">
 									Finish Daily
 								</span>
 							</div>
 							<div class="battleSideBtnContainer" style="display: none" id="exitSpireBtnContainer">
-								<span class="btn btn-danger fightBtn" id="exitSpireBtn" onclick="tooltip('Exit Spire', null, 'update')">
+								<span class="btn btn-danger fightBtn" id="exitSpireBtn" onclick="tooltip('Exit Spire', null, 'update')" data-i18n="ui.battle.exit_spire">
 									Exit Spire
 								</span>
 							</div>
@@ -1002,29 +1002,29 @@
 		<div id="settingsRow">
 			<table id="settingsTable">
 				<tr>
-					<td class="btn btn-info" onclick="save(false, true)">
+					<td class="btn btn-info" onclick="save(false, true)" data-i18n="ui.settings_menu.save">
 						Save <span id="saveIndicator"></span><span id="playFabIndicator"></span>
 					</td>
 					<td class="btn btn-info" onclick="tooltip('Export', null, 'update')">
-						<div>Export</div>
+						<div data-i18n="ui.settings_menu.export">Export</div>
 					</td>
 					<td class="btn btn-info" onclick="tooltip('Import', null, 'update')">
-						<div>Import</div>
+						<div data-i18n="ui.settings_menu.import">Import</div>
 					</td>
 					<td class="btn btn-success" onclick="toggleStats()">
-						<div>Stats</div>
+						<div data-i18n="ui.settings_menu.stats">Stats</div>
 					</td>
 					<td class="btn tealColor" onclick="toggleAchievementWindow()">
-						<div>Achieves</div>
+						<div data-i18n="ui.settings_menu.achieves">Achieves</div>
 					</td>
 					<td class="btn btn-default" onclick="toggleSettingsMenu()">
-						<div id='settingsText'>Settings</div>
+						<div id='settingsText' data-i18n="ui.settings_menu.settings">Settings</div>
 					</td>
 					<td class="btn" id="pastUpgradesBtn" onclick="viewPortalUpgrades()">
 						
 					</td>
 					<td class="btn btn-new" onclick="window.open('updates.html', '_blank')">
-							V <span id="versionNumber"></span> | What's New 
+							<span data-i18n-html="ui.settings_menu.whats_new">V <span id="versionNumber"></span> | What's New</span> 
 					</td>
 					<td id="portalTimer" class="timerNotPaused" onclick="toggleSetting('pauseGame')" onmouseover="tooltip('Pause the game', 'customText', event, game.options.menu['pauseGame'].description)" onmouseout="tooltip('hide')">
 						<span id="portalTime">&nbsp;</span>&nbsp;&nbsp;<span style='font-size: 0.85em; line-height: 0.85em;' class='icomoon icon-pause3'></span>&nbsp;
@@ -1034,8 +1034,8 @@
 			<div id="settingsHere" style="display: none">
 				<div id='searchSettingsWindow'>
 					<div id='settingTitleBar'>
-						<div class='noselect optionContainer settingsBtn tealColor settingTypeBtn' onclick='toggleSettingSection(false)'>Browse All</div>
-						<span id='searchSettingsTitle'>Choose a Category Below, or Search for a Setting/Keyword:</span>&nbsp;
+						<div class='noselect optionContainer settingsBtn tealColor settingTypeBtn' onclick='toggleSettingSection(false)' data-i18n="ui.settings_menu.browse_all">Browse All</div>
+						<span id='searchSettingsTitle' data-i18n="ui.settings_menu.search_title">Choose a Category Below, or Search for a Setting/Keyword:</span>&nbsp;
 						<input id='searchSettings' onkeyup='searchSettings(this)' /><br/>
 						<div id='localeControlRow' class='settingLocaleControl'>
 							<label for='localeSelect' data-i18n='ui.settings.language.label'>Language:</label>
@@ -1046,21 +1046,21 @@
 						</div>
 						<div id='settingsTabs'>
 							<ul class="nav nav-tabs nav-justified">
-								<li role="presentation" style='display: none' id='NewTab' onclick="settingTab('New')" class="tabNotSelected settingTab"><a>New</a></li>
-								<li role="presentation" id='GeneralTab' onclick="settingTab('General')" class="tabNotSelected settingTab"><a>General</a></li>
-								<li role="presentation" id='PerformanceTab' onclick="settingTab('Performance')" class="tabNotSelected settingTab"><a>Performance</a></li>
-								<li role="presentation"  id='QOLTab' onclick="settingTab('QOL')" class="tabNotSelected settingTab"><a>Quality of Life</a></li>
-								<li role="presentation"  id='AlertsTab' onclick="settingTab('Alerts')" class="tabNotSelected settingTab"><a>Pop-ups and Alerts</a></li>
-								<li role="presentation"  id='LayoutTab' onclick="settingTab('Layout')" class="tabNotSelected settingTab"><a>Layout</a></li>
-								<li role="presentation"  id='OtherTab' onclick="settingTab('Other')" class="tabNotSelected settingTab"><a>Other</a></li>
-								<li role="presentation"  id='HotkeyTab' onclick="tooltip('Hotkeys', null, 'update')" class="tabNotSelected settingTab"><a>Hotkeys</a></li>
+								<li role="presentation" style='display: none' id='NewTab' onclick="settingTab('New')" class="tabNotSelected settingTab"><a data-i18n="ui.settings_tabs.new">New</a></li>
+								<li role="presentation" id='GeneralTab' onclick="settingTab('General')" class="tabNotSelected settingTab"><a data-i18n="ui.settings_tabs.general">General</a></li>
+								<li role="presentation" id='PerformanceTab' onclick="settingTab('Performance')" class="tabNotSelected settingTab"><a data-i18n="ui.settings_tabs.performance">Performance</a></li>
+								<li role="presentation"  id='QOLTab' onclick="settingTab('QOL')" class="tabNotSelected settingTab"><a data-i18n="ui.settings_tabs.qol">Quality of Life</a></li>
+								<li role="presentation"  id='AlertsTab' onclick="settingTab('Alerts')" class="tabNotSelected settingTab"><a data-i18n="ui.settings_tabs.alerts">Pop-ups and Alerts</a></li>
+								<li role="presentation"  id='LayoutTab' onclick="settingTab('Layout')" class="tabNotSelected settingTab"><a data-i18n="ui.settings_tabs.layout">Layout</a></li>
+								<li role="presentation"  id='OtherTab' onclick="settingTab('Other')" class="tabNotSelected settingTab"><a data-i18n="ui.settings_tabs.other">Other</a></li>
+								<li role="presentation"  id='HotkeyTab' onclick="tooltip('Hotkeys', null, 'update')" class="tabNotSelected settingTab"><a data-i18n="ui.settings_tabs.hotkeys">Hotkeys</a></li>
 							</ul>
 						</div>
 					</div>					
 					<div id='settingSearchResults'></div>
 				</div>
 				<div id="allSettings" style="display: none">
-					<div class='noselect optionContainer settingsBtn tealColor' onclick='toggleSettingSection(true)'>Back to Search</div>
+					<div class='noselect optionContainer settingsBtn tealColor' onclick='toggleSettingSection(true)' data-i18n="ui.settings_menu.back_to_search">Back to Search</div>
 					<div id="allSettingsHere"></div>
 				</div>
 			</div>

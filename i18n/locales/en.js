@@ -54,6 +54,77 @@ window.I18N_LOCALES.en = {
         "research": "Research"
       }
     },
+    "screen_reader": {
+      "info_title": "Screen Reader Information",
+      "info_line_1": "This game uses several different ways to show additional information in tooltips.",
+      "info_line_2": "shift+/ will work on all elements, but requires focus, and specific NVDA settings. All elements with additional information are focusable with tab.",
+      "info_line_3": "shift+enter works only on button elements, not clickable. It does not require focus.",
+      "info_line_4": "You can also enable separate info buttons, which will respond to enter.",
+      "info_line_5": "To enable shift+/ tooltips, Turn NVDA + 8 on, and disable NVDA: Settings > browse mode: Disable \"trap all command gestures from reaching the document.\"",
+      "info_line_6": "You can show/hide this information via the game setting \"Show Screen Read Info.\""
+    },
+    "tabs": {
+      "all": "All",
+      "buildings": "Buildings",
+      "jobs": "Jobs",
+      "upgrades": "Upgrades",
+      "equipment": "Equipment",
+      "mastery": "Mastery",
+      "equality": "Equality",
+      "nature": "Nature",
+      "spire": "Spire",
+      "alchemy": "Alchemy"
+    },
+    "queue": {
+      "auto_traps_off": "AutoTraps Off",
+      "build": "Build",
+      "empty": "Nothing in queue..."
+    },
+    "panels": {
+      "buildings": "Buildings",
+      "jobs": "Jobs"
+    },
+    "automation": {
+      "auto_structure": "AutoStructure",
+      "auto_storage": "AutoStorage",
+      "auto_jobs": "AutoJobs"
+    },
+    "jobs": {
+      "fire": "Fire"
+    },
+    "battle": {
+      "fight": "Fight",
+      "auto_fight_off": "AutoFight Off",
+      "maps": "Maps",
+      "void_maps": "Void Maps",
+      "portal": "Portal",
+      "repeat_off": "Repeat Off",
+      "heirlooms": "Heirlooms",
+      "finish_daily": "Finish Daily",
+      "exit_spire": "Exit Spire"
+    },
+    "settings_menu": {
+      "save": "Save",
+      "export": "Export",
+      "import": "Import",
+      "stats": "Stats",
+      "achieves": "Achieves",
+      "settings": "Settings",
+      "whats_new": "V <span id=\"versionNumber\"></span> | What's New",
+      "browse_all": "Browse All",
+      "search_title": "Choose a Category Below, or Search for a Setting/Keyword:",
+      "back_to_search": "Back to Search"
+    },
+    "settings_tabs": {
+      "new": "New",
+      "general": "General",
+      "performance": "Performance",
+      "qol": "Quality of Life",
+      "alerts": "Pop-ups and Alerts",
+      "layout": "Layout",
+      "other": "Other",
+      "hotkeys": "Hotkeys"
+    },
     "alert": {
       "holiday": {
         "loaded_event": "Loaded {holiday} event!",

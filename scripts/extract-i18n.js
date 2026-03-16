@@ -141,6 +141,25 @@ function parseHtml(html) {
   return root;
 }
 
+function extractInnerHtml(node) {
+  if (!node || !node.children) return '';
+
+  return node.children
+    .map((child) => {
+      if (child.type === 'text') return child.text;
+      if (child.type === 'element') {
+        const attrs = Object.entries(child.attrs || {})
+          .map(([key, value]) => (value === '' ? key : `${key}="${value}"`))
+          .join(' ');
+        const open = attrs ? `<${child.tagName} ${attrs}>` : `<${child.tagName}>`;
+        const inner = extractInnerHtml(child);
+        return `${open}${inner}</${child.tagName}>`;
+      }
+      return '';
+    })
+    .join('');
+}
+
 function extractTextContent(node) {
   if (!node || !node.children) return '';
 
@@ -173,6 +192,7 @@ function runSelfTests() {
       </button>
       <span data-i18n='ui.test.label'>  Multi\n line\t text </span>
       <p data-i18n="ui.test.empty">   </p>
+      <div data-i18n-html="ui.test.rich">A <b>Bold</b> move<br/>now</div>
     </div>
   `;
 
@@ -181,6 +201,9 @@ function runSelfTests() {
   walk(root, (el) => {
     if (el.attrs['data-i18n']) {
       found[el.attrs['data-i18n']] = extractTextContent(el);
+    }
+    if (el.attrs['data-i18n-html']) {
+      found[el.attrs['data-i18n-html']] = normalizeWhitespace(extractInnerHtml(el));
     }
     if (el.attrs['data-i18n-title']) {
       found[el.attrs['data-i18n-title']] = normalizeWhitespace(el.attrs.title || '');
@@ -195,7 +218,9 @@ function runSelfTests() {
   assert(found['ui.test.label'] === 'Multi line text', '멀티라인/공백 정규화');
   assert(found['ui.test.button_title'] === 'Tooltip text', 'data-i18n-title fallback title 추출');
   assert(found['ui.test.empty'] === '', '빈 텍스트 처리');
+  assert(found['ui.test.rich'] === 'A <b>Bold</b> move<br></br>now', 'HTML 추출');
 }
+
 
 runSelfTests();
 
@@ -210,6 +235,7 @@ for (const file of targets) {
 
   walk(root, (el) => {
     const textKey = el.attrs['data-i18n'];
+    const htmlKey = el.attrs['data-i18n-html'];
     const titleKey = el.attrs['data-i18n-title'];
 
     if (textKey) {
@@ -222,6 +248,18 @@ for (const file of targets) {
       if (!('text' in attrsResult[textKey])) attrsResult[textKey].text = fallbackText;
       if (!('title' in attrsResult[textKey])) attrsResult[textKey].title = null;
       fileKeys.add(textKey);
+    }
+
+    if (htmlKey) {
+      const fallbackHtml = normalizeWhitespace(extractInnerHtml(el));
+      if (!(htmlKey in stringsResult)) {
+        stringsResult[htmlKey] = fallbackHtml;
+      }
+
+      if (!attrsResult[htmlKey]) attrsResult[htmlKey] = {};
+      if (!('text' in attrsResult[htmlKey])) attrsResult[htmlKey].text = fallbackHtml;
+      if (!('title' in attrsResult[htmlKey])) attrsResult[htmlKey].title = null;
+      fileKeys.add(htmlKey);
     }
 
     if (titleKey) {

@@ -37,13 +37,13 @@
 	</div>
 	</noscript>
 	<div id="screenReaderInfo" class="visually-hidden">
-		<h6>Screen Reader Information</h6>
-		This game uses several different ways to show additional information in tooltips.<br>
-		shift+/ will work on all elements, but requires focus, and specific NVDA settings. All elements with additional information are focusable with tab.<br>
-		shift+enter works only on button elements, not clickable. It does not require focus.<br>
-		You can also enable separate info buttons, which will respond to enter.<br>
-		To enable shift+/ tooltips, Turn NVDA + 8 on, and disable NVDA: Settings > browse mode: Disable "trap all command gestures from reaching the document."<br>
-		You can show/hide this information via the game setting "Show Screen Read Info."<br>
+		<h6 data-i18n="ui.screen_reader.info_title">Screen Reader Information</h6>
+		<span data-i18n="ui.screen_reader.info_line_1">This game uses several different ways to show additional information in tooltips.</span><br>
+		<span data-i18n="ui.screen_reader.info_line_2">shift+/ will work on all elements, but requires focus, and specific NVDA settings. All elements with additional information are focusable with tab.</span><br>
+		<span data-i18n="ui.screen_reader.info_line_3">shift+enter works only on button elements, not clickable. It does not require focus.</span><br>
+		<span data-i18n="ui.screen_reader.info_line_4">You can also enable separate info buttons, which will respond to enter.</span><br>
+		<span data-i18n="ui.screen_reader.info_line_5">To enable shift+/ tooltips, Turn NVDA + 8 on, and disable NVDA: Settings > browse mode: Disable "trap all command gestures from reaching the document."</span><br>
+		<span data-i18n="ui.screen_reader.info_line_6">You can show/hide this information via the game setting "Show Screen Read Info."</span><br>
 	</div>
 	<div id="offlineWrapper">
 		<div id="offlineInnerWrapper">
@@ -186,7 +186,7 @@
 							</div>
 							<div class="row collectRow">
 								<div class="col-xs-6">
-									<button id="foodCollectBtn" class="workBtn workColorOff pointer noselect" onclick="setGather('food')">Gather</button>
+									<button id="foodCollectBtn" class="workBtn workColorOff pointer noselect" onclick="setGather('food')" data-i18n="ui.resources.action.gather">Gather</button>
 								</div>
 								<div class="col-xs-6">
 									<span class="psText sizeSecRegular pointer noselect" id="foodPs" onclick="getPsString('food')">+0/sec</span>
@@ -208,7 +208,7 @@
 
 							<div class="row collectRow">
 								<div class="col-xs-6">
-									<button id="woodCollectBtn" class="workBtn workColorOff pointer noselect" onclick="setGather('wood')">Chop</button>
+									<button id="woodCollectBtn" class="workBtn workColorOff pointer noselect" onclick="setGather('wood')" data-i18n="ui.resources.action.chop">Chop</button>
 								</div>
 								<div class="col-xs-6">
 									<span class="psText sizeSecRegular pointer noselect" id="woodPs" onclick="getPsString('wood')">+0/sec</span>
@@ -230,7 +230,7 @@
 							</div>
 							<div class="row collectRow">
 								<div class="col-xs-6">
-									<button id="metalCollectBtn" class="workBtn workColorOff pointer noselect" onclick="setGather('metal')">Mine</button>
+									<button id="metalCollectBtn" class="workBtn workColorOff pointer noselect" onclick="setGather('metal')" data-i18n="ui.resources.action.mine">Mine</button>
 								</div>
 								<div class="col-xs-6">
 									<span class="psText sizeSecRegular pointer noselect" id="metalPs" onclick="getPsString('metal')">+0/sec</span>
@@ -245,7 +245,7 @@
 							<br/>
 							<div class="row collectRow">
 								<div class="col-xs-6">
-									<button id="scienceCollectBtn" class="workBtn workColorOff pointer noselect" onclick="setGather('science')">Research</button>
+									<button id="scienceCollectBtn" class="workBtn workColorOff pointer noselect" onclick="setGather('science')" data-i18n="ui.resources.action.research">Research</button>
 								</div>
 								<div class="col-xs-6">
 									<span class="psText sizeSecRegular pointer noselect" id="sciencePs" onclick="getPsString('science')">+0/sec</span>
@@ -376,24 +376,24 @@
 							<span id="buildSpeed"></span>
 						</div>
 						<div class="col-xs-3 lowPad">
-							<div id="autoTrapBtn" style="display: none" onclick="toggleAutoTrap()" class="pointer noselect colorDanger autoUpgradeBtn">AutoTraps Off</div>
+							<div id="autoTrapBtn" style="display: none" onclick="toggleAutoTrap()" class="pointer noselect colorDanger autoUpgradeBtn" data-i18n="ui.queue.auto_traps_off">AutoTraps Off</div>
 						</div>
 						<div class="col-xs-3">
 							<h1><button id="buildingsCollectBtn" onclick="setGather('buildings')" class="workBtn workColorOff pointer noselect">Build Buildings</button></h1>
 						</div>
 					</div>
 					<div class="queue niceScroll" id="buildingsQueue">
-						<span id='noQueue'>Nothing in queue...</span><div id="queueItemsHere"></div>
+						<span id='noQueue' data-i18n="ui.queue.empty">Nothing in queue...</span><div id="queueItemsHere"></div>
 					</div>
 				</div>
 				<div id="outerBuyContainer">	
 				<div id="buyTabs">
 					<ul id="buyTabsUl" class="nav nav-tabs nav-justified buyTabsUl" aria-label="Buy Tabs">
-						<li id="allTab" onclick="filterTabs('all')" class="tabNotSelected buyTab"><a id="allA">All</a></li>
-						<li id="buildingsTab" onclick="filterTabs('buildings')" class="tabNotSelected buyTab"><a id="buildingsA"><span id="buildingsAlert" class="alert badge"></span>Buildings</a></li>
-						<li id="jobsTab" style="visibility: hidden" onclick="filterTabs('jobs')" class="tabNotSelected buyTab"><a id="jobsA"><span id="jobsAlert" class="alert badge"></span>Jobs</a></li>
-						<li id="upgradesTab" style="visibility: hidden" onclick="filterTabs('upgrades')" class="tabNotSelected buyTab"><a id="upgradesA"><span id="upgradesAlert" class="alert badge"></span>Upgrades</a></li>
-						<li id="equipmentTab" style="visibility: hidden" onclick="filterTabs('equipment')" class="tabNotSelected buyTab"><a id="equipmentA"><span id="equipmentAlert" class="alert badge"></span>Equipment</a></li>		
+						<li id="allTab" onclick="filterTabs('all')" class="tabNotSelected buyTab"><a id="allA" data-i18n="ui.tabs.all">All</a></li>
+						<li id="buildingsTab" onclick="filterTabs('buildings')" class="tabNotSelected buyTab"><a id="buildingsA"><span id="buildingsAlert" class="alert badge"></span><span data-i18n="ui.tabs.buildings">Buildings</span></a></li>
+						<li id="jobsTab" style="visibility: hidden" onclick="filterTabs('jobs')" class="tabNotSelected buyTab"><a id="jobsA"><span id="jobsAlert" class="alert badge"></span><span data-i18n="ui.tabs.jobs">Jobs</span></a></li>
+						<li id="upgradesTab" style="visibility: hidden" onclick="filterTabs('upgrades')" class="tabNotSelected buyTab"><a id="upgradesA"><span id="upgradesAlert" class="alert badge"></span><span data-i18n="ui.tabs.upgrades">Upgrades</span></a></li>
+						<li id="equipmentTab" style="visibility: hidden" onclick="filterTabs('equipment')" class="tabNotSelected buyTab"><a id="equipmentA"><span id="equipmentAlert" class="alert badge"></span><span data-i18n="ui.tabs.equipment">Equipment</span></a></li>		
 					</ul>
 					<ul id="buyTabsUl2" class="nav nav-tabs nav-justified buyTabsUl" aria-label="Features Tabs">
 						<li id="talentsTab" style='display: none' onclick="filterTabs('talents')" class="tabNotSelected buyTab" ><a id="talentA"><span id="talentsAlert" class="alert badge"></span><span id="mutatorsAlert" class="alert badge"></span><span id='MasteryTabName'>Mastery</span><span id="talentsEssenceTotal"></span></a></li>		
@@ -484,7 +484,7 @@
 								<div id="upgradesTitleDiv" style="display: none" class="titleDiv">
 									<div class="row">
 										<div class="col-xs-3" style="padding-right: 5px">
-											<h2><span id="upgradesTitleSpan" class="titleSpan">Upgrades<br/>(Research first)</span></h2>
+											<h2><span id="upgradesTitleSpan" class="titleSpan" data-i18n-html="ui.menu.upgrades_research_first">Upgrades<br/>(Research first)</span></h2>
 										</div>
 										<div class="col-xs-3 lowPad">								
 											<div id="autoGoldenBtn"  class="pointer noselect settingBtn0 autoUpgradeBtn toggleConfigBtn">
@@ -775,13 +775,13 @@
 							</div>
 							<div class="battleSideBtnContainer">
 								<button id="mapsBtn" class="btn btn-warning fightBtn" style="display: none">
-									<div id='mapsBtnText' onclick="mapsClicked()">Maps</div>
+									<div id='mapsBtnText' onclick="mapsClicked()" data-i18n="ui.battle.maps">Maps</div>
 									<button aria-label='Configure Map Settings. Press S to view the popup.' onclick="tooltip('Configure Maps', null, 'update')">
 										<span class='glyphicon glyphicon-cog'>Configure Maps</span></button>
 									</button>
 							</div>
 							<div class="battleSideBtnContainer">
-								<button class="btn voidMessage fightBtn" id="voidMapsBtn" onclick="toggleVoidMaps()" style="display: none">
+								<button class="btn voidMessage fightBtn" id="voidMapsBtn" onclick="toggleVoidMaps()" style="display: none" data-i18n="ui.battle.void_maps">
 									Void Maps
 								</button>
 							</div>
@@ -796,7 +796,7 @@
 								</button>
 							</div>
 							<div class="battleSideBtnContainer" style="display: none" id="heirloomBtnContainer">
-								<button id="heirloomsBtn" class="btn fightBtn heirloomsBtnColor" onclick="toggleHeirlooms()">Heirlooms</button>
+								<button id="heirloomsBtn" class="btn fightBtn heirloomsBtnColor" onclick="toggleHeirlooms()" data-i18n="ui.battle.heirlooms">Heirlooms</button>
 							</div>
 							<div class="battleSideBtnContainer" style="display: none" id="boneBtnContainer">
 								<button class="btn btn-default fightBtn" id="boneBtnMain" onclick="showBones()">
@@ -804,12 +804,12 @@
 								</button>
 							</div>							
 							<div class="battleSideBtnContainer" style="display: none" id="finishDailyBtnContainer">
-								<button class="btn btn-success fightBtn" id="finishDailyBtn" onclick="tooltip('Finish Daily', null, 'update')">
+								<button class="btn btn-success fightBtn" id="finishDailyBtn" onclick="tooltip('Finish Daily', null, 'update')" data-i18n="ui.battle.finish_daily">
 									Finish Daily
 								</button>
 							</div>
 							<div class="battleSideBtnContainer" style="display: none" id="exitSpireBtnContainer">
-								<button class="btn btn-danger fightBtn" id="exitSpireBtn" onclick="tooltip('Exit Spire', null, 'update')">
+								<button class="btn btn-danger fightBtn" id="exitSpireBtn" onclick="tooltip('Exit Spire', null, 'update')" data-i18n="ui.battle.exit_spire">
 									Exit Spire
 								</button>
 							</div>
@@ -1449,25 +1449,25 @@
 					Save <span id="saveIndicator"></span><span id="playFabIndicator"></span>
 				</td>
 				<td class="btn btn-info" onclick="tooltip('Export', null, 'update')">
-					<div>Export</div>
+					<div data-i18n="ui.settings_menu.export">Export</div>
 				</td>
 				<td class="btn btn-info" onclick="tooltip('Import', null, 'update')">
-					<div>Import</div>
+					<div data-i18n="ui.settings_menu.import">Import</div>
 				</td>
 				<td class="btn btn-success" onclick="toggleStats()">
-					<div>Stats</div>
+					<div data-i18n="ui.settings_menu.stats">Stats</div>
 				</td>
 				<td class="btn tealColor" onclick="toggleAchievementWindow()">
-					<div>Achieves</div>
+					<div data-i18n="ui.settings_menu.achieves">Achieves</div>
 				</td>
 				<td class="btn btn-default" onclick="toggleSettingsMenu()">
-					<div id='settingsText'>Settings</div>
+					<div id='settingsText' data-i18n="ui.settings_menu.settings">Settings</div>
 				</td>
 				<td class="btn" id="pastUpgradesBtn" onclick="viewPortalUpgrades()">
 					
 				</td>
 				<td class="btn btn-new" onclick="window.open('updates.html', '_blank')">
-						V <span id="versionNumber"></span> | What's New 
+						<span data-i18n-html="ui.settings_menu.whats_new">V <span id="versionNumber"></span> | What's New</span> 
 				</td>
 				<td  id="portalTimer" class="timerNotPaused" onclick="toggleSetting('pauseGame')" >
 					<span id="portalTime">&nbsp;</span>&nbsp;&nbsp;<span style='font-size: 0.85em; line-height: 0.85em;' class='icomoon icon-pause3'></span>&nbsp;
@@ -1477,8 +1477,8 @@
 		<div id="settingsHere" style="display: none">
 			<div id='searchSettingsWindow'>
 				<div id='settingTitleBar'>
-					<button class='noselect optionContainer settingsBtn tealColor settingTypeBtn' onclick='toggleSettingSection(false)'>Browse All</button>
-					<span id='searchSettingsTitle'>Choose a Category Below, or Search for a Setting/Keyword:</span>&nbsp;
+					<button class='noselect optionContainer settingsBtn tealColor settingTypeBtn' onclick='toggleSettingSection(false)' data-i18n="ui.settings_menu.browse_all">Browse All</button>
+					<span id='searchSettingsTitle' data-i18n="ui.settings_menu.search_title">Choose a Category Below, or Search for a Setting/Keyword:</span>&nbsp;
 					<input id='searchSettings' onkeyup='searchSettings(this)' /><br/>
 						<div id='localeControlRow' class='settingLocaleControl'>
 							<label for='localeSelect' data-i18n='ui.settings.language.label'>Language:</label>
@@ -1503,7 +1503,7 @@
 				<div id='settingSearchResults'></div>
 			</div>
 			<div id="allSettings" style="display: none">
-				<div class='noselect optionContainer settingsBtn tealColor' onclick='toggleSettingSection(true)'>Back to Search</div>
+				<div class='noselect optionContainer settingsBtn tealColor' onclick='toggleSettingSection(true)' data-i18n="ui.settings_menu.back_to_search">Back to Search</div>
 				<div id="allSettingsHere"></div>
 			</div>
 		</div>
