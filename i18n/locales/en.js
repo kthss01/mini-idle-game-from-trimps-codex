@@ -185,6 +185,48 @@ window.I18N_LOCALES.en = {
       "floor": " Floor {floor}",
       "zone": "Zone"
     },
+    "maps": {
+      "abandon_soldiers": "Abandon Soldiers",
+      "recycle_map": "Recycle Map",
+      "world": "World",
+      "continue": "Continue",
+      "abandon_map": "Abandon Map",
+      "abandon_map_lowercase": "abandon",
+      "recycle_map_lowercase": "recycle",
+      "run_map": "Run Map",
+      "maps_with_bonus": "Maps ({bonus})",
+      "maps": "Maps",
+      "level_with_prefix": "<br/>Lv: {level}",
+      "select_a_map": "Select a Map!",
+      "map_bonus": "{bonus}% Map Bonus",
+      "spire": "Spire",
+      "spire_number": "Spire {num}",
+      "floor": " Floor {floor}",
+      "zone": "Zone"
+    },
+    "challenges": {
+      "hypothermia": {
+        "perks_locked_html": "<span style='color: red'>You cannot change your perks while on the Hypothermia Challenge!</span>"
+      },
+      "alchemy": {
+        "herb_found": "You found {amount} {resource}!"
+      },
+      "mutations": {
+        "seeds_found": "You found {amount} Mutated Seed{plural}{nullifier_text} on that {enemy} enemy!",
+        "radon_vials_found": "You were able to take {amount} Radon Vials from that Mutated Enemy!"
+      }
+    },
+    "heirloom": {
+      "menu_button": "Heirlooms",
+      "buy_heirloom": "Buy Heirloom (30 bones)",
+      "heirloom_desc": "Get one Heirloom at the chances above, based on highest zone"
+    },
+    "story": {
+      "void_seep": "Use of the portal has created a chance for the Void to seep into your world. Be alert.",
+      "map_fragments_found": "You found {amount} map fragments!",
+      "spire_assault_unlocked_title": "Spire Assault Unlocked!",
+      "spire_assault_unlocked_body": "<i>\"As you approach the infinitely tall Spire, a Trimp rushes out and embraces Scruffy. Scruffy introduces you to Huffy, who seems to have also realized that Druopitee is kind of a prick. Huffy lets you know that he managed to destroy the Corruption device at the top, but that it was now crawling with horrible shadowy enemies. Huffy lets you know that he is shielded from the Portal inside the Spire, but that even when you Portal and forget him, he can use your subconscious to help direct him in cleansing the Spire and finding artifacts to make your Trimps stronger.\"</i><br/><br/>You've finally made it to Huffy and the first Spire in this Universe. Huffy needs your help removing all of the Enemies! Check out the new tab titled 'SA' to get started.<br/><br/><b>A tip for once you're in</b>: Huffy has figured out how to put on Pants and a Sword but is struggling beyond that. Click two other items to equip them ASAP!"
+    },
     "spire_assault": {
       "on": "On",
       "off": "Off",

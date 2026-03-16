@@ -44,3 +44,17 @@ validator는 `i18n.t(...)`의 첫 번째 인자를 정적 분석합니다. 아�
 ## 다음 단계
 - 플레이스홀더(`{count}`)를 포함한 템플릿 메시지 구조 도입
 - 추출/검증 결과를 CI에서 자동 검사
+
+## 도메인 완료 정의 (Definition of Done)
+도메인(`ui.maps`, `ui.challenges`, `ui.heirloom`, `ui.story` 등) 단위로 아래 조건을 모두 충족하면 `done`으로 처리합니다.
+
+1. 키 추가/정렬 완료
+   - 기준 사전 `i18n/locales/en.js`에 도메인 키를 누락 없이 추가하고 구조를 유지합니다.
+2. 한국어 반영 완료
+   - `i18n/locales/ko.js`에 동일 키를 반영하고 번역 상태를 `translated` 이상으로 갱신합니다.
+3. 백로그 상태 업데이트 완료
+   - `docs/localization/ko-backlog.md`에서 각 키 상태를 `new -> translated -> reviewed -> in-game-verified` 순으로 갱신합니다.
+4. 화면 검증 체크 완료
+   - 실제 게임 화면(해당 도메인 UI)에서 텍스트 길이, 줄바꿈, 플레이스홀더 치환, 오탈자를 확인하고 `in-game-verified`로 마감합니다.
+5. 검증 스크립트 통과
+   - `node scripts/validate-i18n.js` 실행 결과에서 `missing/unused` 에러가 없어야 합니다.
