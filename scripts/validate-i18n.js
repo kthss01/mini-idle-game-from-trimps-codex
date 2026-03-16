@@ -2,13 +2,14 @@
 const fs = require('fs');
 const vm = require('vm');
 
-const extractedPath = 'i18n/extracted-ui-strings.json';
+const extractedStringsPath = 'i18n/extracted-ui-strings.json';
+const extractedAttrsPath = 'i18n/extracted-ui-attrs.json';
 const localeFiles = {
   en: 'i18n/locales/en.js',
   ko: 'i18n/locales/ko.js'
 };
 
-const runtimeScanFiles = ['main.js', 'objects.js', 'updates.js', 'config.js'];
+const runtimeScanFiles = ['main.js', 'objects.js', 'updates.js', 'config.js', 'playerSpire.js'];
 
 // 동적 키 규칙: false positive 방지를 위해 허용 패턴과 예외를 명시적으로 관리한다.
 const dynamicKeyRules = {
@@ -18,8 +19,9 @@ const dynamicKeyRules = {
   ignoredExpressions: new Set([])
 };
 
-const extracted = JSON.parse(fs.readFileSync(extractedPath, 'utf8'));
-const extractedKeys = new Set(Object.keys(extracted));
+const extractedStrings = JSON.parse(fs.readFileSync(extractedStringsPath, 'utf8'));
+const extractedAttrs = JSON.parse(fs.readFileSync(extractedAttrsPath, 'utf8'));
+const extractedKeys = new Set([...Object.keys(extractedStrings), ...Object.keys(extractedAttrs)]);
 
 function flatten(obj, prefix = '') {
   return Object.entries(obj).reduce((acc, [key, value]) => {

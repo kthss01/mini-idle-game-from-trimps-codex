@@ -231,6 +231,10 @@
     "text": "Fire",
     "title": null
   },
+  "ui.aria.configure_auto_golden": {
+    "text": null,
+    "aria-label": ""
+  },
   "ui.battle.fight": {
     "text": "Fight",
     "title": null
@@ -270,6 +274,31 @@
   "ui.battle.exit_spire": {
     "text": "Exit Spire",
     "title": null
+  },
+  "ui.maps.biome.random": {
+    "text": "Random",
+    "title": null
+  },
+  "ui.maps.biome.mountain": {
+    "text": "Mountain",
+    "title": null
+  },
+  "ui.maps.biome.forest": {
+    "text": "Forest",
+    "title": null
+  },
+  "ui.maps.biome.sea": {
+    "text": "Sea",
+    "title": null
+  },
+  "ui.maps.biome.depths": {
+    "text": "Depths",
+    "title": null
+  },
+  "ui.maps.map_credits_title": {
+    "text": null,
+    "title": "",
+    "aria-label": ""
   },
   "ui.settings_menu.save": {
     "text": "Save",
@@ -379,9 +408,45 @@
     "text": "You can show/hide this information via the game setting \"Show Screen Read Info.\"",
     "title": null
   },
+  "ui.aria.configure_displayed_messages": {
+    "text": null,
+    "aria-label": ""
+  },
+  "ui.aria.buy_tabs": {
+    "text": null,
+    "aria-label": ""
+  },
+  "ui.aria.features_tabs": {
+    "text": null,
+    "aria-label": ""
+  },
   "ui.menu.upgrades_research_first": {
     "text": "Upgrades<br></br>(Research first)",
     "title": null
+  },
+  "ui.aria.formation.none": {
+    "text": null,
+    "aria-label": ""
+  },
+  "ui.aria.formation.heap": {
+    "text": null,
+    "aria-label": ""
+  },
+  "ui.aria.formation.dominance": {
+    "text": null,
+    "aria-label": ""
+  },
+  "ui.aria.formation.barrier": {
+    "text": null,
+    "aria-label": ""
+  },
+  "ui.aria.formation.scryer": {
+    "text": null,
+    "aria-label": ""
+  },
+  "ui.aria.formation.wind": {
+    "text": null,
+    "aria-label": ""
   },
   "ui.kong.page_title": {
     "text": "Trimps 5.10.1 (Kongregate Version)",

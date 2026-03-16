@@ -237,6 +237,7 @@ for (const file of targets) {
     const textKey = el.attrs['data-i18n'];
     const htmlKey = el.attrs['data-i18n-html'];
     const titleKey = el.attrs['data-i18n-title'];
+    const attrsKeyMap = el.attrs['data-i18n-attr'];
 
     if (textKey) {
       const fallbackText = extractTextContent(el);
@@ -268,6 +269,25 @@ for (const file of targets) {
       if (!('text' in attrsResult[titleKey])) attrsResult[titleKey].text = null;
       if (!('title' in attrsResult[titleKey])) attrsResult[titleKey].title = fallbackTitle;
       fileKeys.add(titleKey);
+    }
+
+    if (attrsKeyMap) {
+      attrsKeyMap.split(',').forEach((entry) => {
+        const parts = entry.split(':');
+        if (parts.length < 2) return;
+
+        const attrName = parts.shift().trim();
+        const key = parts.join(':').trim();
+        if (!attrName || !key) return;
+
+        if (!attrsResult[key]) attrsResult[key] = {};
+        if (!('text' in attrsResult[key])) attrsResult[key].text = null;
+        if (!(attrName in attrsResult[key])) {
+          attrsResult[key][attrName] = normalizeWhitespace(el.attrs[attrName] || '');
+        }
+
+        fileKeys.add(key);
+      });
     }
   });
 
