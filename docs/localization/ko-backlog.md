@@ -198,3 +198,25 @@
 | ui.tooltip.confirm.im_fine | I'll be fine | 괜찮아요 | extracted-ui-strings+runtime | updates.js | translated |
 | ui.tooltip.confirm.im_scared | I'm Scared | 무서워요 | extracted-ui-strings+runtime | updates.js | translated |
 
+
+## 이번 반영 (runtime 신규 키)
+
+| key | en | ko | source | runtime files | status |
+|---|---|---|---|---|---|
+| ui.menu.bone.select_exotic_imports | Select 4 Exotic Imports! | 특수 임프 수입 4개를 선택하세요! | runtime | main.js | translated |
+| ui.menu.bone.select_four_imps_first | First, Select 4 Imps | 먼저 임프 4개를 선택하세요 | runtime | main.js | translated |
+| ui.message.kong.api_not_loaded | Kongregate API not loaded! You cannot submit high scores or spend Kreds. Try refreshing or contacting Kongregate support! | 콩그리게이트 API를 불러오지 못했습니다! 최고 점수를 제출하거나 크레드를 사용할 수 없습니다. 새로고침하거나 콩그리게이트 지원팀에 문의해 주세요! | runtime | main.js | translated |
+| ui.menu.perks.unknown | ??? | ??? | runtime | updates.js | translated |
+| ui.menu.perks.view | View Perks | 특전 보기 | runtime | updates.js | translated |
+| ui.menu.alchemy.title | Alchemy | 연금술 | runtime | objects.js | translated |
+| ui.menu.alchemy.save_and_close | Save and Close | 저장하고 닫기 | runtime | objects.js | translated |
+| ui.menu.spire_assault.title | Spire Assault | 첨탑 강습 | runtime | objects.js | translated |
+| ui.menu.close | Close | 닫기 | runtime | objects.js | translated |
+| ui.message.runetrinket.found | You found {amount} Runetrinket{suffix}! | 루네트링킷 {amount}개{suffix}를 찾았습니다! | runtime | config.js | translated |
+| ui.message.science.research_again | You can research science again! | 과학 연구를 다시 할 수 있습니다! | runtime | config.js | translated |
+| ui.message.achievement.locked | Locked | 잠김 | runtime | updates.js | translated |
+| ui.message.achievement.row_finished | Row Finished! | 줄 완료! | runtime | updates.js | translated |
+| ui.message.achievement.row_finished_progress | Row Finished! ({progress}) | 줄 완료! ({progress}) | runtime | updates.js | translated |
+| ui.message.achievement.progress | Progress: {progress} | 진행도: {progress} | runtime | updates.js | translated |
+| ui.message.achievement.progress_too_slow | Progress: Too slow! {progress} | 진행도: 너무 느림! {progress} | runtime | updates.js | translated |
+| ui.message.achievement.wrong_universe_progress | You're in the wrong Universe! {progress} | 현재 우주가 다릅니다! {progress} | runtime | updates.js | translated |

@@ -24,7 +24,7 @@
 if (typeof kongregate === 'undefined' && document.getElementById("boneBtn") !== null) {
 	var boneBtn = document.getElementById("getBonesBtn");
 	boneBtn.onclick = "";
-	boneBtn.innerHTML = "Kongregate API not loaded! You cannot submit high scores or spend Kreds. Try refreshing or contacting Kongregate support!";
+	boneBtn.innerHTML = i18n.t('ui.message.kong.api_not_loaded');
 	boneBtn.style.backgroundColor = "#d9534f";
 	document.getElementById("getBundleBtn").style.display = "none";
 }
@@ -17640,9 +17640,9 @@ function kredPurchase(what) {
 function startBundling(){
 	document.getElementById("boneWrapper1").style.display = "none";
 	document.getElementById("boneWrapper2").style.display = "block";
-	document.getElementById("bundleTitle").innerHTML = "Select 4 Exotic Imports!";
+	document.getElementById("bundleTitle").innerHTML = i18n.t('ui.menu.bone.select_exotic_imports');
 	var btn = document.getElementById("addBundleBtn");
-	btn.innerHTML = "First, Select 4 Imps";
+	btn.innerHTML = i18n.t('ui.menu.bone.select_four_imps_first');
 	btn.style.backgroundColor = "grey";
 	boneTemp.bundle = [];
 	updateImports(1);

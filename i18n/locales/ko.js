@@ -169,7 +169,23 @@ window.I18N_LOCALES.ko = {
       "upgrades": "업그레이드",
       "trimps": "트림프",
       "breeding": "번식 중",
-      "bored": "심심함"
+      "bored": "심심함",
+      "close": "닫기",
+      "perks": {
+        "unknown": "???",
+        "view": "특전 보기"
+      },
+      "alchemy": {
+        "title": "연금술",
+        "save_and_close": "저장하고 닫기"
+      },
+      "spire_assault": {
+        "title": "첨탑 강습"
+      },
+      "bone": {
+        "select_exotic_imports": "특수 임프 수입 4개를 선택하세요!",
+        "select_four_imps_first": "먼저 임프 4개를 선택하세요"
+      }
     },
     "map": {
       "abandon_soldiers": "병사 포기",
@@ -258,6 +274,23 @@ window.I18N_LOCALES.ko = {
       },
       "map": {
         "finish_or_action_current_map": "이동하기 전에 현재 맵을 완료하거나 {action}해야 합니다."
+      },
+      "kong": {
+        "api_not_loaded": "콩그리게이트 API를 불러오지 못했습니다! 최고 점수를 제출하거나 크레드를 사용할 수 없습니다. 새로고침하거나 콩그리게이트 지원팀에 문의해 주세요!"
+      },
+      "runetrinket": {
+        "found": "루네트링킷 {amount}개{suffix}를 찾았습니다!"
+      },
+      "science": {
+        "research_again": "과학 연구를 다시 할 수 있습니다!"
+      },
+      "achievement": {
+        "locked": "잠김",
+        "row_finished": "줄 완료!",
+        "row_finished_progress": "줄 완료! ({progress})",
+        "progress": "진행도: {progress}",
+        "progress_too_slow": "진행도: 너무 느림! {progress}",
+        "wrong_universe_progress": "현재 우주가 다릅니다! {progress}"
       }
     }
   }

@@ -169,7 +169,23 @@ window.I18N_LOCALES.en = {
       "upgrades": "Upgrades",
       "trimps": "Trimps",
       "breeding": "breeding",
-      "bored": "bored"
+      "bored": "bored",
+      "close": "Close",
+      "perks": {
+        "unknown": "???",
+        "view": "View Perks"
+      },
+      "alchemy": {
+        "title": "Alchemy",
+        "save_and_close": "Save and Close"
+      },
+      "spire_assault": {
+        "title": "Spire Assault"
+      },
+      "bone": {
+        "select_exotic_imports": "Select 4 Exotic Imports!",
+        "select_four_imps_first": "First, Select 4 Imps"
+      }
     },
     "map": {
       "abandon_soldiers": "Abandon Soldiers",
@@ -258,6 +274,23 @@ window.I18N_LOCALES.en = {
       },
       "map": {
         "finish_or_action_current_map": "You must finish or {action} your current map before moving on."
+      },
+      "kong": {
+        "api_not_loaded": "Kongregate API not loaded! You cannot submit high scores or spend Kreds. Try refreshing or contacting Kongregate support!"
+      },
+      "runetrinket": {
+        "found": "You found {amount} Runetrinket{suffix}!"
+      },
+      "science": {
+        "research_again": "You can research science again!"
+      },
+      "achievement": {
+        "locked": "Locked",
+        "row_finished": "Row Finished!",
+        "row_finished_progress": "Row Finished! ({progress})",
+        "progress": "Progress: {progress}",
+        "progress_too_slow": "Progress: Too slow! {progress}",
+        "wrong_universe_progress": "You're in the wrong Universe! {progress}"
       }
     }
   }
