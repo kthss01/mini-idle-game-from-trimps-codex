@@ -1,0 +1,162 @@
+{
+  "ui.offline.title": {
+    "text": "Making up lost time...",
+    "title": null
+  },
+  "ui.offline.starting": {
+    "text": "Starting...",
+    "title": null
+  },
+  "ui.offline.zone": {
+    "text": "Zone",
+    "title": null
+  },
+  "ui.offline.cell": {
+    "text": "Cell",
+    "title": null
+  },
+  "ui.offline.run_map": {
+    "text": "Wanna run a map?",
+    "title": null
+  },
+  "ui.offline.world_level_map": {
+    "text": "World Level Map",
+    "title": null
+  },
+  "ui.offline.minus1_map": {
+    "text": "-1 Level map",
+    "title": null
+  },
+  "ui.offline.minus2_map": {
+    "text": "-2 Level map",
+    "title": null
+  },
+  "ui.offline.minus3_map": {
+    "text": "-3 Level map",
+    "title": null
+  },
+  "ui.offline.back_to_world": {
+    "text": "Back to World",
+    "title": null
+  },
+  "ui.offline.what_is_this": {
+    "text": "What is This?!",
+    "title": null
+  },
+  "ui.offline.stop_here": {
+    "text": "Stop Here",
+    "title": null
+  },
+  "ui.offline.show_equality": {
+    "text": "Show Equality",
+    "title": null
+  },
+  "ui.offline.start_fighting": {
+    "text": "Start Fighting",
+    "title": null
+  },
+  "ui.bone_trader.title": {
+    "text": "Bone Trader",
+    "title": null
+  },
+  "ui.bone_trader.owned_prefix": {
+    "text": "You have",
+    "title": null
+  },
+  "ui.bone_trader.source": {
+    "text": "You can earn bones as you progress through the world by killing Skeletimps and Megaskeletimps.",
+    "title": null
+  },
+  "ui.bone_trader.flavor": {
+    "text": "The Bone Trader trades bones for... bonuses",
+    "title": null
+  },
+  "ui.bone_trader.close": {
+    "text": "Close",
+    "title": null
+  },
+  "ui.bone_trader.permanent_upgrades": {
+    "text": "Permanent Upgrades",
+    "title": null
+  },
+  "ui.bone_trader.exotic_imports": {
+    "text": "Exotic Imp-orts",
+    "title": null
+  },
+  "ui.bone_trader.exotic_imports_desc_prefix": {
+    "text": "Exotic Imp-orts will be unlocked permanently once purchased. Each has a",
+    "title": null
+  },
+  "ui.bone_trader.exotic_imports_desc_suffix": {
+    "text": "chance to spawn per cell and better loot than normal enemies. Any stacking multipliers from killing Imp-orts reset on Portal but the imps do not have to be unlocked again.",
+    "title": null
+  },
+  "ui.bone_trader.spawns_world": {
+    "text": "Spawns in World",
+    "title": null
+  },
+  "ui.bone_trader.spawns_maps": {
+    "text": "Spawns in Maps",
+    "title": null
+  },
+  "ui.bone_trader.other_goodies": {
+    "text": "Other Goodies",
+    "title": null
+  },
+  "ui.bone_trader.buy_bone_portal": {
+    "text": "Buy Bone Portal (100 bones)",
+    "title": null
+  },
+  "ui.bone_trader.bone_portal_desc": {
+    "text": "Automatically gain helium equal to the amount you earned on your best run",
+    "title": null
+  },
+  "ui.bone_trader.buy_heirloom": {
+    "text": "Buy Heirloom (30 bones)",
+    "title": null
+  },
+  "ui.bone_trader.heirloom_desc": {
+    "text": "Get one Heirloom at the chances above, based on highest zone",
+    "title": null
+  },
+  "ui.resources.food": {
+    "text": "Food",
+    "title": null
+  },
+  "ui.resources.action.gather": {
+    "text": "Gather",
+    "title": null
+  },
+  "ui.resources.wood": {
+    "text": "Wood",
+    "title": null
+  },
+  "ui.resources.action.chop": {
+    "text": "Chop",
+    "title": null
+  },
+  "ui.resources.metal": {
+    "text": "Metal",
+    "title": null
+  },
+  "ui.resources.action.mine": {
+    "text": "Mine",
+    "title": null
+  },
+  "ui.resources.science": {
+    "text": "Science",
+    "title": null
+  },
+  "ui.resources.action.research": {
+    "text": "Research",
+    "title": null
+  },
+  "ui.resources.fragments": {
+    "text": "Fragments",
+    "title": null
+  },
+  "ui.bone_trader.menu_button": {
+    "text": "Bone Trader",
+    "title": null
+  }
+}
