@@ -13,6 +13,7 @@
 - [09-balancing-and-tuning.md](./09-balancing-and-tuning.md)
 - [10-testing-and-debugging.md](./10-testing-and-debugging.md)
 - [appendix-glossary.md](./appendix-glossary.md)
+- [DOCUMENTATION_GOVERNANCE.md](./DOCUMENTATION_GOVERNANCE.md)
 
 ## 루트 문서 → 새 문서 매핑
 | 기존 루트 문서 | 새 문서 경로 |
