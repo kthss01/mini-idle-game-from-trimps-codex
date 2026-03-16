@@ -347,6 +347,10 @@
     "text": "Back to Search",
     "title": null
   },
+  "ui.screen_reader.page_title": {
+    "text": "Trimps 5.10.1 (Screen Reader version)",
+    "title": null
+  },
   "ui.screen_reader.info_title": {
     "text": "Screen Reader Information",
     "title": null
@@ -377,6 +381,14 @@
   },
   "ui.menu.upgrades_research_first": {
     "text": "Upgrades<br></br>(Research first)",
+    "title": null
+  },
+  "ui.kong.page_title": {
+    "text": "Trimps 5.10.1 (Kongregate Version)",
+    "title": null
+  },
+  "ui.kong.shell_title": {
+    "text": "Kongregate Game Shell",
     "title": null
   }
 }

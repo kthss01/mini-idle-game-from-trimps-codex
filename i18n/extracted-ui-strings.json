@@ -147,5 +147,8 @@
   "ui.tabs.spire": "Spire",
   "ui.tabs.upgrades": "Upgrades",
   "ui.tooltip.confirm.im_fine": "I'll be fine",
-  "ui.tooltip.confirm.im_scared": "I'm Scared"
+  "ui.tooltip.confirm.im_scared": "I'm Scared",
+  "ui.screen_reader.page_title": "Trimps 5.10.1 (Screen Reader version)",
+  "ui.kong.page_title": "Trimps 5.10.1 (Kongregate Version)",
+  "ui.kong.shell_title": "Kongregate Game Shell"
 }
