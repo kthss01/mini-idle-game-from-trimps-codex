@@ -29,5 +29,14 @@
   "ui.bone_trader.bone_portal_desc": "Automatically gain helium equal to the amount you earned on your best run",
   "ui.bone_trader.buy_heirloom": "Buy Heirloom (30 bones)",
   "ui.bone_trader.heirloom_desc": "Get one Heirloom at the chances above, based on highest zone",
+  "ui.resources.food": "Food",
+  "ui.resources.action.gather": "Gather",
+  "ui.resources.wood": "Wood",
+  "ui.resources.action.chop": "Chop",
+  "ui.resources.metal": "Metal",
+  "ui.resources.action.mine": "Mine",
+  "ui.resources.science": "Science",
+  "ui.resources.action.research": "Research",
+  "ui.resources.fragments": "Fragments",
   "ui.bone_trader.menu_button": "Bone Trader"
 }
