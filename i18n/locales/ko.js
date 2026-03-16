@@ -144,6 +144,17 @@ window.I18N_LOCALES.ko = {
       "confirm": {
         "im_fine": "괜찮아요",
         "im_scared": "무서워요"
+      },
+      "spire_assault": {
+        "unlock": {
+          "body": "<i>\"끝없이 높은 첨탑에 다가가자 트림프 하나가 달려 나와 스크러피를 껴안았습니다. 스크러피는 드루오피티가 꽤 못된 녀석이라는 걸 깨달은 듯한 허피를 소개합니다. 허피는 꼭대기의 부패 장치를 파괴하는 데 성공했지만, 지금은 끔찍한 그림자 적들로 들끓고 있다고 말합니다. 또한 첨탑 내부에서는 포털로부터 보호받고 있지만, 당신이 포털을 타고 자신을 잊더라도 당신의 잠재의식을 통해 첨탑 정화와 트림프 강화를 위한 유물 탐색을 계속 도울 수 있다고 합니다.\"</i><br/><br/>드디어 이 우주의 첫 번째 첨탑과 허피에게 도착했습니다. 허피가 모든 적을 제거할 수 있도록 도와주세요! 새로 생긴 'SA' 탭에서 시작할 수 있습니다.<br/><br/><b>들어가면 유용한 팁</b>: 허피는 바지와 검은 착용할 줄 알게 되었지만 그 이상은 아직 어렵습니다. 다른 아이템 두 개를 눌러 최대한 빨리 장착해 주세요!",
+          "title": "첨탑 강습 해금!",
+          "continue": "계속"
+        },
+        "help": {
+          "title": "첨탑 강습 도움말/FAQ",
+          "back_button": "첨탑 강습으로 돌아가기"
+        }
       }
     },
     "menu": {
@@ -151,6 +162,7 @@ window.I18N_LOCALES.ko = {
       "cancel": "취소",
       "upgrades_research_first": "업그레이드<br/>(먼저 연구 필요)",
       "upgrades": "업그레이드",
+      "trimps": "트림프",
       "breeding": "번식 중",
       "bored": "심심함"
     },
@@ -160,6 +172,9 @@ window.I18N_LOCALES.ko = {
       "world": "월드",
       "continue": "계속",
       "abandon_map": "맵 포기",
+      "abandon_map_lowercase": "포기",
+      "recycle_map_lowercase": "재활용",
+      "run_map": "맵 실행",
       "maps_with_bonus": "맵 ({bonus})",
       "maps": "맵",
       "level_with_prefix": "<br/>레벨: {level}",
@@ -169,6 +184,34 @@ window.I18N_LOCALES.ko = {
       "spire_number": "첨탑 {num}",
       "floor": " {floor}층",
       "zone": "지역"
+    },
+    "spire_assault": {
+      "on": "켜짐",
+      "off": "꺼짐",
+      "auto_level_status": "자동 레벨 {status}"
+    },
+    "message": {
+      "challenge": {
+        "alchemy": {
+          "herb_found": "{amount} {resource}을(를) 발견했습니다!"
+        },
+        "spire_assault": {
+          "contract_fulfilled": "계약을 이행하여 허피가 {contract}에 접근할 수 있게 되었습니다!"
+        },
+        "mutations": {
+          "seeds_found": "그 {enemy} 적에게서 변이 씨앗 {amount}개{nullifier_text}를 획득했습니다!",
+          "radon_vials_found": "그 변이 적에게서 라돈 바이알 {amount}개를 가져올 수 있었습니다!"
+        },
+        "hypothermia": {
+          "perks_locked_html": "<span style='color: red'>저체온증 도전 중에는 특전을 변경할 수 없습니다!</span>"
+        }
+      },
+      "story": {
+        "map_fragments_found": "맵 조각 {amount}개를 발견했습니다!"
+      },
+      "map": {
+        "finish_or_action_current_map": "이동하기 전에 현재 맵을 완료하거나 {action}해야 합니다."
+      }
     }
   }
 };

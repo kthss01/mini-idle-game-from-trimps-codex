@@ -11350,7 +11350,7 @@ var toReturn = {
 			title: "Map Fragments",
 			fire: function() {
 				var amt = rewardResource("fragments");
-				message("You found " + prettify(amt) + " map fragments!", "Loot", "th", null, "secondary");
+				message(i18n.t('ui.message.story.map_fragments_found', { amount: prettify(amt) }), "Loot", "th", null, "secondary");
 			}
 		},
 		//portal Trumps
@@ -13251,7 +13251,7 @@ var toReturn = {
 			},
 			fire: function () {
 				fadeIn("jobsTab", 10);
-				document.getElementById("trimpTitle").innerHTML = "Trimps";
+				document.getElementById("trimpTitle").innerHTML = i18n.t('ui.menu.trimps');
 				document.getElementById("empHide").style.visibility = "visible";
 				unlockJob("Farmer");
 				document.getElementById("jobsTitleDiv").style.display = "block";

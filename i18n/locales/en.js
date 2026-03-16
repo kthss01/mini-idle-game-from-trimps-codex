@@ -144,6 +144,17 @@ window.I18N_LOCALES.en = {
       "confirm": {
         "im_fine": "I'll be fine",
         "im_scared": "I'm Scared"
+      },
+      "spire_assault": {
+        "unlock": {
+          "body": "<i>\"As you approach the infinitely tall Spire, a Trimp rushes out and embraces Scruffy. Scruffy introduces you to Huffy, who seems to have also realized that Druopitee is kind of a prick. Huffy lets you know that he managed to destroy the Corruption device at the top, but that it was now crawling with horrible shadowy enemies. Huffy lets you know that he is shielded from the Portal inside the Spire, but that even when you Portal and forget him, he can use your subconscious to help direct him in cleansing the Spire and finding artifacts to make your Trimps stronger.\"</i><br/><br/>You've finally made it to Huffy and the first Spire in this Universe. Huffy needs your help removing all of the Enemies! Check out the new tab titled 'SA' to get started.<br/><br/><b>A tip for once you're in</b>: Huffy has figured out how to put on Pants and a Sword but is struggling beyond that. Click two other items to equip them ASAP!",
+          "title": "Spire Assault Unlocked!",
+          "continue": "Continue"
+        },
+        "help": {
+          "title": "Spire Assault Help/FAQ",
+          "back_button": "Back to Spire Assault"
+        }
       }
     },
     "menu": {
@@ -151,6 +162,7 @@ window.I18N_LOCALES.en = {
       "cancel": "Cancel",
       "upgrades_research_first": "Upgrades<br/>(Research first)",
       "upgrades": "Upgrades",
+      "trimps": "Trimps",
       "breeding": "breeding",
       "bored": "bored"
     },
@@ -160,6 +172,9 @@ window.I18N_LOCALES.en = {
       "world": "World",
       "continue": "Continue",
       "abandon_map": "Abandon Map",
+      "abandon_map_lowercase": "abandon",
+      "recycle_map_lowercase": "recycle",
+      "run_map": "Run Map",
       "maps_with_bonus": "Maps ({bonus})",
       "maps": "Maps",
       "level_with_prefix": "<br/>Lv: {level}",
@@ -169,6 +184,34 @@ window.I18N_LOCALES.en = {
       "spire_number": "Spire {num}",
       "floor": " Floor {floor}",
       "zone": "Zone"
+    },
+    "spire_assault": {
+      "on": "On",
+      "off": "Off",
+      "auto_level_status": "AutoLevel {status}"
+    },
+    "message": {
+      "challenge": {
+        "alchemy": {
+          "herb_found": "You found {amount} {resource}!"
+        },
+        "spire_assault": {
+          "contract_fulfilled": "You have fulfilled your Contract, and Huffy has gained access to {contract}!"
+        },
+        "mutations": {
+          "seeds_found": "You found {amount} Mutated Seed{plural}{nullifier_text} on that {enemy} enemy!",
+          "radon_vials_found": "You were able to take {amount} Radon Vials from that Mutated Enemy!"
+        },
+        "hypothermia": {
+          "perks_locked_html": "<span style='color: red'>You cannot change your perks while on the Hypothermia Challenge!</span>"
+        }
+      },
+      "story": {
+        "map_fragments_found": "You found {amount} map fragments!"
+      },
+      "map": {
+        "finish_or_action_current_map": "You must finish or {action} your current map before moving on."
+      }
     }
   }
 };

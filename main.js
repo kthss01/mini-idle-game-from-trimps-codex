@@ -10999,7 +10999,7 @@ function selectMap(mapId, force) {
 	if (game.options.menu.pauseGame.enabled && !force) return;
     if (!force && game.global.currentMapId !== "") {
 		var curMap = getCurrentMapObject();
-        message("You must finish or " + ((curMap.noRecycle) ? "abandon" : "recycle") + " your current map before moving on.", "Notices");
+		message(i18n.t('ui.message.map.finish_or_action_current_map', { action: (curMap.noRecycle) ? i18n.t('ui.map.abandon_map_lowercase') : i18n.t('ui.map.recycle_map_lowercase') }), "Notices");
         return;
     }
     var map = getMapIndex(mapId);
@@ -11018,7 +11018,7 @@ function selectMap(mapId, force) {
 	var currentSelected = document.getElementById(mapId);
 	currentSelected.className = currentSelected.className.replace("mapElementNotSelected", "mapElementSelected");
     game.global.lookingAtMap = mapId;
-    document.getElementById("selectMapBtn").innerHTML = "Run Map";
+    document.getElementById("selectMapBtn").innerHTML = i18n.t('ui.map.run_map');
     document.getElementById("selectMapBtn").style.visibility = "visible";
 	document.getElementById("recycleMapBtn").style.visibility = (map.noRecycle) ? "hidden" : "visible";
 }
