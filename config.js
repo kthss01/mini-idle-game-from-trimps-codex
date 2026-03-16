@@ -3578,13 +3578,13 @@ var toReturn = {
 				return (getHighestLevelCleared(true) >= 69);
 			},
 			start: function () {
-				document.getElementById('trimpsBreedingTitle').innerHTML = "bored";
+				document.getElementById('trimpsBreedingTitle').innerHTML = i18n.t("ui.menu.bored");
 			},
 			onLoad: function () {
 				this.start();
 			},
 			abandon: function () {
-				document.getElementById('trimpsBreedingTitle').innerHTML = "breeding";
+				document.getElementById('trimpsBreedingTitle').innerHTML = i18n.t("ui.menu.breeding");
 				for (var x = 0; x < game.challenges.Trapper.heldBooks; x++){
 					unlockUpgrade("Potency");
 				}
@@ -4451,13 +4451,13 @@ var toReturn = {
 				return (getHighestLevelCleared(true) >= 59);
 			},
 			start: function () {
-				document.getElementById('trimpsBreedingTitle').innerHTML = "bored";
+				document.getElementById('trimpsBreedingTitle').innerHTML = i18n.t("ui.menu.bored");
 			},
 			onLoad: function () {
 				this.start();
 			},
 			abandon: function () {
-				document.getElementById('trimpsBreedingTitle').innerHTML = "breeding";
+				document.getElementById('trimpsBreedingTitle').innerHTML = i18n.t("ui.menu.breeding");
 				for (var x = 0; x < game.challenges.Trappapalooza.heldBooks; x++){
 					unlockUpgrade("Potency");
 				}
@@ -13290,7 +13290,7 @@ var toReturn = {
 		},
 		Battle: {
 			done: 0,
-			once: function() {document.getElementById("upgradesTitleSpan").innerHTML = "Upgrades";},
+			once: function() {document.getElementById("upgradesTitleSpan").innerHTML = i18n.t("ui.menu.upgrades");},
 			message: function(){
 				if (game.global.universe == 2) return "As you finally step out into the Battle Zones, the first thing you notice is that your Heirlooms feel weaker here. Oh well, 1000 more times into the fray... ";
 				return "War... what is it good for? Exploration, or something."
@@ -13303,7 +13303,7 @@ var toReturn = {
 			fire: function () {
 				if (game.global.totalPortals == 0) tutorial.start();
 				unlockUpgrade('Battle');
-				document.getElementById("upgradesTitleSpan").innerHTML = "Upgrades";
+				document.getElementById("upgradesTitleSpan").innerHTML = i18n.t("ui.menu.upgrades");
 			}
 		},
 		Hut: {

@@ -30,14 +30,14 @@ var holidayObj = {
         for (var holiday in this.holidays){
             if (this.holidays[holiday].check(day, month)){
                 if (!this.holiday){
-                    message("Loaded " + holiday + " event!", "Notices");
+                    message(i18n.t('ui.alert.holiday.loaded_event', { holiday: holiday }), "Notices");
                 }
                 this.holiday = holiday;
                 return;
             }
         }
         if (this.holiday){
-            message(this.holiday + " event has come to an end!", "Notices");
+            message(i18n.t('ui.alert.holiday.event_ended', { holiday: this.holiday }), "Notices");
         }
         this.holiday = "";
         return;

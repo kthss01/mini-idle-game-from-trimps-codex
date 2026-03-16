@@ -48,6 +48,51 @@ window.I18N_LOCALES.en = {
         "mine": "Mine",
         "research": "Research"
       }
+    },
+    "alert": {
+      "holiday": {
+        "loaded_event": "Loaded {holiday} event!",
+        "event_ended": "{holiday} event has come to an end!"
+      },
+      "map": {
+        "waiting_for_soldiers": "Waiting to travel until your soldiers are finished."
+      },
+      "generic": {
+        "sorry": "Sorry"
+      },
+      "story": {
+        "void_seep": "Use of the portal has created a chance for the Void to seep into your world. Be alert."
+      }
+    },
+    "tooltip": {
+      "confirm": {
+        "im_fine": "I'll be fine",
+        "im_scared": "I'm Scared"
+      }
+    },
+    "menu": {
+      "delete_save": "Delete Save",
+      "cancel": "Cancel",
+      "upgrades_research_first": "Upgrades<br/>(Research first)",
+      "upgrades": "Upgrades",
+      "breeding": "breeding",
+      "bored": "bored"
+    },
+    "map": {
+      "abandon_soldiers": "Abandon Soldiers",
+      "recycle_map": "Recycle Map",
+      "world": "World",
+      "continue": "Continue",
+      "abandon_map": "Abandon Map",
+      "maps_with_bonus": "Maps ({bonus})",
+      "maps": "Maps",
+      "level_with_prefix": "<br/>Lv: {level}",
+      "select_a_map": "Select a Map!",
+      "map_bonus": "{bonus}% Map Bonus",
+      "spire": "Spire",
+      "spire_number": "Spire {num}",
+      "floor": " Floor {floor}",
+      "zone": "Zone"
     }
   }
 };

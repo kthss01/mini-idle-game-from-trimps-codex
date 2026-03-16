@@ -48,6 +48,51 @@ window.I18N_LOCALES.ko = {
         "mine": "채굴",
         "research": "연구"
       }
+    },
+    "alert": {
+      "holiday": {
+        "loaded_event": "{holiday} 이벤트를 불러왔습니다!",
+        "event_ended": "{holiday} 이벤트가 종료되었습니다!"
+      },
+      "map": {
+        "waiting_for_soldiers": "병사들의 전투가 끝날 때까지 이동을 기다리는 중입니다."
+      },
+      "generic": {
+        "sorry": "죄송합니다"
+      },
+      "story": {
+        "void_seep": "포털 사용으로 인해 공허가 세계로 스며들 가능성이 생겼습니다. 주의하세요."
+      }
+    },
+    "tooltip": {
+      "confirm": {
+        "im_fine": "괜찮아요",
+        "im_scared": "무서워요"
+      }
+    },
+    "menu": {
+      "delete_save": "저장 삭제",
+      "cancel": "취소",
+      "upgrades_research_first": "업그레이드<br/>(먼저 연구 필요)",
+      "upgrades": "업그레이드",
+      "breeding": "번식 중",
+      "bored": "심심함"
+    },
+    "map": {
+      "abandon_soldiers": "병사 포기",
+      "recycle_map": "맵 재활용",
+      "world": "월드",
+      "continue": "계속",
+      "abandon_map": "맵 포기",
+      "maps_with_bonus": "맵 ({bonus})",
+      "maps": "맵",
+      "level_with_prefix": "<br/>레벨: {level}",
+      "select_a_map": "맵을 선택하세요!",
+      "map_bonus": "맵 보너스 {bonus}%",
+      "spire": "첨탑",
+      "spire_number": "첨탑 {num}",
+      "floor": " {floor}층",
+      "zone": "지역"
     }
   }
 };
