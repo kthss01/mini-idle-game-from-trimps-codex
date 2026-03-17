@@ -215,7 +215,7 @@ window.I18N_LOCALES.ko = {
       "bored": "심심함",
       "close": "닫기",
       "perks": {
-        "unknown": "???",
+        "unknown": "알 수 없음",
         "view": "특전 보기"
       },
       "alchemy": {
