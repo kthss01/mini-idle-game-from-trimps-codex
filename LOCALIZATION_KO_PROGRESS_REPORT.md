@@ -14,12 +14,12 @@
 ## 1) 정량 지표 (최신)
 
 ### A. 로케일 사전 품질 (`en.js` vs `ko.js`)
-- en 키 수: **235**
-- ko 키 수: **235**
+- en 키 수: **285**
+- ko 키 수: **285**
 - 누락(missing): **0**
 - 빈 값(empty): **0**
 - en/ko 동일값: **2** (`ui.menu.perks.unknown`, `ui.spire.preset.trap_chip`)
-- 유효 번역 키: **233 / 235**
+- 유효 번역 키: **283 / 285**
 
 ### B. HTML i18n 바인딩 적용 수 (`scripts/extract-i18n.js`)
 > 아래 수치는 **파일별 고유 키 수(unique)** 와 **속성 바인딩 수(binding)** 를 함께 표기합니다.
@@ -99,9 +99,9 @@
 ---
 
 ## 측정 메타데이터
-- 측정 시각(UTC): **2026-03-17T01:04:35Z**
+- 측정 시각(UTC): **2026-03-17T01:49:11Z**
 - 측정 브랜치: **work**
-- 측정 기준 커밋: **414a3ea86df70cf2c41571de4a723868e900be56**
+- 측정 기준 커밋: **1bf363576f68aa072ecfb8a361b336b649e6bb98**
 - 실행 명령:
   - `node scripts/extract-i18n.js`
   - `node scripts/validate-i18n.js`

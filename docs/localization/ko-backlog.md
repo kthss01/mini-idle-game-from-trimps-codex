@@ -29,6 +29,7 @@
 | Sprint 1 | `playerSpire.js`, `main.js`, `updates.js` 런타임 메시지 고빈도 구간 | [x] | [x] | [x] | Spire 프리셋/설정, 맵/업적/전투 메시지 키 점검 완료 |
 | Sprint 2 | `config.js`, `objects.js` 장문 설명/툴팁 + 키 정규화 | [x] | [x] | [x] | 런타임 키 스캔 대상 확장 및 `data-i18n-attr` 키 추출 보강 |
 | Sprint 3 | `indexKong.html`, `ScreenReader.html` 잔여 텍스트/속성 외부화 + 접근성 문구 검수 | [x] | [x] | [x] | ARIA/페이지 타이틀 추출 경로 검증 및 스크린리더 문구 확인 |
+| Sprint 4 | 공용 플랫폼 고유명사 번역 톤 통일(`ui.updates.steam/reddit/discord`) | [x] | [x] | [ ] | Steam/Reddit/Discord 표기를 스팀/레딧/디스코드로 통일 |
 
 ### 릴리즈 전 검증 체크
 - `node scripts/validate-i18n.js` 기준 `missing: 0`, `unused: 0` 달성.

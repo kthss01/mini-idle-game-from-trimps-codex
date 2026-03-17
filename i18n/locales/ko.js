@@ -88,9 +88,9 @@ window.I18N_LOCALES.ko = {
     "updates": {
       "page_title": "업데이트",
       "find_trimps": "Trimps를 여기에서 만나보세요:",
-      "steam": "Steam",
-      "reddit": "Reddit",
-      "discord": "Discord",
+      "steam": "스팀",
+      "reddit": "레딧",
+      "discord": "디스코드",
       "header": "Trimps 업데이트!"
     },
     "aria": {
