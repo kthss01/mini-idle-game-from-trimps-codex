@@ -218,7 +218,18 @@ window.I18N_LOCALES.ko = {
       "spire": "첨탑",
       "spire_number": "첨탑 {num}",
       "floor": " {floor}층",
-      "zone": "지역"
+      "zone": "지역",
+      "repeat_until": {
+        "description": "<p><b>무한 반복</b>은 Repeat Maps가 켜져 있을 때 맵을 계속 반복합니다.</p><p><b>10회까지 반복</b>은 맵 보너스 10중첩이 될 때까지 반복합니다.</p><p><b>아이템까지 반복</b>은 해당 맵 레벨에서 더 이상 특수 아이템이 없을 때까지 반복합니다.</p><p><b>가능한 항목까지 반복</b>은 특수 아이템이 없고 더 이상 맵 보너스 중첩도 쌓을 수 없을 때까지 반복합니다.</p><p><b>이 설정은 반복이 켜져 있을 때만 적용됩니다. 반복을 꺼도 맵 완료 시에는 종료됩니다.</b></p>",
+        "forever": "무한 반복",
+        "to_10": "10회까지 반복",
+        "for_items": "아이템까지 반복",
+        "for_any": "가능한 항목까지 반복"
+      },
+      "exit_to": {
+        "maps": "맵으로 나가기",
+        "world": "월드로 나가기"
+      }
     },
     "maps": {
       "abandon_soldiers": "병사 포기",
@@ -247,6 +258,37 @@ window.I18N_LOCALES.ko = {
         "depths": "심해"
       }
     },
+    "tutorial": {
+      "bookmarks": ["전투", "지역", "팁 1", "팁 2", "맵 발견", "맵 챔버", "맵핑", "장비 프레스티지", "커스텀 맵", "맵 설정", "트랩스톰", "고유 맵", "방어", "현상금", "분노", "포털"],
+      "reminder_toggle_advisor": "<br/><br/><i>적 이름 옆의 금색 별을 클릭하거나 V를 눌러 ADVISOR 창을 다시 열 수 있습니다.</i>"
+    },
+    "maz": {
+      "title": "Map At Zone 설정",
+      "actions": {
+        "add_row": "+ 행 추가",
+        "help": "도움말"
+      },
+      "repeat_until": {
+        "dont_change": "변경 안 함",
+        "climb_bw_to_level": "BW를 레벨까지 등반",
+        "repeat_25_times": "25회 반복",
+        "repeat_50_times": "50회 반복",
+        "repeat_100_times": "100회 반복",
+        "repeat_x_times": "X회 반복"
+      }
+    },
+    "save": {
+      "disabled_due_to_error": "오류가 발생하여 저장 손상을 방지하기 위해 저장이 비활성화되었습니다.",
+      "game_saved": "게임이 저장되었습니다!",
+      "failed_backup": "어떤 이유로 게임이 저장되지 않습니다. 저장 데이터를 내보내어 백업해 주세요!",
+      "storage_corrupted": "브라우저 저장소가 손상된 것 같습니다. Tools -> Clear Recent History -> Cookies에서 기간을 'Everything'으로 설정해 저장소를 정리해 주세요. 이 작업은 모든 사이트의 손상된 브라우저 저장소를 제거합니다."
+    },
+    "generator": {
+      "state": {
+        "dont_change_at_zone": "해당 지역에서 변경하지 않음"
+      }
+    },
+
     "challenges": {
       "hypothermia": {
         "perks_locked_html": "<span style='color: red'>저체온증 도전 중에는 특전을 변경할 수 없습니다!</span>"

@@ -219,7 +219,7 @@ function save(exportThis, fromManual) {
     saveString = LZString.compressToBase64(JSON.stringify(saveGame));
     if (exportThis) return saveString;
 	if (disableSaving) {
-		message("Due to an error occuring, saving has been disabled to prevent corruption", "Notices");
+		message(i18n.t('ui.save.disabled_due_to_error'), "Notices");
 		postMessages();
 		return;
 	}
@@ -231,18 +231,18 @@ function save(exportThis, fromManual) {
 		if (typeof greenworks !== 'undefined') saveToSteam(saveString);
 		localStorage.setItem("trimpSave1",saveString);
 		if (localStorage.getItem("trimpSave1") == saveString){
-			message("Game Saved!", "Notices");
+			message(i18n.t('ui.save.game_saved'), "Notices");
 		}
 		else {
-			message("For some reason, your game is not saving. Make sure you export and back up your save!", "Notices");
+			message(i18n.t('ui.save.failed_backup'), "Notices");
 		}
 	}
 	catch(e){
 		if(e.name == "NS_ERROR_FILE_CORRUPTED") {
-        message("Sorry, it looks like your browser storage has been corrupted. Please clear your storage by going to Tools -> Clear Recent History -> Cookies and set time range to 'Everything'. This will remove the corrupted browser storage across all sites.", "Notices");
+        message(i18n.t('ui.save.storage_corrupted'), "Notices");
 		}
 		else
-		message("For some reason, your game is not saving. Make sure you export and back up your save!", "Notices");
+		message(i18n.t('ui.save.failed_backup'), "Notices");
 		}
 
 	if (game.options.menu.usePlayFab.enabled == 1 && playFabId){
@@ -9612,7 +9612,7 @@ function toggleGenStateConfig(elem, num){
 function getGenStateConfigBtnText(num){
 	var text;
 	switch(num){
-		case -1: text = "Don't Change At Zone"; break;
+		case -1: text = i18n.t('ui.generator.state.dont_change_at_zone'); break;
 		case 0: text = "Set to Gain Fuel"; break;
 		case 1: text = "Set to Gain Mi"; break;
 		case 2: text = "Set to Hybrid"; break;
@@ -20288,7 +20288,7 @@ document.addEventListener('keydown', function (e) {
 			}
 			break;
 		case 90: //z for map at zone
-			if (game.global.lockTooltip && lastTooltipTitle == "Set Map At Zone") {
+			if (game.global.lockTooltip && lastTooltipTitle == i18n.t('ui.maz.title')) {
 				var confirmCheck = document.getElementById("confirmTooltipBtn");
 				if (confirmCheck !== null && typeof confirmCheck.onclick == 'function'){
 					confirmCheck.onclick();

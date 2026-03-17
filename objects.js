@@ -191,7 +191,7 @@ var tutorial = {
     },
     setBookmarks: function(){
         var elem = document.getElementById('tutorialBookmarks');
-        var titles = ["Battle", "Zones", "Tips 1", "Tips 2", "Found a Map", "Map Chamber", "Mapping", "Equipment Prestige", "Custom Maps", "Map Settings", "Trapstorm", "Unique Maps", "Block", "Bounty", "Anger", "Portal"];
+        var titles = i18n.t('ui.tutorial.bookmarks', { returnObjects: true });
         var text = "";
         for (var x = 0; x <= game.global.tutorialStep; x++){
             if (x > titles.length) break;
@@ -288,7 +288,7 @@ var tutorial = {
                 break;
             
         }
-        if (this.viewingStep != 0 && this.viewingStep != 15) text += "<br/><br/><i>Remember you can toggle the ADVISOR window by pressing V or clicking the gold star by the enemy's name.</i>";
+        if (this.viewingStep != 0 && this.viewingStep != 15) text += i18n.t('ui.tutorial.reminder_toggle_advisor');
         this.setWinSize();
         document.getElementById('tutorialTextInner').innerHTML = text;
         document.getElementById('tutorialGoal').innerHTML = goal;
