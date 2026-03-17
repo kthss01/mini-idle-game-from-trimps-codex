@@ -39,6 +39,16 @@ window.I18N_LOCALES.ko = {
       "bone_portal_desc": "최고 기록 런에서 획득한 헬륨 양만큼 자동으로 획득합니다",
       "buy_heirloom": "가보 구매 (뼈 30개)",
       "heirloom_desc": "최고 지역 기준으로 위 확률에 따라 가보 1개를 획득합니다",
+      "get_more_bones": "<span class=\"kredSpan\"><img class=\"kredImg\" src=\"imgs/kred_single.png\"></img></span> 뼈 더 얻기",
+      "bundle_cta": "<span class=\"glyphicon glyphicon-star\"></span> 특수 임프 수입 4개를 묶어 무료 뼈 100개 받기! <span class=\"glyphicon glyphicon-star\"></span>",
+      "purchase_title": "뼈 구매",
+      "purchase_desc": "뼈는 게임 내에서 획득하거나 여기서 구매할 수 있습니다.",
+      "purchase_desc_detail": "게임 내에서는 월드에 무작위로 등장하는 적에게서 뼈를 획득합니다",
+      "purchase_support": "이 게임을 만드는 걸 정말 좋아하지만 아직 할 일이 많습니다. 뼈 구매로 모인 후원금은 Trimps의 지속적인 개발에 큰 도움이 됩니다. 플레이해 주셔서 진심으로 감사합니다!",
+      "back_to_trader": "상인으로 돌아가기",
+      "close_all": "전체 닫기",
+      "select_imports": "특수 수입 임프 4개 선택!",
+      "select_imports_desc": "한 번 클릭하면 선택, 다시 클릭하면 선택 해제됩니다",
       "menu_button": "뼈 상인"
     },
     "resources": {
@@ -62,7 +72,26 @@ window.I18N_LOCALES.ko = {
       "info_line_3": "shift+enter는 클릭 가능한 요소가 아닌 button 요소에서만 동작하며, 포커스가 필요하지 않습니다.",
       "info_line_4": "별도의 정보 버튼을 활성화할 수도 있으며, enter로 반응합니다.",
       "info_line_5": "shift+/ 툴팁을 사용하려면 NVDA + 8을 켜고 NVDA 설정 > browse mode에서 \"trap all command gestures from reaching the document.\"를 비활성화하세요.",
-      "info_line_6": "게임 설정의 \"Show Screen Read Info.\"를 통해 이 안내를 표시/숨김할 수 있습니다."
+      "info_line_6": "게임 설정의 \"Show Screen Read Info.\"를 통해 이 안내를 표시/숨김할 수 있습니다.",
+      "loot_breakdown": "전리품 분석",
+      "configure_map_settings": "맵 설정 구성. 팝업을 보려면 S를 누르세요.",
+      "show_hide_map_settings": "맵 설정 표시/숨기기",
+      "load_preset_1": "프리셋 1 불러오기",
+      "load_preset_2": "프리셋 2 불러오기",
+      "load_preset_3": "프리셋 3 불러오기",
+      "load_preset_4": "프리셋 4 불러오기",
+      "load_preset_5": "프리셋 5 불러오기",
+      "save_selected_preset": "선택된 프리셋에 설정 저장",
+      "reset_selected_preset": "선택된 프리셋 초기화",
+      "recycle_all_maps": "모든 맵 재활용"
+    },
+    "updates": {
+      "page_title": "업데이트",
+      "find_trimps": "Trimps를 여기에서 만나보세요:",
+      "steam": "Steam",
+      "reddit": "Reddit",
+      "discord": "Discord",
+      "header": "Trimps 업데이트!"
     },
     "aria": {
       "configure_displayed_messages": "표시 메시지 구성",

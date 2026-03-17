@@ -39,6 +39,16 @@ window.I18N_LOCALES.en = {
       "bone_portal_desc": "Automatically gain helium equal to the amount you earned on your best run",
       "buy_heirloom": "Buy Heirloom (30 bones)",
       "heirloom_desc": "Get one Heirloom at the chances above, based on highest zone",
+      "get_more_bones": "<span class=\"kredSpan\"><img class=\"kredImg\" src=\"imgs/kred_single.png\"></img></span> Get some more bones",
+      "bundle_cta": "<span class=\"glyphicon glyphicon-star\"></span> Click to Bundle 4 Exotic Imp-orts and get 100 free bones! <span class=\"glyphicon glyphicon-star\"></span>",
+      "purchase_title": "Purchase Bones",
+      "purchase_desc": "Bones can be earned in game or purchased here.",
+      "purchase_desc_detail": "In game, you will earn bones from enemies that randomly spawn in the world",
+      "purchase_support": "I love working on this game, but there's still so much to do, and any funds raised through bones will support the continued development of Trimps. Thank you so much for playing!",
+      "back_to_trader": "Back to Trader",
+      "close_all": "Close All",
+      "select_imports": "Select 4 Exotic Imports!",
+      "select_imports_desc": "Click once to select an Imp, click again to deselect",
       "menu_button": "Bone Trader"
     },
     "resources": {
@@ -62,7 +72,26 @@ window.I18N_LOCALES.en = {
       "info_line_3": "shift+enter works only on button elements, not clickable. It does not require focus.",
       "info_line_4": "You can also enable separate info buttons, which will respond to enter.",
       "info_line_5": "To enable shift+/ tooltips, Turn NVDA + 8 on, and disable NVDA: Settings > browse mode: Disable \"trap all command gestures from reaching the document.\"",
-      "info_line_6": "You can show/hide this information via the game setting \"Show Screen Read Info.\""
+      "info_line_6": "You can show/hide this information via the game setting \"Show Screen Read Info.\"",
+      "loot_breakdown": "Loot Breakdown",
+      "configure_map_settings": "Configure Map Settings. Press S to view the popup.",
+      "show_hide_map_settings": "Show/Hide map settings",
+      "load_preset_1": "Load Preset 1",
+      "load_preset_2": "Load Preset 2",
+      "load_preset_3": "Load Preset 3",
+      "load_preset_4": "Load Preset 4",
+      "load_preset_5": "Load Preset 5",
+      "save_selected_preset": "Save Settings to Selected Preset",
+      "reset_selected_preset": "Reset The Selected Preset",
+      "recycle_all_maps": "Recycle All Maps"
+    },
+    "updates": {
+      "page_title": "Updates",
+      "find_trimps": "Find Trimps on:",
+      "steam": "Steam",
+      "reddit": "Reddit",
+      "discord": "Discord",
+      "header": "Trimps Updates!"
     },
     "aria": {
       "configure_displayed_messages": "Configure Displayed Messages",

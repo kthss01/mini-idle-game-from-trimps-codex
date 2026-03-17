@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 const fs = require('fs');
 
-const targets = ['index.html', 'ScreenReader.html', 'indexKong.html', 'Kongregate_Game_Shell.html'];
+const targets = ['index.html', 'ScreenReader.html', 'indexKong.html', 'Kongregate_Game_Shell.html', 'updates.html'];
 const stringsOutput = 'i18n/extracted-ui-strings.json';
 const attrsOutput = 'i18n/extracted-ui-attrs.json';
 

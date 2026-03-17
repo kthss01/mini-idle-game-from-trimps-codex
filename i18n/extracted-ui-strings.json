@@ -155,5 +155,21 @@
   "ui.maps.biome.mountain": "Mountain",
   "ui.maps.biome.forest": "Forest",
   "ui.maps.biome.sea": "Sea",
-  "ui.maps.biome.depths": "Depths"
+  "ui.maps.biome.depths": "Depths",
+  "ui.updates.page_title": "Updates",
+  "ui.updates.find_trimps": "Find Trimps on:",
+  "ui.updates.steam": "Steam",
+  "ui.updates.reddit": "Reddit",
+  "ui.updates.discord": "Discord",
+  "ui.updates.header": "Trimps Updates!",
+  "ui.bone_trader.get_more_bones": "<span class=\"kredSpan\"><img class=\"kredImg\" src=\"imgs/kred_single.png\"></img></span> Get some more bones",
+  "ui.bone_trader.bundle_cta": "<span class=\"glyphicon glyphicon-star\"></span> Click to Bundle 4 Exotic Imp-orts and get 100 free bones! <span class=\"glyphicon glyphicon-star\"></span>",
+  "ui.bone_trader.purchase_title": "Purchase Bones",
+  "ui.bone_trader.purchase_desc": "Bones can be earned in game or purchased here.",
+  "ui.bone_trader.purchase_desc_detail": "In game, you will earn bones from enemies that randomly spawn in the world",
+  "ui.bone_trader.purchase_support": "I love working on this game, but there's still so much to do, and any funds raised through bones will support the continued development of Trimps. Thank you so much for playing!",
+  "ui.bone_trader.back_to_trader": "Back to Trader",
+  "ui.bone_trader.close_all": "Close All",
+  "ui.bone_trader.select_imports": "Select 4 Exotic Imports!",
+  "ui.bone_trader.select_imports_desc": "Click once to select an Imp, click again to deselect"
 }
