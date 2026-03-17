@@ -218,7 +218,18 @@ window.I18N_LOCALES.en = {
       "spire": "Spire",
       "spire_number": "Spire {num}",
       "floor": " Floor {floor}",
-      "zone": "Zone"
+      "zone": "Zone",
+      "repeat_until": {
+        "description": "<p><b>Repeat Forever</b> will cause the map to continually repeat if Repeat Maps is enabled.</p><p><b>Repeat to 10</b> will repeat unless you have 10 Map Bonus stacks.</p><p><b>Repeat for Items</b> will repeat unless there are no more special items left for that level of map.</p><p><b>Repeat for Any</b> will repeat unless there are no special items available AND you can not earn more Map Bonus stacks.</p><p><b>This setting only matters if Repeat is on. Toggling Repeat off will still leave the map when it is finished no matter what.</b></p>",
+        "forever": "Repeat Forever",
+        "to_10": "Repeat to 10",
+        "for_items": "Repeat for Items",
+        "for_any": "Repeat for Any"
+      },
+      "exit_to": {
+        "maps": "Exit to Maps",
+        "world": "Exit to World"
+      }
     },
     "maps": {
       "abandon_soldiers": "Abandon Soldiers",
@@ -247,6 +258,37 @@ window.I18N_LOCALES.en = {
         "depths": "Depths"
       }
     },
+    "tutorial": {
+      "bookmarks": ["Battle", "Zones", "Tips 1", "Tips 2", "Found a Map", "Map Chamber", "Mapping", "Equipment Prestige", "Custom Maps", "Map Settings", "Trapstorm", "Unique Maps", "Block", "Bounty", "Anger", "Portal"],
+      "reminder_toggle_advisor": "<br/><br/><i>Remember you can toggle the ADVISOR window by pressing V or clicking the gold star by the enemy's name.</i>"
+    },
+    "maz": {
+      "title": "Set Map At Zone",
+      "actions": {
+        "add_row": "+ Add Row",
+        "help": "Help"
+      },
+      "repeat_until": {
+        "dont_change": "Don't Change",
+        "climb_bw_to_level": "Climb BW to Level",
+        "repeat_25_times": "Repeat 25 Times",
+        "repeat_50_times": "Repeat 50 Times",
+        "repeat_100_times": "Repeat 100 Times",
+        "repeat_x_times": "Repeat X Times"
+      }
+    },
+    "save": {
+      "disabled_due_to_error": "Due to an error occuring, saving has been disabled to prevent corruption",
+      "game_saved": "Game Saved!",
+      "failed_backup": "For some reason, your game is not saving. Make sure you export and back up your save!",
+      "storage_corrupted": "Sorry, it looks like your browser storage has been corrupted. Please clear your storage by going to Tools -> Clear Recent History -> Cookies and set time range to 'Everything'. This will remove the corrupted browser storage across all sites."
+    },
+    "generator": {
+      "state": {
+        "dont_change_at_zone": "Don't Change At Zone"
+      }
+    },
+
     "challenges": {
       "hypothermia": {
         "perks_locked_html": "<span style='color: red'>You cannot change your perks while on the Hypothermia Challenge!</span>"

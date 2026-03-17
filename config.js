@@ -1172,9 +1172,9 @@ var toReturn = {
 			},
 			repeatUntil: {
 				enabled: 0,
-				description: "<p><b>Repeat Forever</b> will cause the map to continually repeat if Repeat Maps is enabled.</p><p><b>Repeat to 10</b> will repeat unless you have 10 Map Bonus stacks.</p><p><b>Repeat for Items</b> will repeat unless there are no more special items left for that level of map.</p><p><b>Repeat for Any</b> will repeat unless there are no special items available AND you can not earn more Map Bonus stacks.</p><p><b>This setting only matters if Repeat is on. Toggling Repeat off will still leave the map when it is finished no matter what.</b></p>",
+				description: i18n.t('ui.map.repeat_until.description'),
 				get titles(){
-					var arr = ["Repeat Forever", "Repeat to 10", "Repeat for Items", "Repeat for Any"];
+					var arr = [i18n.t('ui.map.repeat_until.forever'), i18n.t('ui.map.repeat_until.to_10'), i18n.t('ui.map.repeat_until.for_items'), i18n.t('ui.map.repeat_until.for_any')];
 					if (this.enabled == 0 && game.global.mapCounterGoal > game.global.mapRunCounter){
 						var count = (game.global.mapCounterGoal - game.global.mapRunCounter);
 						arr[0] = "Repeat " + count + " Time" + needAnS(count);
@@ -1190,7 +1190,7 @@ var toReturn = {
 			exitTo: {
 				enabled: 0,
 				description: "Choose whether to go to the Maps Screen or World after completing a map.",
-				titles: ["Exit to Maps", "Exit to World"],
+				titles: [i18n.t('ui.map.exit_to.maps'), i18n.t('ui.map.exit_to.world')],
 				locked: true,
 				secondLocation: ['toggleexitToCM']
 			},
@@ -1448,7 +1448,7 @@ var toReturn = {
 					else{
 						this.U1Mode = (this.U1Mode == 'a') ? 'b' : 'a';
 					}
-					tooltip('Set Map At Zone', null, 'update');
+					tooltip(i18n.t('ui.maz.title'), null, 'update');
 				},
 				storeSetting: function(setting){
 					if (game.global.universe == 2){
