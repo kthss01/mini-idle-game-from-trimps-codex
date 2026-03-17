@@ -737,7 +737,7 @@
 									</div>
 									<div class="col-xs-1" style="font-size: 1.5em; padding: 0;">
 										<div id="lootBdContainer">
-											<span id="lootBdBtn" aria-label="Loot Breakdown" class="icomoon icon-gift2 pointer" onclick="getLootBd('Food/Wood/Metal')"></span>
+										<span id="lootBdBtn" data-i18n-attr="aria-label:ui.screen_reader.loot_breakdown" aria-label="Loot Breakdown" class="icomoon icon-gift2 pointer" onclick="getLootBd('Food/Wood/Metal')"></span>
 											<div id="openTutorialContainer" style="display: none;">
 												<span id="openTutorialBtn" class="flashNo icomoon icon-star pointer tutorialStar" onclick="tutorial.popup()" style="color: gold;"></span>
 											</div>
@@ -776,7 +776,7 @@
 							<div class="battleSideBtnContainer">
 								<button id="mapsBtn" class="btn btn-warning fightBtn" style="display: none">
 									<div id='mapsBtnText' onclick="mapsClicked()" data-i18n="ui.battle.maps">Maps</div>
-									<button aria-label='Configure Map Settings. Press S to view the popup.' onclick="tooltip('Configure Maps', null, 'update')">
+									<button data-i18n-attr="aria-label:ui.screen_reader.configure_map_settings" aria-label='Configure Map Settings. Press S to view the popup.' onclick="tooltip('Configure Maps', null, 'update')">
 										<span class='glyphicon glyphicon-cog'>Configure Maps</span></button>
 									</button>
 							</div>
@@ -823,15 +823,15 @@
 									<span id="openTutorialBtn2" class="flashNo icomoon icon-star pointer tutorialStar" onclick="tutorial.popup()" style="color: gold;"></span>
 								</div>
 								<div id='advMapsControlBtns'>
-									<button id='advMapsHideBtn'  aria-label="Show/Hide map settings" class='icomoon icon-minus-circle pointer' onclick='hideAdvMaps()' >&nbsp;</button>
-									<button id='advMapsPreset1'  aria-label="Load Preset 1" class='pointer mapPreset presetSelectionOff' onclick='selectAdvMapsPreset(1)' >1</button>
-									<button id='advMapsPreset2'  aria-label="Load Preset 2" class='pointer mapPreset presetSelectionOff' onclick='selectAdvMapsPreset(2)' >2</button>
-									<button id='advMapsPreset3'  aria-label="Load Preset 3" class='pointer mapPreset presetSelectionOff' onclick='selectAdvMapsPreset(3)' >3</button>
-									<button id='advMapsPreset4'  aria-label="Load Preset 4" class='pointer mapPreset presetSelectionOff' onclick='selectAdvMapsPreset(4)' >4</button>
-									<button id='advMapsPreset5'  aria-label="Load Preset 5" class='pointer mapPreset presetSelectionOff' onclick='selectAdvMapsPreset(5)' >5</button>
-									<button id='advMapsSaveBtn'  aria-label="Save Settings to Selected Preset" class='icomoon icon-save pointer' onclick='saveAdvMaps()' >&nbsp;</button>	
-									<button id='advMapsResetBtn'  aria-label="Reset The Selected Preset" class='icomoon icon-refresh pointer' onclick='resetAdvMaps(true)' >&nbsp;</button>											
-									<button id='advMapsRecycleBtn'  aria-label="Recycle All Maps" class="icomoon icon-trash-o pointer iconStateBad"  onclick="recycleBelow(false)">&nbsp;</button>
+									<button id='advMapsHideBtn' data-i18n-attr="aria-label:ui.screen_reader.show_hide_map_settings" aria-label="Show/Hide map settings" class='icomoon icon-minus-circle pointer' onclick='hideAdvMaps()' >&nbsp;</button>
+									<button id='advMapsPreset1' data-i18n-attr="aria-label:ui.screen_reader.load_preset_1" aria-label="Load Preset 1" class='pointer mapPreset presetSelectionOff' onclick='selectAdvMapsPreset(1)' >1</button>
+									<button id='advMapsPreset2' data-i18n-attr="aria-label:ui.screen_reader.load_preset_2" aria-label="Load Preset 2" class='pointer mapPreset presetSelectionOff' onclick='selectAdvMapsPreset(2)' >2</button>
+									<button id='advMapsPreset3' data-i18n-attr="aria-label:ui.screen_reader.load_preset_3" aria-label="Load Preset 3" class='pointer mapPreset presetSelectionOff' onclick='selectAdvMapsPreset(3)' >3</button>
+									<button id='advMapsPreset4' data-i18n-attr="aria-label:ui.screen_reader.load_preset_4" aria-label="Load Preset 4" class='pointer mapPreset presetSelectionOff' onclick='selectAdvMapsPreset(4)' >4</button>
+									<button id='advMapsPreset5' data-i18n-attr="aria-label:ui.screen_reader.load_preset_5" aria-label="Load Preset 5" class='pointer mapPreset presetSelectionOff' onclick='selectAdvMapsPreset(5)' >5</button>
+									<button id='advMapsSaveBtn' data-i18n-attr="aria-label:ui.screen_reader.save_selected_preset" aria-label="Save Settings to Selected Preset" class='icomoon icon-save pointer' onclick='saveAdvMaps()' >&nbsp;</button>	
+									<button id='advMapsResetBtn' data-i18n-attr="aria-label:ui.screen_reader.reset_selected_preset" aria-label="Reset The Selected Preset" class='icomoon icon-refresh pointer' onclick='resetAdvMaps(true)' >&nbsp;</button>									
+									<button id='advMapsRecycleBtn' data-i18n-attr="aria-label:ui.screen_reader.recycle_all_maps" aria-label="Recycle All Maps" class="icomoon icon-trash-o pointer iconStateBad"  onclick="recycleBelow(false)">&nbsp;</button>
 								</div>
 								<div id="mapLevelContainer" class="col-xs-4">
 									Level <input onkeyup="updateMapCost()" type="number" id="mapLevelInput" onfocusout="checkMapLevelInput(this)">

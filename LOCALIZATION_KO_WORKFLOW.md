@@ -20,10 +20,12 @@
 
 ## 권장 작업 순서
 1. HTML에 `data-i18n` 키를 반영합니다.
-2. `node scripts/extract-i18n.js`로 키 목록을 갱신합니다.
-3. 런타임 문자열이 있는 경우 `main.js`, `objects.js`, `updates.js`, `config.js`에서 `i18n.t('...')` 형태로 키를 적용합니다.
-4. `i18n/locales/en.js`, `i18n/locales/ko.js`에 번역을 반영합니다.
-5. `node scripts/validate-i18n.js`를 실행해 아래 결과를 기준으로 수정 우선순위를 정합니다.
+2. `data-i18n-attr`를 사용해 `title`, `placeholder`, `aria-label` 같은 속성 문자열도 키로 연결합니다.
+3. `node scripts/extract-i18n.js`로 `i18n/extracted-ui-strings.json`(문자열)과 `i18n/extracted-ui-attrs.json`(속성)을 함께 재생성합니다.
+   - 현재 추출 대상: `index.html`, `indexKong.html`, `ScreenReader.html`, `Kongregate_Game_Shell.html`, `updates.html`
+4. 런타임 문자열이 있는 경우 `main.js`, `objects.js`, `updates.js`, `config.js`에서 `i18n.t('...')` 형태로 키를 적용합니다.
+5. `i18n/locales/en.js`, `i18n/locales/ko.js`에 번역을 반영합니다.
+6. `node scripts/validate-i18n.js`를 실행해 아래 결과를 기준으로 수정 우선순위를 정합니다.
    - `missing`: 로케일 파일에 반드시 추가해야 하는 키(최우선)
    - `unused`: 로케일에만 남아 있는 키(정리 대상)
    - `runtime-only`: 코드(`i18n.t`)에서만 사용되고 추출 파일에는 없는 키(추출 범위 확장 또는 예외 검토)

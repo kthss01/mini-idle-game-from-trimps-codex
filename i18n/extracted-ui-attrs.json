@@ -455,5 +455,49 @@
   "ui.kong.shell_title": {
     "text": "Kongregate Game Shell",
     "title": null
+  },
+  "ui.screen_reader.loot_breakdown": {
+    "text": null,
+    "aria-label": "Loot Breakdown"
+  },
+  "ui.screen_reader.configure_map_settings": {
+    "text": null,
+    "aria-label": "Configure Map Settings. Press S to view the popup."
+  },
+  "ui.screen_reader.show_hide_map_settings": {
+    "text": null,
+    "aria-label": "Show/Hide map settings"
+  },
+  "ui.screen_reader.load_preset_1": {
+    "text": null,
+    "aria-label": "Load Preset 1"
+  },
+  "ui.screen_reader.load_preset_2": {
+    "text": null,
+    "aria-label": "Load Preset 2"
+  },
+  "ui.screen_reader.load_preset_3": {
+    "text": null,
+    "aria-label": "Load Preset 3"
+  },
+  "ui.screen_reader.load_preset_4": {
+    "text": null,
+    "aria-label": "Load Preset 4"
+  },
+  "ui.screen_reader.load_preset_5": {
+    "text": null,
+    "aria-label": "Load Preset 5"
+  },
+  "ui.screen_reader.save_selected_preset": {
+    "text": null,
+    "aria-label": "Save Settings to Selected Preset"
+  },
+  "ui.screen_reader.reset_selected_preset": {
+    "text": null,
+    "aria-label": "Reset The Selected Preset"
+  },
+  "ui.screen_reader.recycle_all_maps": {
+    "text": null,
+    "aria-label": "Recycle All Maps"
   }
 }
