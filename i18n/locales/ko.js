@@ -68,11 +68,11 @@ window.I18N_LOCALES.ko = {
       "page_title": "Trimps 5.10.1 (스크린 리더 버전)",
       "info_title": "스크린 리더 정보",
       "info_line_1": "이 게임은 툴팁에 추가 정보를 표시하는 여러 가지 방법을 사용합니다.",
-      "info_line_2": "shift+/는 모든 요소에서 작동하지만 포커스와 NVDA 설정이 필요합니다. 추가 정보가 있는 모든 요소는 tab으로 포커스할 수 있습니다.",
-      "info_line_3": "shift+enter는 클릭 가능한 요소가 아닌 button 요소에서만 동작하며, 포커스가 필요하지 않습니다.",
-      "info_line_4": "별도의 정보 버튼을 활성화할 수도 있으며, enter로 반응합니다.",
-      "info_line_5": "shift+/ 툴팁을 사용하려면 NVDA + 8을 켜고 NVDA 설정 > browse mode에서 \"trap all command gestures from reaching the document.\"를 비활성화하세요.",
-      "info_line_6": "게임 설정의 \"Show Screen Read Info.\"를 통해 이 안내를 표시/숨김할 수 있습니다.",
+      "info_line_2": "shift+/는 모든 요소에서 작동하지만 포커스와 NVDA 설정이 필요합니다. 추가 정보가 있는 모든 요소는 Tab 키로 포커스를 이동할 수 있습니다.",
+      "info_line_3": "shift+enter는 클릭 가능한 요소가 아닌 버튼 요소에서만 동작하며, 포커스가 필요하지 않습니다.",
+      "info_line_4": "별도의 정보 버튼을 활성화할 수도 있으며, Enter 키로 반응합니다.",
+      "info_line_5": "shift+/ 툴팁을 사용하려면 NVDA + 8을 켜고 NVDA 설정 > 탐색 모드(Browse Mode)에서 \"문서로 전달되는 모든 명령 제스처 차단(trap all command gestures from reaching the document.)\" 옵션을 비활성화하세요.",
+      "info_line_6": "게임 설정의 \"스크린 리더 정보 표시(Show Screen Read Info.)\"를 통해 이 안내를 표시/숨김할 수 있습니다.",
       "loot_breakdown": "전리품 분석",
       "configure_map_settings": "맵 설정 구성. 팝업을 보려면 S를 누르세요.",
       "show_hide_map_settings": "맵 설정 표시/숨기기",
@@ -127,6 +127,18 @@ window.I18N_LOCALES.ko = {
       "auto_traps_off": "자동 함정 꺼짐",
       "build": "건설",
       "empty": "대기열이 비어 있습니다..."
+    },
+    "trimps": {
+      "breeding": "번식 중",
+      "employed": "배치됨",
+      "check_traps_html": "함정 확인 (<span id=\"trimpTrapText\">1</span>)",
+      "trapping_html": "포획 중 (<span id=\"trimpTrapText2\">1</span>)"
+    },
+    "log_filters": {
+      "story": "스토리",
+      "loot": "전리품",
+      "unlocks": "해금",
+      "combat": "전투"
     },
     "panels": {
       "buildings": "건물",
