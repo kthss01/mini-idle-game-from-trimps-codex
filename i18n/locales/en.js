@@ -126,7 +126,8 @@ window.I18N_LOCALES.en = {
     "queue": {
       "auto_traps_off": "AutoTraps Off",
       "build": "Build",
-      "empty": "Nothing in queue..."
+      "empty": "Nothing in queue...",
+      "time_remaining": " - {seconds} Seconds"
     },
     "trimps": {
       "breeding": "breeding",
@@ -150,7 +151,29 @@ window.I18N_LOCALES.en = {
       "auto_jobs": "AutoJobs"
     },
     "jobs": {
-      "fire": "Fire"
+      "fire": "Fire",
+      "workspace_single": "{count} workspace",
+      "workspace_plural": "{count} workspaces"
+    },
+    "buildings": {
+      "trap": {
+        "tooltip_single": "Each Trap allows you to catch {amount} thing.",
+        "tooltip_plural": "Each Trap allows you to catch {amount} things."
+      }
+    },
+    "entities": {
+      "buildings": {
+        "Trap": "Trap",
+        "Barn": "Barn",
+        "Shed": "Shed",
+        "Forge": "Forge"
+      },
+      "jobs": {
+        "Farmer": "Farmer",
+        "Lumberjack": "Lumberjack",
+        "Miner": "Miner",
+        "Scientist": "Scientist"
+      }
     },
     "battle": {
       "fight": "Fight",
