@@ -2106,7 +2106,9 @@ function addTooltipPricing(toTip, what, isItIn) {
 							percentOfTotal = "(" + percentOfTotal + "%)";
 						}
 					}
-					costText += '<span class="' + canAfford + '">' + item + ':&nbsp;' + prettify(price) + '&nbsp;' + percentOfTotal + '</span>, ';
+						var itemLabel = (window.i18n && typeof window.i18n.t === 'function') ? i18n.t('ui.resources.' + item) : item;
+						if (itemLabel == 'ui.resources.' + item) itemLabel = item;
+						costText += '<span class="' + canAfford + '">' + itemLabel + ':&nbsp;' + prettify(price) + '&nbsp;' + percentOfTotal + '</span>, ';
 				}
 				else
 				costText += item + ": " + prettify(price) + ", ";
@@ -5780,8 +5782,19 @@ function updateSideTrimps() {
 	const s = free > 1 ? 's' : '';
 
 	elem = document.getElementById('jobsTitleUnemployed');
-	elemText = `${prettify(free)} workspace${s}`;
+	if (window.i18n && typeof window.i18n.t === 'function') {
+		elemText = i18n.t((free === 1) ? 'ui.jobs.workspace_single' : 'ui.jobs.workspace_plural', { count: prettify(free) });
+	} else {
+		elemText = `${prettify(free)} workspace${s}`;
+	}
 	if (elem.innerHTML !== elemText && !usingRealTimeOffline) elem.innerHTML = elemText;
+}
+
+function getLocalizedEntityName(type, key, fallback) {
+	if (!window.i18n || typeof window.i18n.t !== 'function') return fallback;
+	const translationKey = `ui.entities.${type}.${key}`;
+	const translated = i18n.t(translationKey);
+	return translated === translationKey ? fallback : translated;
 }
 
 function unlockBuilding(what) {
@@ -5898,6 +5911,7 @@ function makeBuildJobUpgEquipButtonHTML(type, what, owned) {
 	const efficientArmor = (type == "equipment") ? "efficientNo " : "";
 	let displayName = what;
 	if (game[type][what].name) displayName = game[type][what].name;
+	displayName = getLocalizedEntityName(type, what, displayName);
 	let html = `<${tagName} class="${efficientArmor}thingColorCanNotAfford thing noselect pointer ${buttonType[type].toLowerCase()}Thing" id="${what}" onclick="buy${buttonType[type]}('${what}')" ${tooltips}>
 			<span class="thingName"><span id="${what}Alert" class="alert badge">${alertMessage}</span>${displayName} ${numeralSpan}</span>${sep} 
 			<span class="thingOwned">${(type == 'equipment' ? "Level:" : "")} <span id="${what}Owned">${owned}</span></span>`
