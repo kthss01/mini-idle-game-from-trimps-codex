@@ -11436,6 +11436,10 @@ var toReturn = {
 			craftTime: 5,
 			tooltip: function () {
 				var catchAmt = (getPerkLevel("Bait") + 1);
+				if (window.i18n && typeof window.i18n.t === 'function') {
+					var key = (catchAmt > 1) ? 'ui.buildings.trap.tooltip_plural' : 'ui.buildings.trap.tooltip_single';
+					return i18n.t(key, { amount: prettify(catchAmt) });
+				}
 				var s = (catchAmt > 1) ? "s" : "";
 				return "Each Trap allows you to catch " + prettify(catchAmt) + " thing" + s + ".";
 			},

@@ -4805,7 +4805,9 @@ function canAffordBuilding(what, take, buildCostString, isEquipment, updatingLab
 				percent = (game.resources[costItem].owned > 0) ? prettify(((price / game.resources[costItem].owned) * 100).toFixed(1)) : 0;
 				percent = "(" + percent + "%)";
 			}
-			costString += '<span class="' + color + '">' + costItem + ':&nbsp;' + prettify(price) + '&nbsp;' + percent + '</span>, ';
+			var costLabel = (window.i18n && typeof window.i18n.t === 'function') ? i18n.t('ui.resources.' + costItem) : costItem;
+			if (costLabel == 'ui.resources.' + costItem) costLabel = costItem;
+			costString += '<span class="' + color + '">' + costLabel + ':&nbsp;' + prettify(price) + '&nbsp;' + percent + '</span>, ';
 		}
 		if (take) game.resources[costItem].owned -= price;
 	}
@@ -4923,7 +4925,7 @@ function craftBuildings(makeUp) {
 
 		let timeLeft = (game.global.timeLeftOnCraft / modifier).toFixed(1);
 		if (timeLeft < 0.1 || isNumberBad(timeLeft)) timeLeft = 0.1;
-		elemText = ` - ${timeLeft} Seconds`;
+		elemText = (window.i18n && typeof window.i18n.t === 'function') ? i18n.t('ui.queue.time_remaining', { seconds: timeLeft }) : ` - ${timeLeft} Seconds`;
 		if (timeRemaining && timeRemaining.textContent !== elemText) timeRemaining.textContent = elemText;
 
 		if (buildingsBar) buildingsBar.style.opacity = game.options.menu.queueAnimation.enabled ? percent : '0';
@@ -5008,8 +5010,9 @@ function setNewCraftItem() {
 	if (elem){
 		var timeElem = document.getElementById("queueTimeRemaining");
 		if (timeLeft < 0.1 || isNumberBad(timeLeft)) timeLeft = 0.1;
-		if (!timeElem) elem.innerHTML += "<span id='queueTimeRemaining'> - " + timeLeft + " Seconds</span><div id='animationDiv'></div>";
-		else timeElem.textContent = " - " + timeLeft + " Seconds";
+		var timeText = (window.i18n && typeof window.i18n.t === 'function') ? i18n.t('ui.queue.time_remaining', { seconds: timeLeft }) : (" - " + timeLeft + " Seconds");
+		if (!timeElem) elem.innerHTML += "<span id='queueTimeRemaining'>" + timeText + "</span><div id='animationDiv'></div>";
+		else timeElem.textContent = timeText;
 	}
 	if (elem && timeLeft <= 0.1) {timeLeft = 0.1; if (game.options.menu.queueAnimation.enabled) document.getElementById("animationDiv").style.opacity = '1'}
 }
@@ -5387,7 +5390,9 @@ function getTooltipJobText(what, toBuy) {
     for (var item in job.cost) {
 		var result = (checkJobItem(what, false, item, false, toBuy))
         var color =  (result === 0) ? "orange" : ((result == true) ? "green" : "red");
-        fullText += '<span class="' + color + '">' + item + ':&nbsp;' + checkJobItem(what, false, item, true, toBuy) + '</span>, ';
+		var itemLabel = (window.i18n && typeof window.i18n.t === 'function') ? i18n.t('ui.resources.' + item) : item;
+		if (itemLabel == 'ui.resources.' + item) itemLabel = item;
+	        fullText += '<span class="' + color + '">' + itemLabel + ':&nbsp;' + checkJobItem(what, false, item, true, toBuy) + '</span>, ';
     }
     fullText = fullText.slice(0, -2);
     return fullText;

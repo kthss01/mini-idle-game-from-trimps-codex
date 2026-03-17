@@ -126,7 +126,8 @@ window.I18N_LOCALES.ko = {
     "queue": {
       "auto_traps_off": "자동 함정 꺼짐",
       "build": "건설",
-      "empty": "대기열이 비어 있습니다..."
+      "empty": "대기열이 비어 있습니다...",
+      "time_remaining": " - {seconds}초"
     },
     "trimps": {
       "breeding": "번식 중",
@@ -150,7 +151,29 @@ window.I18N_LOCALES.ko = {
       "auto_jobs": "자동 직업"
     },
     "jobs": {
-      "fire": "해고"
+      "fire": "해고",
+      "workspace_single": "{count} 작업 공간",
+      "workspace_plural": "{count} 작업 공간"
+    },
+    "buildings": {
+      "trap": {
+        "tooltip_single": "각 함정은 {amount}마리를 포획할 수 있습니다.",
+        "tooltip_plural": "각 함정은 {amount}마리를 포획할 수 있습니다."
+      }
+    },
+    "entities": {
+      "buildings": {
+        "Trap": "함정",
+        "Barn": "헛간",
+        "Shed": "창고",
+        "Forge": "대장간"
+      },
+      "jobs": {
+        "Farmer": "농부",
+        "Lumberjack": "벌목꾼",
+        "Miner": "광부",
+        "Scientist": "과학자"
+      }
     },
     "battle": {
       "fight": "전투",
