@@ -301,16 +301,16 @@
 						
 					</div>
 					<div id="unempHide" style="visibility: hidden">
-						<span id="trimpsUnemployed">0</span>&nbsp;<span id='trimpsBreedingTitle'>breeding</span>
+						<span id="trimpsUnemployed">0</span>&nbsp;<span id='trimpsBreedingTitle' data-i18n="ui.trimps.breeding">breeding</span>
 						<br/><span id="trimpsPs" class="pointer sizeSecRegular noselect bdHover psColorWhite" onclick="getTrimpPs()">+0/sec</span>
 						<br/>
 					</div>
 					<div id="empHide" style="visibility: hidden">
-						<span id="trimpsEmployed">0</span>/<span id="maxEmployed">0</span> employed
+						<span id="trimpsEmployed">0</span>/<span id="maxEmployed">0</span> <span data-i18n="ui.trimps.employed">employed</span>
 					</div>
 					<div id="trapArea">
-						<div id="trimpsCollectBtn" class="workBtn workColorOff pointer noSelect" onclick="setGather('trimps')">Check&nbsp;Traps&nbsp;(<span id="trimpTrapText">1</span>)</div>
-						<div id="trimpsCollecting" class="collecting" style="display: none">Trapping (<span id="trimpTrapText2">1</span>)</div>
+						<div id="trimpsCollectBtn" class="workBtn workColorOff pointer noSelect" onclick="setGather('trimps')" data-i18n-html="ui.trimps.check_traps_html">Check&nbsp;Traps&nbsp;(<span id="trimpTrapText">1</span>)</div>
+						<div id="trimpsCollecting" class="collecting" style="display: none" data-i18n-html="ui.trimps.trapping_html">Trapping (<span id="trimpTrapText2">1</span>)</div>
 						<div class="progress" id="trappingProgress">
 							<div class="progress-bar" id="trappingBar" role="progressbar"></div>
 						</div>
@@ -321,16 +321,16 @@
 				<div id="logContainer">
 					<div class="btn-group btn-group-justified" id="logBtnGroup" role="group">
 						<div class="btn-group" role="group">
-							<button id="StoryFilter" onclick="filterMessage('Story')" type="button" class="btn btn-success logFlt">Story</button>
+							<button id="StoryFilter" onclick="filterMessage('Story')" type="button" class="btn btn-success logFlt" data-i18n="ui.log_filters.story">Story</button>
 						</div>
 						<div class="btn-group" role="group">
-							<button id="LootFilter" onclick="filterMessage('Loot')" type="button" class="btn btn-success logFlt">Loot</button>
+							<button id="LootFilter" onclick="filterMessage('Loot')" type="button" class="btn btn-success logFlt" data-i18n="ui.log_filters.loot">Loot</button>
 						</div>
 						<div class="btn-group" role="group">
-							<button id="UnlocksFilter" onclick="filterMessage('Unlocks')" type="button" class="btn btn-success logFlt">Unlocks</button>
+							<button id="UnlocksFilter" onclick="filterMessage('Unlocks')" type="button" class="btn btn-success logFlt" data-i18n="ui.log_filters.unlocks">Unlocks</button>
 						</div>
 						<div class="btn-group" role="group">
-							<button id="CombatFilter" type="button" onclick="filterMessage('Combat')" class="btn btn-success logFlt">Combat</button>
+							<button id="CombatFilter" type="button" onclick="filterMessage('Combat')" class="btn btn-success logFlt" data-i18n="ui.log_filters.combat">Combat</button>
 						</div>
 						<div id="logConfigHolder" class="btn-group" role="group">
 							<button id="logConfigBtn" type="button" onclick="tooltip('Message Config', null, 'update')" class="btn btn-default logFlt"><span class='glyphicon glyphicon-cog'></span></button>
