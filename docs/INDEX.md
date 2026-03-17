@@ -15,6 +15,9 @@
 - [appendix-glossary.md](./appendix-glossary.md)
 - [DOCUMENTATION_GOVERNANCE.md](./DOCUMENTATION_GOVERNANCE.md)
 
+## 플레이어 가이드
+- [game-guide-ko.md](./game-guide-ko.md)
+
 ## 루트 문서 → 새 문서 매핑
 | 기존 루트 문서 | 새 문서 경로 |
 |---|---|
