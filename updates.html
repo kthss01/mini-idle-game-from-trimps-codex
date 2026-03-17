@@ -1,6 +1,9 @@
 <html>
 <head>
-        <title>Updates</title>
+        <title data-i18n="ui.updates.page_title">Updates</title>
+        <script defer src="i18n/locales/en.js"></script>
+        <script defer src="i18n/locales/ko.js"></script>
+        <script defer src="i18n/i18n.js"></script>
 </head>
 <style>
 	body {
@@ -105,25 +108,25 @@
 	<table id="linksTable">
 		<tbody>
 			<tr id="linksTableTitle">
-				<td colspan="3">Find Trimps on:</td>
+				<td colspan="3" data-i18n="ui.updates.find_trimps">Find Trimps on:</td>
 			</tr>
 			<tr id="linksRow" class="linksRow">
 				<td>
-					<a href="https://store.steampowered.com/app/1877960/Trimps/" target="_blank"><img id="steamLogo" src='imgs/steam_logo.png'/><div class='linksSpacer'></div>Steam</a>
+					<a href="https://store.steampowered.com/app/1877960/Trimps/" target="_blank" data-i18n="ui.updates.steam"><img id="steamLogo" src='imgs/steam_logo.png'/><div class='linksSpacer'></div>Steam</a>
 				</td>
 				<td>
-					<a href="https://reddit.com/r/Trimps" target="_blank"><img id="redditLogo" src='imgs/reddit_logo.png'/><div class='linksSpacer'></div>Reddit</a>
+					<a href="https://reddit.com/r/Trimps" target="_blank" data-i18n="ui.updates.reddit"><img id="redditLogo" src='imgs/reddit_logo.png'/><div class='linksSpacer'></div>Reddit</a>
 				</td>
 				<td>
-					<a href="https://discord.gg/Trimps" target="_blank"><img id="discordLogo" src='imgs/discord_logo.png'/><br/>Discord</a>
+					<a href="https://discord.gg/Trimps" target="_blank" data-i18n="ui.updates.discord"><img id="discordLogo" src='imgs/discord_logo.png'/><br/>Discord</a>
 				</td>
 			</tr>
 			<tr id="desktopLinksRow" class="linksRow" style="display: none">
 				<td>
-					<a onclick="nwOpen('https://reddit.com/r/trimps')"><img id="redditLogo" src='imgs/reddit_logo.png'/><div class='linksSpacer'></div>Reddit</a>
+					<a onclick="nwOpen('https://reddit.com/r/trimps')" data-i18n="ui.updates.reddit"><img id="redditLogo" src='imgs/reddit_logo.png'/><div class='linksSpacer'></div>Reddit</a>
 				</td>
 				<td>
-					<a onclick = "nwOpen('https://discord.gg/trimps')" target="_blank"><img id="discordLogo" src='imgs/discord_logo.png'/><br/>Discord</a>
+					<a onclick = "nwOpen('https://discord.gg/trimps')" target="_blank" data-i18n="ui.updates.discord"><img id="discordLogo" src='imgs/discord_logo.png'/><br/>Discord</a>
 				</td>
 			</tr>
 		</tbody>
@@ -138,7 +141,7 @@
 			gui.Shell.openExternal(link)
 		}
 	</script>
-<div style="font-size: 1.3em; font-weight: bold; display: block; width: 100%; text-align: center;">Trimps Updates!</div>
+<div style="font-size: 1.3em; font-weight: bold; display: block; width: 100%; text-align: center;" data-i18n="ui.updates.header">Trimps Updates!</div>
 <ul class="betterList">
 	<li>5.10.1 - 2/15/25</li>
 	<ul>

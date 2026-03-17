@@ -24,7 +24,7 @@
 if (typeof kongregate === 'undefined' && document.getElementById("boneBtn") !== null) {
 	var boneBtn = document.getElementById("getBonesBtn");
 	boneBtn.onclick = "";
-	boneBtn.innerHTML = "Kongregate API not loaded! You cannot submit high scores or spend Kreds. Try refreshing or contacting Kongregate support!";
+	boneBtn.innerHTML = i18n.t('ui.message.kong.api_not_loaded');
 	boneBtn.style.backgroundColor = "#d9534f";
 	document.getElementById("getBundleBtn").style.display = "none";
 }
@@ -219,7 +219,7 @@ function save(exportThis, fromManual) {
     saveString = LZString.compressToBase64(JSON.stringify(saveGame));
     if (exportThis) return saveString;
 	if (disableSaving) {
-		message("Due to an error occuring, saving has been disabled to prevent corruption", "Notices");
+		message(i18n.t('ui.save.disabled_due_to_error'), "Notices");
 		postMessages();
 		return;
 	}
@@ -231,18 +231,18 @@ function save(exportThis, fromManual) {
 		if (typeof greenworks !== 'undefined') saveToSteam(saveString);
 		localStorage.setItem("trimpSave1",saveString);
 		if (localStorage.getItem("trimpSave1") == saveString){
-			message("Game Saved!", "Notices");
+			message(i18n.t('ui.save.game_saved'), "Notices");
 		}
 		else {
-			message("For some reason, your game is not saving. Make sure you export and back up your save!", "Notices");
+			message(i18n.t('ui.save.failed_backup'), "Notices");
 		}
 	}
 	catch(e){
 		if(e.name == "NS_ERROR_FILE_CORRUPTED") {
-        message("Sorry, it looks like your browser storage has been corrupted. Please clear your storage by going to Tools -> Clear Recent History -> Cookies and set time range to 'Everything'. This will remove the corrupted browser storage across all sites.", "Notices");
+        message(i18n.t('ui.save.storage_corrupted'), "Notices");
 		}
 		else
-		message("For some reason, your game is not saving. Make sure you export and back up your save!", "Notices");
+		message(i18n.t('ui.save.failed_backup'), "Notices");
 		}
 
 	if (game.options.menu.usePlayFab.enabled == 1 && playFabId){
@@ -9612,7 +9612,7 @@ function toggleGenStateConfig(elem, num){
 function getGenStateConfigBtnText(num){
 	var text;
 	switch(num){
-		case -1: text = "Don't Change At Zone"; break;
+		case -1: text = i18n.t('ui.generator.state.dont_change_at_zone'); break;
 		case 0: text = "Set to Gain Fuel"; break;
 		case 1: text = "Set to Gain Mi"; break;
 		case 2: text = "Set to Hybrid"; break;
@@ -10812,10 +10812,10 @@ function mapsClicked(confirmed) {
         return;
     }
     if (game.global.fighting && !game.global.preMapsActive) {
-		message("Waiting to travel until your soldiers are finished.", "Notices");
+		message(i18n.t("ui.alert.map.waiting_for_soldiers"), "Notices");
 
 		document.getElementById("mapsBtn").className = "btn btn-warning fightBtn shrinkBtnText";
-		document.getElementById("mapsBtnText").innerHTML = "Abandon Soldiers";
+		document.getElementById("mapsBtnText").innerHTML = i18n.t("ui.map.abandon_soldiers");
 	}
     if (game.global.preMapsActive) {
         mapsSwitch();
@@ -10850,7 +10850,7 @@ function mapsSwitch(updateOnly, fromRecycle) {
 	if (game.global.currentMapId !== "") currentMapObj = getCurrentMapObject();
 	var mapsBtnText = document.getElementById("mapsBtnText");
 	var recycleBtn = document.getElementById("recycleMapBtn");
-	recycleBtn.innerHTML = "Recycle Map";
+	recycleBtn.innerHTML = i18n.t("ui.map.recycle_map");
 	document.getElementById("mapsBtn").className = "btn btn-warning fightBtn";
 	document.getElementById('togglemapAtZone2').style.display = (game.global.canMapAtZone) ? "block" : "none";
     if (game.global.preMapsActive) {
@@ -10873,17 +10873,17 @@ function mapsSwitch(updateOnly, fromRecycle) {
         document.getElementById("grid").style.display = "none";
         document.getElementById("preMaps").style.display = "block";
         toggleMapGridHtml();
-        mapsBtnText.innerHTML = "World";
+        mapsBtnText.innerHTML = i18n.t("ui.map.world");
         if (game.global.lookingAtMap && !game.global.currentMapId) selectMap(game.global.lookingAtMap, true);
 		else if (game.global.currentMapId === "") {
 			clearMapDescription();
 		} 
 		else {
             selectMap(game.global.currentMapId, true);
-            document.getElementById("selectMapBtn").innerHTML = "Continue";
+            document.getElementById("selectMapBtn").innerHTML = i18n.t("ui.map.continue");
             document.getElementById("selectMapBtn").style.visibility = "visible";
             recycleBtn.style.visibility = "visible";
-			if (currentMapObj.noRecycle) recycleBtn.innerHTML = "Abandon Map";
+			if (currentMapObj.noRecycle) recycleBtn.innerHTML = i18n.t("ui.map.abandon_map");
 		}
 	}
 	else if (game.global.mapsActive) {
@@ -10945,20 +10945,20 @@ function toggleMapGridHtml(on, currentMapObj){
 	if (!on) return;
 	var innerText = game.global.mapBonus;
 	if (game.talents.mapBattery.purchased && game.global.mapBonus == 10) innerText = "<span class='mapBonus10'>" + innerText + "</span>";
-	document.getElementById("mapsBtnText").innerHTML = (game.global.mapBonus) ? "Maps (" + innerText + ")" : "Maps";
+	document.getElementById("mapsBtnText").innerHTML = (game.global.mapBonus) ? i18n.t("ui.map.maps_with_bonus", { bonus: innerText }) : i18n.t("ui.map.maps");
 	document.getElementById("mapBonus").innerHTML = "";
 	document.getElementById("battleHeadContainer").style.display = "block";
 	if (!currentMapObj) return;
 	var worldNumElem = document.getElementById("worldNumber");
 	worldNumElem.style.display = 'inline';
-	worldNumElem.innerHTML = "<br/>Lv: " + currentMapObj.level;
+	worldNumElem.innerHTML = i18n.t("ui.map.level_with_prefix", { level: currentMapObj.level });
 	document.getElementById("worldName").innerHTML = currentMapObj.name;
 }
 
 function clearMapDescription(){
 	document.getElementById("selectMapBtn").style.visibility = "hidden";
 	document.getElementById("recycleMapBtn").style.visibility = "hidden";
-	document.getElementById("selectedMapName").innerHTML = "Select a Map!";
+	document.getElementById("selectedMapName").innerHTML = i18n.t("ui.map.select_a_map");
 	document.getElementById("mapStatsSize").innerHTML = "";
 	document.getElementById("mapStatsDifficulty").innerHTML = "";
 	document.getElementById("mapStatsLoot").innerHTML = "";
@@ -10967,7 +10967,7 @@ function clearMapDescription(){
 }
 
 function setNonMapBox(){
-	document.getElementById("mapsBtnText").innerHTML = "Maps";
+	document.getElementById("mapsBtnText").innerHTML = i18n.t("ui.map.maps");
 	if (game.global.totalVoidMaps > 0) addVoidAlert();
 	var worldNumElem = document.getElementById("worldNumber");
 	worldNumElem.style.display = (game.global.spireActive) ? 'none' : 'inline';
@@ -10975,9 +10975,9 @@ function setNonMapBox(){
 	var mapBonus = document.getElementById("mapBonus");
 	var bonus = game.global.mapBonus;
 	if (game.talents.mapBattery.purchased && bonus == 10) bonus *= 2;
-	if (bonus > 0) mapBonus.innerHTML = prettify(bonus * 20) + "% Map Bonus";
+	if (bonus > 0) mapBonus.innerHTML = i18n.t("ui.map.map_bonus", { bonus: prettify(bonus * 20) });
 	else mapBonus.innerHTML = "";
-	document.getElementById("worldName").innerHTML = (game.global.spireActive) ? ((checkIfSpireWorld(true) == 1) ? "Spire" : "Spire " + romanNumeral(checkIfSpireWorld(true))) + (game.global.universe == 2 ? " Floor " + game.global.spireLevel : "") : "Zone";	
+	document.getElementById("worldName").innerHTML = (game.global.spireActive) ? ((checkIfSpireWorld(true) == 1) ? i18n.t("ui.map.spire") : i18n.t("ui.map.spire_number", { num: romanNumeral(checkIfSpireWorld(true)) })) + (game.global.universe == 2 ? i18n.t("ui.map.floor", { floor: game.global.spireLevel }) : "") : i18n.t("ui.map.zone");	
 }
 
 function repeatClicked(updateOnly){
@@ -10999,7 +10999,7 @@ function selectMap(mapId, force) {
 	if (game.options.menu.pauseGame.enabled && !force) return;
     if (!force && game.global.currentMapId !== "") {
 		var curMap = getCurrentMapObject();
-        message("You must finish or " + ((curMap.noRecycle) ? "abandon" : "recycle") + " your current map before moving on.", "Notices");
+		message(i18n.t('ui.message.map.finish_or_action_current_map', { action: (curMap.noRecycle) ? i18n.t('ui.map.abandon_map_lowercase') : i18n.t('ui.map.recycle_map_lowercase') }), "Notices");
         return;
     }
     var map = getMapIndex(mapId);
@@ -11018,7 +11018,7 @@ function selectMap(mapId, force) {
 	var currentSelected = document.getElementById(mapId);
 	currentSelected.className = currentSelected.className.replace("mapElementNotSelected", "mapElementSelected");
     game.global.lookingAtMap = mapId;
-    document.getElementById("selectMapBtn").innerHTML = "Run Map";
+    document.getElementById("selectMapBtn").innerHTML = i18n.t('ui.map.run_map');
     document.getElementById("selectMapBtn").style.visibility = "visible";
 	document.getElementById("recycleMapBtn").style.visibility = (map.noRecycle) ? "hidden" : "visible";
 }
@@ -17640,9 +17640,9 @@ function kredPurchase(what) {
 function startBundling(){
 	document.getElementById("boneWrapper1").style.display = "none";
 	document.getElementById("boneWrapper2").style.display = "block";
-	document.getElementById("bundleTitle").innerHTML = "Select 4 Exotic Imports!";
+	document.getElementById("bundleTitle").innerHTML = i18n.t('ui.menu.bone.select_exotic_imports');
 	var btn = document.getElementById("addBundleBtn");
-	btn.innerHTML = "First, Select 4 Imps";
+	btn.innerHTML = i18n.t('ui.menu.bone.select_four_imps_first');
 	btn.style.backgroundColor = "grey";
 	boneTemp.bundle = [];
 	updateImports(1);
@@ -20288,7 +20288,7 @@ document.addEventListener('keydown', function (e) {
 			}
 			break;
 		case 90: //z for map at zone
-			if (game.global.lockTooltip && lastTooltipTitle == "Set Map At Zone") {
+			if (game.global.lockTooltip && lastTooltipTitle == i18n.t('ui.maz.title')) {
 				var confirmCheck = document.getElementById("confirmTooltipBtn");
 				if (confirmCheck !== null && typeof confirmCheck.onclick == 'function'){
 					confirmCheck.onclick();
@@ -20599,3 +20599,26 @@ function keyTooltip(keyEvent, what, isItIn, event, textString, attachFunction, n
 		else tooltip(what, isItIn, "screenRead", ...Object.values(arguments).slice(3,))
 	}
 }
+
+window.addEventListener('i18n:localeChanged', function () {
+	if (window.i18n && typeof window.i18n.applyI18nToDom === 'function') {
+		window.i18n.applyI18nToDom(document);
+	}
+
+	var tooltipElem = document.getElementById('tooltipDiv');
+	if (tooltipElem && tooltipElem.style.display === 'block' && typeof tooltipUpdateFunction === 'function') {
+		tooltipUpdateFunction();
+	}
+
+	var settingsElem = document.getElementById('settingsHere');
+	if (settingsElem && settingsElem.style.display === 'block' && typeof settingTab === 'function') {
+		var activeSettingTab = document.querySelector('#settingsTabs .tabSelected, #settingsTabs .settingTab.tabSelected');
+		if (activeSettingTab && activeSettingTab.id && activeSettingTab.id.endsWith('Tab')) {
+			settingTab(activeSettingTab.id.replace('Tab', ''));
+		}
+	}
+
+	if (typeof drawAllSettings === 'function') {
+		drawAllSettings();
+	}
+});

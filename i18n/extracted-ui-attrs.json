@@ -1,0 +1,503 @@
+{
+  "ui.offline.title": {
+    "text": "Making up lost time...",
+    "title": null
+  },
+  "ui.offline.starting": {
+    "text": "Starting...",
+    "title": null
+  },
+  "ui.offline.zone": {
+    "text": "Zone",
+    "title": null
+  },
+  "ui.offline.cell": {
+    "text": "Cell",
+    "title": null
+  },
+  "ui.offline.run_map": {
+    "text": "Wanna run a map?",
+    "title": null
+  },
+  "ui.offline.world_level_map": {
+    "text": "World Level Map",
+    "title": null
+  },
+  "ui.offline.minus1_map": {
+    "text": "-1 Level map",
+    "title": null
+  },
+  "ui.offline.minus2_map": {
+    "text": "-2 Level map",
+    "title": null
+  },
+  "ui.offline.minus3_map": {
+    "text": "-3 Level map",
+    "title": null
+  },
+  "ui.offline.back_to_world": {
+    "text": "Back to World",
+    "title": null
+  },
+  "ui.offline.what_is_this": {
+    "text": "What is This?!",
+    "title": null
+  },
+  "ui.offline.stop_here": {
+    "text": "Stop Here",
+    "title": null
+  },
+  "ui.offline.show_equality": {
+    "text": "Show Equality",
+    "title": null
+  },
+  "ui.offline.start_fighting": {
+    "text": "Start Fighting",
+    "title": null
+  },
+  "ui.bone_trader.title": {
+    "text": "Bone Trader",
+    "title": null
+  },
+  "ui.bone_trader.owned_prefix": {
+    "text": "You have",
+    "title": null
+  },
+  "ui.bone_trader.source": {
+    "text": "You can earn bones as you progress through the world by killing Skeletimps and Megaskeletimps.",
+    "title": null
+  },
+  "ui.bone_trader.flavor": {
+    "text": "The Bone Trader trades bones for... bonuses",
+    "title": null
+  },
+  "ui.bone_trader.close": {
+    "text": "Close",
+    "title": null
+  },
+  "ui.bone_trader.permanent_upgrades": {
+    "text": "Permanent Upgrades",
+    "title": null
+  },
+  "ui.bone_trader.exotic_imports": {
+    "text": "Exotic Imp-orts",
+    "title": null
+  },
+  "ui.bone_trader.exotic_imports_desc_prefix": {
+    "text": "Exotic Imp-orts will be unlocked permanently once purchased. Each has a",
+    "title": null
+  },
+  "ui.bone_trader.exotic_imports_desc_suffix": {
+    "text": "chance to spawn per cell and better loot than normal enemies. Any stacking multipliers from killing Imp-orts reset on Portal but the imps do not have to be unlocked again.",
+    "title": null
+  },
+  "ui.bone_trader.spawns_world": {
+    "text": "Spawns in World",
+    "title": null
+  },
+  "ui.bone_trader.spawns_maps": {
+    "text": "Spawns in Maps",
+    "title": null
+  },
+  "ui.bone_trader.other_goodies": {
+    "text": "Other Goodies",
+    "title": null
+  },
+  "ui.bone_trader.buy_bone_portal": {
+    "text": "Buy Bone Portal (100 bones)",
+    "title": null
+  },
+  "ui.bone_trader.bone_portal_desc": {
+    "text": "Automatically gain helium equal to the amount you earned on your best run",
+    "title": null
+  },
+  "ui.bone_trader.buy_heirloom": {
+    "text": "Buy Heirloom (30 bones)",
+    "title": null
+  },
+  "ui.bone_trader.heirloom_desc": {
+    "text": "Get one Heirloom at the chances above, based on highest zone",
+    "title": null
+  },
+  "ui.resources.food": {
+    "text": "Food",
+    "title": null
+  },
+  "ui.resources.action.gather": {
+    "text": "Gather",
+    "title": null
+  },
+  "ui.resources.wood": {
+    "text": "Wood",
+    "title": null
+  },
+  "ui.resources.action.chop": {
+    "text": "Chop",
+    "title": null
+  },
+  "ui.resources.metal": {
+    "text": "Metal",
+    "title": null
+  },
+  "ui.resources.action.mine": {
+    "text": "Mine",
+    "title": null
+  },
+  "ui.resources.science": {
+    "text": "Science",
+    "title": null
+  },
+  "ui.resources.action.research": {
+    "text": "Research",
+    "title": null
+  },
+  "ui.resources.fragments": {
+    "text": "Fragments",
+    "title": null
+  },
+  "ui.queue.auto_traps_off": {
+    "text": "AutoTraps Off",
+    "title": null
+  },
+  "ui.queue.build": {
+    "text": "Build",
+    "title": null
+  },
+  "ui.queue.empty": {
+    "text": "Nothing in queue...",
+    "title": null
+  },
+  "ui.tabs.all": {
+    "text": "All",
+    "title": null
+  },
+  "ui.tabs.buildings": {
+    "text": "Buildings",
+    "title": null
+  },
+  "ui.tabs.jobs": {
+    "text": "Jobs",
+    "title": null
+  },
+  "ui.tabs.upgrades": {
+    "text": "Upgrades",
+    "title": null
+  },
+  "ui.tabs.equipment": {
+    "text": "Equipment",
+    "title": null
+  },
+  "ui.tabs.mastery": {
+    "text": "Mastery",
+    "title": null
+  },
+  "ui.tabs.equality": {
+    "text": "Equality",
+    "title": null
+  },
+  "ui.tabs.nature": {
+    "text": "Nature",
+    "title": null
+  },
+  "ui.tabs.spire": {
+    "text": "Spire",
+    "title": null
+  },
+  "ui.tabs.alchemy": {
+    "text": "Alchemy",
+    "title": null
+  },
+  "ui.panels.buildings": {
+    "text": "Buildings",
+    "title": null
+  },
+  "ui.automation.auto_structure": {
+    "text": "AutoStructure",
+    "title": null
+  },
+  "ui.automation.auto_storage": {
+    "text": "AutoStorage",
+    "title": null
+  },
+  "ui.panels.jobs": {
+    "text": "Jobs",
+    "title": null
+  },
+  "ui.automation.auto_jobs": {
+    "text": "AutoJobs",
+    "title": null
+  },
+  "ui.jobs.fire": {
+    "text": "Fire",
+    "title": null
+  },
+  "ui.aria.configure_auto_golden": {
+    "text": null,
+    "aria-label": ""
+  },
+  "ui.battle.fight": {
+    "text": "Fight",
+    "title": null
+  },
+  "ui.battle.auto_fight_off": {
+    "text": "AutoFight Off",
+    "title": null
+  },
+  "ui.battle.maps": {
+    "text": "Maps",
+    "title": null
+  },
+  "ui.battle.void_maps": {
+    "text": "Void Maps",
+    "title": null
+  },
+  "ui.battle.portal": {
+    "text": "Portal",
+    "title": null
+  },
+  "ui.battle.repeat_off": {
+    "text": "Repeat Off",
+    "title": null
+  },
+  "ui.battle.heirlooms": {
+    "text": "Heirlooms",
+    "title": null
+  },
+  "ui.bone_trader.menu_button": {
+    "text": "Bone Trader",
+    "title": null
+  },
+  "ui.battle.finish_daily": {
+    "text": "Finish Daily",
+    "title": null
+  },
+  "ui.battle.exit_spire": {
+    "text": "Exit Spire",
+    "title": null
+  },
+  "ui.maps.biome.random": {
+    "text": "Random",
+    "title": null
+  },
+  "ui.maps.biome.mountain": {
+    "text": "Mountain",
+    "title": null
+  },
+  "ui.maps.biome.forest": {
+    "text": "Forest",
+    "title": null
+  },
+  "ui.maps.biome.sea": {
+    "text": "Sea",
+    "title": null
+  },
+  "ui.maps.biome.depths": {
+    "text": "Depths",
+    "title": null
+  },
+  "ui.maps.map_credits_title": {
+    "text": null,
+    "title": "",
+    "aria-label": ""
+  },
+  "ui.settings_menu.save": {
+    "text": "Save",
+    "title": null
+  },
+  "ui.settings_menu.export": {
+    "text": "Export",
+    "title": null
+  },
+  "ui.settings_menu.import": {
+    "text": "Import",
+    "title": null
+  },
+  "ui.settings_menu.stats": {
+    "text": "Stats",
+    "title": null
+  },
+  "ui.settings_menu.achieves": {
+    "text": "Achieves",
+    "title": null
+  },
+  "ui.settings_menu.settings": {
+    "text": "Settings",
+    "title": null
+  },
+  "ui.settings_menu.whats_new": {
+    "text": "V <span id=\"versionNumber\"></span> | What's New",
+    "title": null
+  },
+  "ui.settings_menu.browse_all": {
+    "text": "Browse All",
+    "title": null
+  },
+  "ui.settings_menu.search_title": {
+    "text": "Choose a Category Below, or Search for a Setting/Keyword:",
+    "title": null
+  },
+  "ui.settings.language.label": {
+    "text": "Language:",
+    "title": null
+  },
+  "ui.settings_tabs.new": {
+    "text": "New",
+    "title": null
+  },
+  "ui.settings_tabs.general": {
+    "text": "General",
+    "title": null
+  },
+  "ui.settings_tabs.performance": {
+    "text": "Performance",
+    "title": null
+  },
+  "ui.settings_tabs.qol": {
+    "text": "Quality of Life",
+    "title": null
+  },
+  "ui.settings_tabs.alerts": {
+    "text": "Pop-ups and Alerts",
+    "title": null
+  },
+  "ui.settings_tabs.layout": {
+    "text": "Layout",
+    "title": null
+  },
+  "ui.settings_tabs.other": {
+    "text": "Other",
+    "title": null
+  },
+  "ui.settings_tabs.hotkeys": {
+    "text": "Hotkeys",
+    "title": null
+  },
+  "ui.settings_menu.back_to_search": {
+    "text": "Back to Search",
+    "title": null
+  },
+  "ui.screen_reader.page_title": {
+    "text": "Trimps 5.10.1 (Screen Reader version)",
+    "title": null
+  },
+  "ui.screen_reader.info_title": {
+    "text": "Screen Reader Information",
+    "title": null
+  },
+  "ui.screen_reader.info_line_1": {
+    "text": "This game uses several different ways to show additional information in tooltips.",
+    "title": null
+  },
+  "ui.screen_reader.info_line_2": {
+    "text": "shift+/ will work on all elements, but requires focus, and specific NVDA settings. All elements with additional information are focusable with tab.",
+    "title": null
+  },
+  "ui.screen_reader.info_line_3": {
+    "text": "shift+enter works only on button elements, not clickable. It does not require focus.",
+    "title": null
+  },
+  "ui.screen_reader.info_line_4": {
+    "text": "You can also enable separate info buttons, which will respond to enter.",
+    "title": null
+  },
+  "ui.screen_reader.info_line_5": {
+    "text": "To enable shift+/ tooltips, Turn NVDA + 8 on, and disable NVDA: Settings > browse mode: Disable \"trap all command gestures from reaching the document.\"",
+    "title": null
+  },
+  "ui.screen_reader.info_line_6": {
+    "text": "You can show/hide this information via the game setting \"Show Screen Read Info.\"",
+    "title": null
+  },
+  "ui.aria.configure_displayed_messages": {
+    "text": null,
+    "aria-label": ""
+  },
+  "ui.aria.buy_tabs": {
+    "text": null,
+    "aria-label": ""
+  },
+  "ui.aria.features_tabs": {
+    "text": null,
+    "aria-label": ""
+  },
+  "ui.menu.upgrades_research_first": {
+    "text": "Upgrades<br></br>(Research first)",
+    "title": null
+  },
+  "ui.aria.formation.none": {
+    "text": null,
+    "aria-label": ""
+  },
+  "ui.aria.formation.heap": {
+    "text": null,
+    "aria-label": ""
+  },
+  "ui.aria.formation.dominance": {
+    "text": null,
+    "aria-label": ""
+  },
+  "ui.aria.formation.barrier": {
+    "text": null,
+    "aria-label": ""
+  },
+  "ui.aria.formation.scryer": {
+    "text": null,
+    "aria-label": ""
+  },
+  "ui.aria.formation.wind": {
+    "text": null,
+    "aria-label": ""
+  },
+  "ui.kong.page_title": {
+    "text": "Trimps 5.10.1 (Kongregate Version)",
+    "title": null
+  },
+  "ui.kong.shell_title": {
+    "text": "Kongregate Game Shell",
+    "title": null
+  },
+  "ui.screen_reader.loot_breakdown": {
+    "text": null,
+    "aria-label": "Loot Breakdown"
+  },
+  "ui.screen_reader.configure_map_settings": {
+    "text": null,
+    "aria-label": "Configure Map Settings. Press S to view the popup."
+  },
+  "ui.screen_reader.show_hide_map_settings": {
+    "text": null,
+    "aria-label": "Show/Hide map settings"
+  },
+  "ui.screen_reader.load_preset_1": {
+    "text": null,
+    "aria-label": "Load Preset 1"
+  },
+  "ui.screen_reader.load_preset_2": {
+    "text": null,
+    "aria-label": "Load Preset 2"
+  },
+  "ui.screen_reader.load_preset_3": {
+    "text": null,
+    "aria-label": "Load Preset 3"
+  },
+  "ui.screen_reader.load_preset_4": {
+    "text": null,
+    "aria-label": "Load Preset 4"
+  },
+  "ui.screen_reader.load_preset_5": {
+    "text": null,
+    "aria-label": "Load Preset 5"
+  },
+  "ui.screen_reader.save_selected_preset": {
+    "text": null,
+    "aria-label": "Save Settings to Selected Preset"
+  },
+  "ui.screen_reader.reset_selected_preset": {
+    "text": null,
+    "aria-label": "Reset The Selected Preset"
+  },
+  "ui.screen_reader.recycle_all_maps": {
+    "text": null,
+    "aria-label": "Recycle All Maps"
+  }
+}

@@ -810,7 +810,7 @@ function tooltip(what, isItIn, event, textString, attachFunction, numCheck, rena
 			screenReaderAssert("Confirmation Popup is active. Press S to view the popup.")
 		}
 	}
-	if (what == "Set Map At Zone"){
+	if (what == i18n.t('ui.maz.title')){
 		var maxSettings = game.options.menu.mapAtZone.getMaxSettings();
 		var mazHelp = "Welcome to Map at Zone (also referred to as MaZ)! This is a powerful automation tool that allows you to set when maps should be automatically run, and allows for a high amount of customization. Here's a quick overview of what everything does:<ul><li><span style='padding-left: 0.3%' class='mazDelete'><span class='icomoon icon-cross'></span></span> - Remove this MaZ line completely</li><li><b>Active</b> - A toggle to temporarily disable/enable the entire MaZ line.</li><li><b>Start Zone</b> - The first Zone that this MaZ line should run. Must be between 10 and 1000.</li><li><b>End Zone</b> - Only matters if you're planning on having this MaZ line repeat. If so, the line will stop repeating at this Zone. Must be between 10 and 1000.</li><li><b>Exit At Cell</b> - The cell number between 1 and 100 where this MaZ line should trigger. 1 is the first cell of the Zone, 100 is the final cell. This line will trigger before starting combat against that cell.</li><li><b>Priority</b> - If there are two or more MaZ lines set to trigger at the same cell on the same Zone, the line with the lowest priority will run first. This also determines sort order of lines in the UI.</li><li><b>Run Map</b> - Uncheck this box if you want Map at Zone to just put you into the Map Chamber without running a map. This will stall your run at a specified point until manual intervention.</li><li><b>Use Preset</b> - Select one of your Advanced Maps presets here, to determine what type of map should be created by this MaZ line. You can also choose to run Void Maps or some specific Unique Maps from this dropdown depending on game progress.</li><li><b>Map Repeat</b> - This will toggle your Map Repeat setting On, Off, or leave it as is every time this MaZ line triggers. Set to Repeat On if you want the map to run more than once.</li>";
 		mazHelp += "<li><b>Set Repeat Until</b> - This changes your 'Repeat to' setting to the selected choice, allowing you to customize how many times the map should be repeated. If 'Run Bionic' is selected as your Preset, you can select the option 'Climb BW to Level' in this dropdown which will automatically climb Bionic Wonderlands until the set level of map has been cleared of items, then will exit the map.</li><li><b>Exit To</b> - Ensure you're Exiting to World if you want the game to continue progressing after the maps have been completed, or set Exit to Maps if you want the game to wait for manual intervention after completing its map.</li><li><b>Zone Repeat</b> - Set how often this preset should repeat between the Start Zone and End Zone. Preset can be repeated every Zone, or set to a custom number depending on need. Note that when using Zone Repeat with 'Climb BW to Level' that your 'Climb To' setting will be increased by the amount of Zones in between Start Zone and the Zone where this line actually triggers. For example, starting a MaZ line at Z140 to climb BW to Z165 with repeat every 30 Zones will run through BW 165 on Z140, then at Z170 will run through BW 195.</li></ul>"
@@ -856,7 +856,7 @@ function tooltip(what, isItIn, event, textString, attachFunction, numCheck, rena
 			if (game.global.universe == 2 && game.global.highestRadonLevelCleared >= 69) presetDropdown += "<option value='5'" + ((vals.preset == 5) ? " selected='selected'" : "") + ">Black Bog</option>";
 			if (game.global.universe == 2 && game.global.highestRadonLevelCleared >= 174) presetDropdown += "<option value='9'" + ((vals.preset == 9) ? " selected='selected'" : "") + ">Frozen Castle</option>";
 			var repeatDropdown = "<option value='0'" + ((vals.repeat == 0) ? " selected='selected'" : "") + ">No Change</option><option value='1'" + ((vals.repeat == 1) ? " selected='selected'" : "") + ">On</option><option value='2'" + ((vals.repeat == 2) ? " selected='selected'" : "") + ">Off</option>";
-			var repeatUntilDropdown = "<option value='0'" + ((vals.until == 0) ? " selected='selected'" : "") + ">Don't Change</option><option value='1'" + ((vals.until == 1) ? " selected='selected'" : "") + ">Repeat Forever</option><option value='2'" + ((vals.until == 2) ? " selected='selected'" : "") + ">Repeat to 10</option><option value='3'" + ((vals.until == 3) ? " selected='selected'" : "") + ">Repeat for Items</option><option value='4'" + ((vals.until == 4) ? " selected='selected'" : "") + ">Repeat for Any</option><option class='mazBwClimbOption' value='5'" + ((vals.until == 5) ? " selected='selected'" : "") + ">Climb BW to Level</option><option value='6'" + ((vals.until == 6) ? " selected='selected'" : "") + ">Repeat 25 Times</option><option value='7'" + ((vals.until == 7) ? " selected='selected'" : "") + ">Repeat 50 Times</option><option value='8'" + ((vals.until == 8) ? " selected='selected'" : "") + ">Repeat 100 Times</option><option value='9'" + ((vals.until == 9) ? " selected='selected'" : "") + ">Repeat X Times</option>"	
+			var repeatUntilDropdown = "<option value='0'" + ((vals.until == 0) ? " selected='selected'" : "") + ">" + i18n.t('ui.maz.repeat_until.dont_change') + "</option><option value='1'" + ((vals.until == 1) ? " selected='selected'" : "") + ">" + i18n.t('ui.map.repeat_until.forever') + "</option><option value='2'" + ((vals.until == 2) ? " selected='selected'" : "") + ">" + i18n.t('ui.map.repeat_until.to_10') + "</option><option value='3'" + ((vals.until == 3) ? " selected='selected'" : "") + ">" + i18n.t('ui.map.repeat_until.for_items') + "</option><option value='4'" + ((vals.until == 4) ? " selected='selected'" : "") + ">" + i18n.t('ui.map.repeat_until.for_any') + "</option><option class='mazBwClimbOption' value='5'" + ((vals.until == 5) ? " selected='selected'" : "") + ">" + i18n.t('ui.maz.repeat_until.climb_bw_to_level') + "</option><option value='6'" + ((vals.until == 6) ? " selected='selected'" : "") + ">" + i18n.t('ui.maz.repeat_until.repeat_25_times') + "</option><option value='7'" + ((vals.until == 7) ? " selected='selected'" : "") + ">" + i18n.t('ui.maz.repeat_until.repeat_50_times') + "</option><option value='8'" + ((vals.until == 8) ? " selected='selected'" : "") + ">" + i18n.t('ui.maz.repeat_until.repeat_100_times') + "</option><option value='9'" + ((vals.until == 9) ? " selected='selected'" : "") + ">" + i18n.t('ui.maz.repeat_until.repeat_x_times') + "</option>"	
 			var exitDropdown = "<option value='0'" + ((vals.exit == 0) ? " selected='selected'" : "") + ">No Change</option><option value='1'" + ((vals.exit == 1) ? " selected='selected'" : "") + ">Maps</option><option value='2'" + ((vals.exit == 2) ? " selected='selected'" : "") + ">World</option>";
 			var timesDropdown = "<option value='-1'" + ((vals.times == -1) ? " selected='selected'" : "") + ">Just This Zone</option><option value='1'" + ((vals.times == 1) ? " selected='selected'" : "") + ">Every Zone</option><option value='2'" + ((vals.times == 2) ? " selected='selected'" : "") + ">Every Other Zone</option><option value='3'" + ((vals.times == 3) ? " selected='selected'" : "") + ">Every 3 Zones</option><option value='5'" + ((vals.times == 5) ? " selected='selected'" : "") + ">Every 5 Zones</option><option value='10'" + ((vals.times == 10) ? " selected='selected'" : "") + ">Every 10 Zones</option><option value='30'" + ((vals.times == 30) ? " selected='selected'" : "") + ">Every 30 Zones</option><option value='-2'" + ((vals.times == -2) ? " selected='selected'" : "") + ">Every X Zones</option>";
 			var className = (vals.preset == 3) ? "mazBwMainOn" : "mazBwMainOff";
@@ -881,11 +881,11 @@ function tooltip(what, isItIn, event, textString, attachFunction, numCheck, rena
 			tooltipText += "<div class='mazTx'><div style='text-align: center;'>X&nbsp;Zones</div><input aria-label='X Zones' value='" + vals.tx + "' type='number' id='mazTx" + x + "'/></div>";
 			tooltipText += "</div>"
 		}
-		tooltipText += "<div tabindex=0 role=button id='mazAddRowBtn' style='display: " + ((current.length < maxSettings) ? "inline-block" : "none") + "' class='btn btn-success btn-md' onclick='game.options.menu.mapAtZone.addRow()'>+ Add Row</div>"
+		tooltipText += "<div tabindex=0 role=button id='mazAddRowBtn' style='display: " + ((current.length < maxSettings) ? "inline-block" : "none") + "' class='btn btn-success btn-md' onclick='game.options.menu.mapAtZone.addRow()'>" + i18n.t('ui.maz.actions.add_row') + "</div>"
 		var currentPreset = ((game.global.universe == 1 && game.options.menu.mapAtZone.U1Mode == 'a') || (game.global.universe == 2 && game.options.menu.mapAtZone.U2Mode == 'a')) ? "a" : "b";
 		tooltipText += "<div tabindex=0 role=button id='mazSwapPresetBtn' style='display: " + ((game.talents.maz.purchased) ? "inline-block" : "none") + "' class='btn btn-" + ((currentPreset == "a") ? "info" : "danger") + " btn-md' onclick='game.options.menu.mapAtZone.swapPreset()'>Swap to Preset " + ((currentPreset == "a") ? "B" : "A") + "</div>";
 		tooltipText += "</div><div style='display: none' id='mazHelpContainer'>" + mazHelp + "</div>";
-		costText = "<div class='maxCenter'><span tabindex=0 role=button class='btn btn-success btn-md' id='confirmTooltipBtn' onclick='game.options.menu.mapAtZone.save()'>Save and Close (Z/Enter)</span><span tabindex=0 role=button class='btn btn-danger btn-md' onclick='cancelTooltip(true)'>Cancel (Esc)</span><span tabindex=0 role=button class='btn btn-primary btn-md' id='confirmTooltipBtn' onclick='game.options.menu.mapAtZone.save(true)'>Save</span><span tabindex=0 role=button aria-label='Help. Shift-S to return to top of tooltip to read.' class='btn btn-info btn-md' onclick='game.options.menu.mapAtZone.toggleHelp()'>Help</span></div>"
+		costText = "<div class='maxCenter'><span tabindex=0 role=button class='btn btn-success btn-md' id='confirmTooltipBtn' onclick='game.options.menu.mapAtZone.save()'>Save and Close (Z/Enter)</span><span tabindex=0 role=button class='btn btn-danger btn-md' onclick='cancelTooltip(true)'>Cancel (Esc)</span><span tabindex=0 role=button class='btn btn-primary btn-md' id='confirmTooltipBtn' onclick='game.options.menu.mapAtZone.save(true)'>Save</span><span tabindex=0 role=button aria-label='Help. Shift-S to return to top of tooltip to read.' class='btn btn-info btn-md' onclick='game.options.menu.mapAtZone.toggleHelp()'>" + i18n.t('ui.maz.actions.help') + "</span></div>"
 		game.global.lockTooltip = true;
 		elem.style.top = "25%";
 		elem.style.left = "10%";
@@ -1160,7 +1160,7 @@ function tooltip(what, isItIn, event, textString, attachFunction, numCheck, rena
 		if (!game.global.autoUpgradesAvailable) tooltipText += "<br/><br/><span class='planetBreakMessage'><b>Your Trimps seem to understand that they'll need to help out more, and you realize how to permanently use them to automate upgrades!<b></span><br/>";
 		costText = "<span class='planetBreakDescription'><span class='bad'>Trimp breed speed reduced by a factor of 10. 20% of enemy damage can now penetrate your block.</span><span class='good'> You have unlocked a new upgrade to learn a Formation. Helium harvested per Zone is increased by a factor of 5. Equipment cost is dramatically cheaper. Creating modified maps is now cheaper, and your scientists have found new ways to improve maps! You have access to the 'Trimp' challenge!<span></span>";
 		if (game.global.challengeActive == "Corrupted") costText += "<br/><br/><span class='corruptedBadGuyName'>Looks like the Corruption is starting early...</span>";
-		costText += "<hr/><div class='maxCenter'><div class='btn btn-info' id='confirmTooltipBtn' role=button tabindex=0 onclick='cancelTooltip()'>I'll be fine</div><div class='btn btn-danger' onclick='cancelTooltip(); message(\"Sorry\", \"Notices\")'>I'm Scared</div></div>"
+		costText += "<hr/><div class='maxCenter'><div class='btn btn-info' id='confirmTooltipBtn' role=button tabindex=0 onclick='cancelTooltip()'>" + i18n.t("ui.tooltip.confirm.im_fine") + "</div><div class='btn btn-danger' onclick='cancelTooltip(); message(i18n.t(\"ui.alert.generic.sorry\"), \"Notices\")'>" + i18n.t("ui.tooltip.confirm.im_scared") + "</div></div>"
 		game.global.lockTooltip = true;
 		elem.style.left = "33.75%";
 		elem.style.top = "25%";
@@ -1301,7 +1301,7 @@ function tooltip(what, isItIn, event, textString, attachFunction, numCheck, rena
 	}
 	if (what == "Reset"){
 		tooltipText = "Are you sure you want to reset? This will really actually reset your game. You won't get anything cool. It will be gone. <b style='color: red'>This is not the soft-reset you're looking for. This will delete your save.</b>";
-		costText="<div class='maxCenter'><div class='btn btn-danger' onclick='resetGame(false, true);unlockTooltip();tooltip(\"hide\")'>Delete Save</div> <div class='btn btn-info' role=button tabindex=0 onclick='cancelTooltip()'>Cancel</div></div>";
+		costText="<div class='maxCenter'><div class='btn btn-danger' onclick='resetGame(false, true);unlockTooltip();tooltip(\"hide\")'>" + i18n.t("ui.menu.delete_save") + "</div> <div class='btn btn-info' role=button tabindex=0 onclick='cancelTooltip()'>" + i18n.t("ui.menu.cancel") + "</div></div>";
 		game.global.lockTooltip = true;
 		elem.style.left = "33.75%";
 		elem.style.top = "25%";
@@ -1469,7 +1469,7 @@ function tooltip(what, isItIn, event, textString, attachFunction, numCheck, rena
 	if (what == "Import Perks"){
 		if (game.global.challengeActive == "Hypothermia"){
 			var portalStoryElem = document.getElementById('portalStory');
-			if (portalStoryElem) portalStoryElem.innerHTML = "<span style='color: red'>You cannot change your perks while on the Hypothermia Challenge!</span>";
+			if (portalStoryElem) portalStoryElem.innerHTML = i18n.t('ui.message.challenge.hypothermia.perks_locked_html');
 			return;
 		}
 		tooltipText = "Import your perks from a text string!<br/><br/><textarea spellcheck='false' id='perkImportBox' style='width: 100%' rows='5'></textarea>";
@@ -4228,7 +4228,7 @@ function resetGame(keepPortal, resetting) {
 	document.getElementById("buyCol").style.visibility = "hidden";
 	document.getElementById("unempHide").style.visibility = "hidden";
 	document.getElementById("empHide").style.visibility = "hidden";
-	document.getElementById("upgradesTitleSpan").innerHTML = "Upgrades<br/>(Research first)";
+	document.getElementById("upgradesTitleSpan").innerHTML = i18n.t("ui.menu.upgrades_research_first");
 	document.getElementById("science").style.visibility = "hidden";
 	document.getElementById("battleContainer").style.visibility = "hidden";
 	document.getElementById("pauseFight").style.display = "none";
@@ -4263,12 +4263,12 @@ function resetGame(keepPortal, resetting) {
 	document.getElementById("respecPortalBtn").style.display = "none";
 	document.getElementById("battleHeadContainer").style.display = "block";
 	document.getElementById("mapsCreateRow").style.display = "none";
-	document.getElementById("worldName").innerHTML = "Zone";
+	document.getElementById("worldName").innerHTML = i18n.t("ui.map.zone");
 	document.getElementById("wrapper").style.background = "url(css/bg2.png) center repeat-x";
 	document.getElementById("wrapper").className = "wrapperUnbroken"
 	document.getElementById("turkimpBuff").style.display = "none";
 	document.getElementById("statsBtnRow").style.display = "block";
-	document.getElementById("mapsBtnText").innerHTML = "Maps";
+	document.getElementById("mapsBtnText").innerHTML = i18n.t("ui.map.maps");
 	document.getElementById("mapBonus").innerHTML = "";
 	document.getElementById("roboTrimpTurnsLeft").innerHTML = "";
 	swapClass("shriekState", "shriekStateCooldown", document.getElementById("chainHolder"));
@@ -4295,7 +4295,7 @@ function resetGame(keepPortal, resetting) {
 	document.getElementById("swapToCurrentChallengeBtn").style.display = "none";
 	document.getElementById('autoGoldenBtn').style.display = "none";
 	document.getElementById('scienceCollectBtn').style.display = "block";
-	document.getElementById('trimpsBreedingTitle').innerHTML = "breeding";
+	document.getElementById('trimpsBreedingTitle').innerHTML = i18n.t("ui.menu.breeding");
 	document.getElementById('alchemyTab').style.display = 'none';
 	document.getElementById("energyShield").style.width = "0%";
 	document.getElementById("energyShieldLayer").style.width = "0%";
@@ -4816,7 +4816,7 @@ function resetGame(keepPortal, resetting) {
 		for (var heirItem in heirloomStuff){
 			game.global[heirItem] = heirloomStuff[heirItem];
 		}
-		if (game.global.totalPortals == 1) message("Use of the portal has created a chance for the Void to seep into your world. Be alert.", "Story", null, "voidMessage");
+		if (game.global.totalPortals == 1) message(i18n.t("ui.alert.story.void_seep"), "Story", null, "voidMessage");
 		if (game.stats.totalHeirlooms.valueTotal > 0) document.getElementById("heirloomBtnContainer").style.display = "block";
 		recalculateHeirloomBonuses();
 		game.global.voidMaxLevel = voidMaxLevel;
@@ -5030,7 +5030,7 @@ function enableImprovedAutoStorage(){
 function applyS1(){
 	if (game.global.challengeActive != "Scientist") game.resources.science.owned += 5000;
 	fadeIn("science", 10);
-	document.getElementById("upgradesTitleSpan").innerHTML = "Upgrades";
+	document.getElementById("upgradesTitleSpan").innerHTML = i18n.t("ui.menu.upgrades");
 	game.resources.wood.owned += 100;
 	game.resources.food.owned += 100;
 	game.buildings.Trap.owned += 10;
@@ -6290,11 +6290,11 @@ function displayPerksBtn(){
 	var btn = document.getElementById("pastUpgradesBtn");
 	if (game.global.totalPortals == 0){
 		btn.className = "btn";
-		btn.innerHTML = "???";
+		btn.innerHTML = i18n.t("ui.menu.perks.unknown");
 	}
 	else {
 		btn.className = "btn btn-primary";
-		btn.innerHTML = "View Perks";
+		btn.innerHTML = i18n.t("ui.menu.perks.view");
 	}
 }
 
@@ -6452,7 +6452,7 @@ function getSettingHtml(optionItem, item, forceClass, appendId){
 			name = "Timewarp Speed Limit";
 		}
 		if (item == "mapAtZone") {
-			configBtnClick = `onclick='tooltip("Set Map At Zone", null, "update")'`;
+			configBtnClick = `onclick='tooltip(\"${i18n.t('ui.maz.title')}\", null, \"update\")'`;
 			name = "Map At Zone";
 		}
 		if (item == "standardNotation") {
@@ -6526,7 +6526,7 @@ function toggleSetting(setting, elem, fromPortal, updateOnly, backwards, fromHot
 	}
 	var menuOption = game.options.menu[setting];
 	if (setting == "mapAtZone" && !updateOnly && (menuOption.enabled == 0 || fromHotkey)){
-		tooltip('Set Map At Zone', null, 'update');
+		tooltip(i18n.t('ui.maz.title'), null, 'update');
 		return;
 	}
 	if (setting == "usePlayFab" && !updateOnly){
@@ -6618,9 +6618,9 @@ function toggleSetting(setting, elem, fromPortal, updateOnly, backwards, fromHot
 		if ((forHover || forTracker) && ((!one && !achievement.showAll && displayNumber > achievement.finished) || (one && (achievement.filterLevel() < achievement.filters[displayNumber] && !achievement.finished[displayNumber])))) {
 			document.getElementById("achievement" + location).style.display = "block";
 			document.getElementById("achievement" + location + "IconContainer").innerHTML = '<span class="achieveTier' + achievement.tiers[displayNumber] + ' icomoon icon-locked achievementPopupIcon"></span>';
-			titleElem.innerHTML = "Locked";
+			titleElem.innerHTML = i18n.t("ui.message.achievement.locked");
 			titleElem.className = 'achieveTier' + achievement.tiers[displayNumber];
-			document.getElementById("achievement" + location + "Description").innerHTML = "Locked";
+			document.getElementById("achievement" + location + "Description").innerHTML = i18n.t("ui.message.achievement.locked");
 			document.getElementById("achievement" + location + "Reward").innerHTML = '<b>Reward:</b> +' + game.tierValues[achievement.tiers[displayNumber]] + "% Damage";
 			prog.innerHTML = "";
 			return;
@@ -6634,22 +6634,22 @@ function toggleSetting(setting, elem, fromPortal, updateOnly, backwards, fromHot
 		document.getElementById("achievement" + location + "Reward").innerHTML = '<b>Reward:</b> +' + game.tierValues[achievement.tiers[displayNumber]] + "% Damage";
 		if ((forHover || forTracker) && typeof achievement.progress !== 'undefined' && (typeof achievement.highest === 'undefined' || (achievement.highest > 0 || achievement.finished > 0))){
 			if (!one && achievement.tiers.length == achievement.finished){
-				prog.innerHTML = "Row Finished! (" + achievement.progress(displayNumber) + ")";
+				prog.innerHTML = i18n.t("ui.message.achievement.row_finished_progress", { progress: achievement.progress(displayNumber) });
 			}
 			else{
 				if (achievement.timed && displayNumber == achievement.finished){
-					if (achievement.u != game.global.universe) prog.innerHTML = "You're in the wrong Universe! " + achievement.progress(displayNumber);
-					else if (achievement.evaluate() >= achievement.breakpoints[displayNumber]) prog.innerHTML = "Progress: Too slow! " + achievement.progress(displayNumber);
-					else prog.innerHTML = "Progress: " + achievement.progress(displayNumber);
+					if (achievement.u != game.global.universe) prog.innerHTML = i18n.t("ui.message.achievement.wrong_universe_progress", { progress: achievement.progress(displayNumber) });
+					else if (achievement.evaluate() >= achievement.breakpoints[displayNumber]) prog.innerHTML = i18n.t("ui.message.achievement.progress_too_slow", { progress: achievement.progress(displayNumber) });
+					else prog.innerHTML = i18n.t("ui.message.achievement.progress", { progress: achievement.progress(displayNumber) });
 				}
 				else{
-					prog.innerHTML = "Progress: " + achievement.progress(displayNumber);
+					prog.innerHTML = i18n.t("ui.message.achievement.progress", { progress: achievement.progress(displayNumber) });
 				}
 			}
 		}
 		else
 			if (!one && achievement.tiers.length == achievement.finished){
-				prog.innerHTML = "Row Finished!";
+				prog.innerHTML = i18n.t("ui.message.achievement.row_finished");
 			}
 			else prog.innerHTML = "";
 	}

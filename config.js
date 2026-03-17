@@ -1172,9 +1172,9 @@ var toReturn = {
 			},
 			repeatUntil: {
 				enabled: 0,
-				description: "<p><b>Repeat Forever</b> will cause the map to continually repeat if Repeat Maps is enabled.</p><p><b>Repeat to 10</b> will repeat unless you have 10 Map Bonus stacks.</p><p><b>Repeat for Items</b> will repeat unless there are no more special items left for that level of map.</p><p><b>Repeat for Any</b> will repeat unless there are no special items available AND you can not earn more Map Bonus stacks.</p><p><b>This setting only matters if Repeat is on. Toggling Repeat off will still leave the map when it is finished no matter what.</b></p>",
+				description: i18n.t('ui.map.repeat_until.description'),
 				get titles(){
-					var arr = ["Repeat Forever", "Repeat to 10", "Repeat for Items", "Repeat for Any"];
+					var arr = [i18n.t('ui.map.repeat_until.forever'), i18n.t('ui.map.repeat_until.to_10'), i18n.t('ui.map.repeat_until.for_items'), i18n.t('ui.map.repeat_until.for_any')];
 					if (this.enabled == 0 && game.global.mapCounterGoal > game.global.mapRunCounter){
 						var count = (game.global.mapCounterGoal - game.global.mapRunCounter);
 						arr[0] = "Repeat " + count + " Time" + needAnS(count);
@@ -1190,7 +1190,7 @@ var toReturn = {
 			exitTo: {
 				enabled: 0,
 				description: "Choose whether to go to the Maps Screen or World after completing a map.",
-				titles: ["Exit to Maps", "Exit to World"],
+				titles: [i18n.t('ui.map.exit_to.maps'), i18n.t('ui.map.exit_to.world')],
 				locked: true,
 				secondLocation: ['toggleexitToCM']
 			},
@@ -1448,7 +1448,7 @@ var toReturn = {
 					else{
 						this.U1Mode = (this.U1Mode == 'a') ? 'b' : 'a';
 					}
-					tooltip('Set Map At Zone', null, 'update');
+					tooltip(i18n.t('ui.maz.title'), null, 'update');
 				},
 				storeSetting: function(setting){
 					if (game.global.universe == 2){
@@ -3187,7 +3187,7 @@ var toReturn = {
 				if (this.trinkets + amt > cap) amt = cap - this.trinkets;
 				this.trinkets += amt;
 				game.stats.runetrinkets.value += amt;
-				message("You found " + amt + " Runetrinket" + needAnS(amt) + "!", "Loot", "*link4", "runetrinket", "runetrinket");
+				message(i18n.t("ui.message.runetrinket.found", { amount: amt, suffix: needAnS(amt) }), "Loot", "*link4", "runetrinket", "runetrinket");
 				if (this.trinkets >= 7500) giveSingleAchieve("Heavy Trinker");
 			},
 			onNextWorld: function(){
@@ -3461,7 +3461,7 @@ var toReturn = {
 				for (var x = 0; x < this.heldBooks; x++){
 					unlockUpgrade("Speedscience");
 				}
-				message("You can research science again!", "Notices");
+				message(i18n.t("ui.message.science.research_again"), "Notices");
 				if (game.global.sLevel >= 4) {
 					if (game.buildings.Warpstation.craftTime > 0){
 						game.buildings.Warpstation.craftTime = 0;
@@ -3578,13 +3578,13 @@ var toReturn = {
 				return (getHighestLevelCleared(true) >= 69);
 			},
 			start: function () {
-				document.getElementById('trimpsBreedingTitle').innerHTML = "bored";
+				document.getElementById('trimpsBreedingTitle').innerHTML = i18n.t("ui.menu.bored");
 			},
 			onLoad: function () {
 				this.start();
 			},
 			abandon: function () {
-				document.getElementById('trimpsBreedingTitle').innerHTML = "breeding";
+				document.getElementById('trimpsBreedingTitle').innerHTML = i18n.t("ui.menu.breeding");
 				for (var x = 0; x < game.challenges.Trapper.heldBooks; x++){
 					unlockUpgrade("Potency");
 				}
@@ -4451,13 +4451,13 @@ var toReturn = {
 				return (getHighestLevelCleared(true) >= 59);
 			},
 			start: function () {
-				document.getElementById('trimpsBreedingTitle').innerHTML = "bored";
+				document.getElementById('trimpsBreedingTitle').innerHTML = i18n.t("ui.menu.bored");
 			},
 			onLoad: function () {
 				this.start();
 			},
 			abandon: function () {
-				document.getElementById('trimpsBreedingTitle').innerHTML = "breeding";
+				document.getElementById('trimpsBreedingTitle').innerHTML = i18n.t("ui.menu.breeding");
 				for (var x = 0; x < game.challenges.Trappapalooza.heldBooks; x++){
 					unlockUpgrade("Potency");
 				}
@@ -11350,7 +11350,7 @@ var toReturn = {
 			title: "Map Fragments",
 			fire: function() {
 				var amt = rewardResource("fragments");
-				message("You found " + prettify(amt) + " map fragments!", "Loot", "th", null, "secondary");
+				message(i18n.t('ui.message.story.map_fragments_found', { amount: prettify(amt) }), "Loot", "th", null, "secondary");
 			}
 		},
 		//portal Trumps
@@ -13251,7 +13251,7 @@ var toReturn = {
 			},
 			fire: function () {
 				fadeIn("jobsTab", 10);
-				document.getElementById("trimpTitle").innerHTML = "Trimps";
+				document.getElementById("trimpTitle").innerHTML = i18n.t('ui.menu.trimps');
 				document.getElementById("empHide").style.visibility = "visible";
 				unlockJob("Farmer");
 				document.getElementById("jobsTitleDiv").style.display = "block";
@@ -13290,7 +13290,7 @@ var toReturn = {
 		},
 		Battle: {
 			done: 0,
-			once: function() {document.getElementById("upgradesTitleSpan").innerHTML = "Upgrades";},
+			once: function() {document.getElementById("upgradesTitleSpan").innerHTML = i18n.t("ui.menu.upgrades");},
 			message: function(){
 				if (game.global.universe == 2) return "As you finally step out into the Battle Zones, the first thing you notice is that your Heirlooms feel weaker here. Oh well, 1000 more times into the fray... ";
 				return "War... what is it good for? Exploration, or something."
@@ -13303,7 +13303,7 @@ var toReturn = {
 			fire: function () {
 				if (game.global.totalPortals == 0) tutorial.start();
 				unlockUpgrade('Battle');
-				document.getElementById("upgradesTitleSpan").innerHTML = "Upgrades";
+				document.getElementById("upgradesTitleSpan").innerHTML = i18n.t("ui.menu.upgrades");
 			}
 		},
 		Hut: {
