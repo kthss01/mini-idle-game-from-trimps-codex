@@ -699,7 +699,7 @@
 									</div>
 								</div>
 								<div class="row guyRow" id="goodGuyStatsRow">
-									<h4 style='font-size: 0px'>Trimp Battle Stats</h4>
+									<h4 style='font-size: 0px' data-i18n="ui.screen_reader.trimp_battle_stats">Trimp Battle Stats</h4>
 									<div id='damageDiv' class="col-xs-6 lbdHover pointer noselect bdHover" style="padding-right: 0" onclick="getBattleStatBd('attack')">
 										<span id="goodGuyAttack" class='attackColorNormal'></span> DMG <span id="critSpan"></span>
 									</div>
@@ -726,7 +726,7 @@
 							<div class="col-xs-6" id="badGuyCol" style="visibility: hidden">
 							<div>
 								<div class="row">
-									<h4 style='font-size: 0px'>Enemy Battle Stats</h4>
+									<h4 style='font-size: 0px' data-i18n="ui.screen_reader.enemy_battle_stats">Enemy Battle Stats</h4>
 									<div class="col-xs-11">
 									<span class="battleStatsTitle"><span id="badGuyName"></span> <span id="corruptionBuff"></span><span id="voidBuff"></span><span id="badCanCrit" style="display: none" class="badge" onmouseover="tooltip('Crushing Blows', 'customText', event, 'Your current health is higher than your block, making you vulnerable to critical strikes from your enemies. Better fix that...')" ><span class="icomoon icon-hair-cross"></span></span><span id='badDebuffSpan'></span></span><br/>
 									<div class="guyRow" id="badGuyRow">
@@ -1094,40 +1094,40 @@
 			</div>
 			<div id="challengeCol" class="col-xs-5">
 				<div id="viewChallenge" style="display: none">
-					<div style='text-align: center'><span class="thing thingColorSquared pointer" style='width: 50%; display: inline-block;'   id='challengeSquaredViewBtn'>Challenge<sup><span id='challengeSquaredName'>2</span></sup> - <span id='challengeSquaredBonusAmtView'>0</span>% bonus</span></div>
-					<span id="viewChallengeText">You do not currently have an active challenge.</span>
+				<div style='text-align: center'><span class="thing thingColorSquared pointer" style='width: 50%; display: inline-block;'   id='challengeSquaredViewBtn'><span data-i18n="ui.portal.challenge_squared">Challenge</span><sup><span id='challengeSquaredName'>2</span></sup> - <span id='challengeSquaredBonusAmtView'>0</span>% <span data-i18n="ui.portal.bonus">bonus</span></span></div>
+					<span id="viewChallengeText" data-i18n="ui.portal.no_active_challenge">You do not currently have an active challenge.</span>
 				<br/><br/>
-				<button class="btn btn-warning inPortalBtn" style="display: none" id="cancelChallengeBtn" onclick="confirmAbandonChallenge()">Abandon Challenge</button>
+				<button class="btn btn-warning inPortalBtn" style="display: none" id="cancelChallengeBtn" onclick="confirmAbandonChallenge()" data-i18n="ui.portal.abandon_challenge">Abandon Challenge</button>
 				<span id="extraChallengeStuff"></span>
 				</div>
 				<div id="challenges"  style="display: none">
 					<div id='challengeTitleNoSquared'>
-						<div class="challengeTitle">Challenges</div>
+						<div class="challengeTitle" data-i18n="ui.portal.challenges_title">Challenges</div>
 					</div>
 					<div id='challengeTitleSquared' style='display: none'>
-						<div class="challengeTitle" style='display: inline-block; width: 50%; padding: 0; margin: 0;'>Challenges</div><div style='display: inline-block; width: 50%; padding: 0; margin: 0;'><button id='inPortalC2Button' class="thing thingColorSquared pointer" style='width: 75%; display: inline-block;' onclick="toggleChallengeSquared()"  >Swap to/from Challenge<sup><span id='inPortalC2Name'>2</span></sup> - <span id='challengeSquaredBonusAmt'>0</span>% bonus</button></div>
+						<div class="challengeTitle" style='display: inline-block; width: 50%; padding: 0; margin: 0;' data-i18n="ui.portal.challenges_title">Challenges</div><div style='display: inline-block; width: 50%; padding: 0; margin: 0;'><button id='inPortalC2Button' class="thing thingColorSquared pointer" style='width: 75%; display: inline-block;' onclick="toggleChallengeSquared()"  ><span data-i18n="ui.portal.swap_challenge_squared">Swap to/from Challenge</span><sup><span id='inPortalC2Name'>2</span></sup> - <span id='challengeSquaredBonusAmt'>0</span>% <span data-i18n="ui.portal.bonus">bonus</span></button></div>
 					</div>
 					
 					<div id="challengeDescription" aria-live="polite">
-						<span id="challengeDescriptionPre">You can also choose to activate a challenge before using your portal. Completing a challenge will earn you a permanent reward. You can abandon or view an active challenge at any time by clicking the "View Perks" button.</span>
-						<span id="flagMustRestart" style="display: none;"><b>If you abandon this challenge, the portal will become unstable and the world will restart (you'll keep permanent bonuses like helium)</b></span>
+						<span id="challengeDescriptionPre" data-i18n="ui.portal.challenge_description_pre">You can also choose to activate a challenge before using your portal. Completing a challenge will earn you a permanent reward. You can abandon or view an active challenge at any time by clicking the "View Perks" button.</span>
+						<span id="flagMustRestart" style="display: none;"><b data-i18n="ui.portal.challenge_must_restart">If you abandon this challenge, the portal will become unstable and the world will restart (you'll keep permanent bonuses like helium)</b></span>
 
 						<div id="specificChallengeDescription" class="challengeDescriptionLg">
 							
 						</div>
 					</div>
-					<ul id="challengesHere" aria-label="Challenges">
+					<ul id="challengesHere" aria-label="Challenges" data-i18n-attr="aria-label:ui.portal.challenges_title">
 					
 					</ul>
 				</div>
 			</div>
 		</div>
 		<div id="portalBtnContainer">
-			<button class="btn btn-primary inPortalBtn" id="activatePortalBtn" onclick="activateClicked()">Activate Portal</button>
-			<button class="btn btn-danger inPortalBtn" id="cancelPortalBtn" onclick="cancelTooltip(); cancelPortal()">Cancel</button>
+			<button class="btn btn-primary inPortalBtn" id="activatePortalBtn" onclick="activateClicked()" data-i18n="ui.portal.activate_portal">Activate Portal</button>
+			<button class="btn btn-danger inPortalBtn" id="cancelPortalBtn" onclick="cancelTooltip(); cancelPortal()" data-i18n="ui.menu.cancel">Cancel</button>
 			<button class="btn btn-warning inPortalBtn" style="display: none" id="respecPortalBtn" onclick="respecPerks()" ></button>
-			<button class="btn btn-success inPortalBtn" style='display: none' id="swapToCurrentChallengeBtn" onclick="swapToCurrentChallenge()" >View Current Challenge</button>
-			<button class="btn btn-warning inPortalBtn" style="display: none" id="clearPerksBtn" onclick="clearPerks()">Clear All Perks</button>
+			<button class="btn btn-success inPortalBtn" style='display: none' id="swapToCurrentChallengeBtn" onclick="swapToCurrentChallenge()" data-i18n="ui.portal.view_current_challenge">View Current Challenge</button>
+			<button class="btn btn-warning inPortalBtn" style="display: none" id="clearPerksBtn" onclick="clearPerks()" data-i18n="ui.portal.clear_all_perks">Clear All Perks</button>
 			<button class="btn inPortalBtn autoColor darkBorder"  onclick="u2Mutations.toggleRespec()" style="display: none" id="respecMutatorsBtn"></button>
 		</div>
 	</div>
@@ -1416,32 +1416,32 @@
 			</tr>
 			<tr>
 				<td>
-					Last combat: <span id='srSumLastCombat'></span>
+					<span data-i18n="ui.screen_reader.summary.last_combat">Last combat</span>: <span id='srSumLastCombat'></span>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					Last story: <span id='srSumLastStory'></span>
+					<span data-i18n="ui.screen_reader.summary.last_story">Last story</span>: <span id='srSumLastStory'></span>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					World Time: <span id='srSumWorldTime'></span>
+					<span data-i18n="ui.screen_reader.summary.world_time">World Time</span>: <span id='srSumWorldTime'></span>
 				</td>
 			</tr>
 			<tr id='srSumMapTimeContainer'>
 				<td>
-					Current Map Time: <span id='srSumMapTime'></span>
+					<span data-i18n="ui.screen_reader.summary.current_map_time">Current Map Time</span>: <span id='srSumMapTime'></span>
 				</td>
 			</tr>
 			<tr id='srSumVoidMapContainer'>
 				<td>
-					Void Maps: <span id='srSumVoidMap'></span>
+					<span data-i18n="ui.battle.void_maps">Void Maps</span>: <span id='srSumVoidMap'></span>
 				</td>
 			</tr>
 		</tbody>
 	</table>
-	<div style='position: absolute; display: block; width: 15vw; left: 85%; top: 90%; background-color: grey; z-index: 99' id="screenReaderTooltip" aria-live="assertive"></div>
+	<div style='position: absolute; display: block; width: 15vw; left: 85%; top: 90%; background-color: grey; z-index: 99' id="screenReaderTooltip" aria-live="assertive" data-i18n-attr="aria-label:ui.screen_reader.live_region_label"></div>
 	<div id="settingsRow">
 		<table id="settingsTable">
 			<tr>

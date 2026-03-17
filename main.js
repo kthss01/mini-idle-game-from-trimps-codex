@@ -1707,13 +1707,13 @@ function portalClicked(noUniChange) {
 	document.getElementById("totalHeliumSpent").innerHTML = prettify(countHeliumSpent(false, true));
 	document.getElementById("totalPortals").innerHTML = getTotalPortals(true);
 	document.getElementById("activatePortalBtn").style.display = "inline-block";
-	document.getElementById("activatePortalBtn").innerHTML = "Activate Portal";
+	document.getElementById("activatePortalBtn").innerHTML = i18n.t('ui.portal.activate_portal');
 	document.getElementById("challengeSquaredBonusAmt").innerHTML = prettify(game.global.totalSquaredReward);
 	document.getElementById('inPortalC2Name').innerHTML = (game.global.highestRadonLevelCleared >= 49) ? "<span class='icomoon icon-infinity'></span>" : "2";
 	var className = (game.global.highestRadonLevelCleared >= 49) ? "thingColorInfinite" : "thingColorSquared";
 	swapClass("thingColor", className, document.getElementById('inPortalC2Button'))
 	document.getElementById("challengeDescription").style.height = (getSLevel(true) >= 1) ? "19vw" : "22.5vw";
-	document.getElementById("challengeDescriptionPre").innerHTML = (getSLevel(true) >= 1) ? "Don't forget to bring a challenge<br/>" : 'You can also choose to activate a challenge before using your portal. Completing a challenge will earn you a permanent reward. You can abandon or view an active challenge at any time by clicking the "View Perks" button.';
+	document.getElementById("challengeDescriptionPre").innerHTML = (getSLevel(true) >= 1) ? i18n.t('ui.portal.challenge_description_short_html') : i18n.t('ui.portal.challenge_description_pre');
 	if (game.global.canRespecPerks) {
 		document.getElementById("respecPortalBtn").innerHTML = "Respec";
 		document.getElementById("respecPortalBtn").style.display = "inline-block";
@@ -2236,7 +2236,7 @@ function viewPortalUpgrades() {
 		challengeText = getCurrentChallengePane();
 	}
 	else
-		challengeText = "You don't have an active challenge.";
+		challengeText = i18n.t('ui.portal.no_active_challenge_view');
 	if (game.global.universe == 2 && !game.global.portalActive){
 		document.getElementById('extraChallengeStuff').innerHTML = "<br/>If you can't handle this Universe, you can always return to Universe 1. However, returning before finding the Portal Device will invalidate all Scruffy Exp and Radon earned.<br/><span onclick='screwThisUniverse()' class='inPortalBtn btn btn-danger'>Return to Universe 1</span>"
 	}
@@ -2308,7 +2308,7 @@ function swapToCurrentChallenge(updateOnly){
 		challengesElem.style.display = 'none';
 		document.getElementById('viewChallengeText').innerHTML = getCurrentChallengePane();
 		updatePortalChallengeAbandonButton();
-		btnElem.innerHTML = "Select New Challenge";
+		btnElem.innerHTML = i18n.t('ui.portal.select_new_challenge');
 		var c2Reward = document.getElementById('challengeSquaredBonusAmtView');
 		if (c2Reward !== null)
 			c2Reward.innerHTML = prettify(game.global.totalSquaredReward);
@@ -2316,7 +2316,7 @@ function swapToCurrentChallenge(updateOnly){
 	else {
 		viewChallengeElem.style.display = 'none';
 		challengesElem.style.display = 'block';
-		btnElem.innerHTML = "View Current Challenge";
+		btnElem.innerHTML = i18n.t('ui.portal.view_current_challenge');
 	}
 }
 

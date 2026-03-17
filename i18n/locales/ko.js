@@ -84,7 +84,25 @@ window.I18N_LOCALES.ko = {
       "load_preset_5": "프리셋 5 불러오기",
       "save_selected_preset": "선택된 프리셋에 설정 저장",
       "reset_selected_preset": "선택된 프리셋 초기화",
-      "recycle_all_maps": "모든 맵 재활용"
+      "recycle_all_maps": "모든 맵 재활용",
+      "trimp_battle_stats": "트림프 전투 통계",
+      "enemy_battle_stats": "적 전투 통계",
+      "live_region_label": "스크린리더 라이브 영역",
+      "summary": {
+        "last_combat": "최근 전투",
+        "last_story": "최근 스토리",
+        "world_time": "월드 시간",
+        "current_map_time": "현재 맵 시간",
+        "void_maps_stacks_suffix": " ({stacks}중첩)",
+        "trimps_status": "전투 중 {fighting}, 보유 {owned}, 수용량 {fullPercent}%",
+        "attack_score": "공격력 {attack}, 적 체력 대비 {enemyHealthPercent}%",
+        "health_score": "체력 {hp}, 적 공격당 손실 {lostPercent}%",
+        "block": "방어",
+        "prismatic_shield": "프리즘 보호막",
+        "resource_full_suffix": ", 수용량 {fullPercent}%",
+        "balance_stacks": "균형 중첩: {stacks}",
+        "unbalance_stacks": "역균형 중첩: {stacks}"
+      }
     },
     "updates": {
       "page_title": "업데이트",
@@ -221,8 +239,15 @@ window.I18N_LOCALES.ko = {
       "abandon_challenge": "도전 포기",
       "challenges_title": "도전",
       "challenge_description_pre": "포털 사용 전에 도전을 활성화할 수도 있습니다. 도전을 완료하면 영구 보상을 획득합니다. \"특전 보기\" 버튼을 눌러 언제든 활성 도전을 확인하거나 포기할 수 있습니다.",
+      "challenge_description_short_html": "도전을 꼭 챙기세요<br/>",
+      "challenge_must_restart": "이 도전을 포기하면 포털이 불안정해져 월드가 다시 시작됩니다(헬륨 같은 영구 보너스는 유지됩니다)",
       "activate_portal": "포털 활성화",
       "view_current_challenge": "현재 도전 보기",
+      "select_new_challenge": "새 도전 선택",
+      "swap_challenge_squared": "도전 전환",
+      "challenge_squared": "도전",
+      "bonus": "보너스",
+      "no_active_challenge_view": "활성화된 도전이 없습니다.",
       "clear_all_perks": "모든 특전 초기화",
       "trimps_info": "트림프 정보"
     },
@@ -303,6 +328,7 @@ window.I18N_LOCALES.ko = {
     "menu": {
       "delete_save": "저장 삭제",
       "cancel": "취소",
+      "none": "없음",
       "upgrades_research_first": "업그레이드<br/>(먼저 연구 필요)",
       "upgrades": "업그레이드",
       "trimps": "트림프",

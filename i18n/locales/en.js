@@ -84,7 +84,25 @@ window.I18N_LOCALES.en = {
       "load_preset_5": "Load Preset 5",
       "save_selected_preset": "Save Settings to Selected Preset",
       "reset_selected_preset": "Reset The Selected Preset",
-      "recycle_all_maps": "Recycle All Maps"
+      "recycle_all_maps": "Recycle All Maps",
+      "trimp_battle_stats": "Trimp Battle Stats",
+      "enemy_battle_stats": "Enemy Battle Stats",
+      "live_region_label": "Screen reader live region",
+      "summary": {
+        "last_combat": "Last combat",
+        "last_story": "Last story",
+        "world_time": "World Time",
+        "current_map_time": "Current Map Time",
+        "void_maps_stacks_suffix": " in {stacks} stacks",
+        "trimps_status": "{fighting} Fighting, {owned} owned, {fullPercent}% full",
+        "attack_score": "{attack} ATK, {enemyHealthPercent}% of Enemy Health",
+        "health_score": "{hp} HP, {lostPercent}% lost per Enemy Attack",
+        "block": "Block",
+        "prismatic_shield": "Prismatic Shield",
+        "resource_full_suffix": ", {fullPercent}% full",
+        "balance_stacks": "Balance Stacks: {stacks}",
+        "unbalance_stacks": "Unbalance stacks: {stacks}"
+      }
     },
     "updates": {
       "page_title": "Updates",
@@ -221,8 +239,15 @@ window.I18N_LOCALES.en = {
       "abandon_challenge": "Abandon Challenge",
       "challenges_title": "Challenges",
       "challenge_description_pre": "You can also choose to activate a challenge before using your portal. Completing a challenge will earn you a permanent reward. You can abandon or view an active challenge at any time by clicking the \"View Perks\" button.",
+      "challenge_description_short_html": "Don't forget to bring a challenge<br/>",
+      "challenge_must_restart": "If you abandon this challenge, the portal will become unstable and the world will restart (you'll keep permanent bonuses like helium)",
       "activate_portal": "Activate Portal",
       "view_current_challenge": "View Current Challenge",
+      "select_new_challenge": "Select New Challenge",
+      "swap_challenge_squared": "Swap to/from Challenge",
+      "challenge_squared": "Challenge",
+      "bonus": "bonus",
+      "no_active_challenge_view": "You don't have an active challenge.",
       "clear_all_perks": "Clear All Perks",
       "trimps_info": "Trimps Info"
     },
@@ -303,6 +328,7 @@ window.I18N_LOCALES.en = {
     "menu": {
       "delete_save": "Delete Save",
       "cancel": "Cancel",
+      "none": "None",
       "upgrades_research_first": "Upgrades<br/>(Research first)",
       "upgrades": "Upgrades",
       "trimps": "Trimps",

@@ -7697,7 +7697,7 @@ function screenReaderSummary(){
 	elems.srSumWorldZone.innerHTML = game.global.world;
 	elems.srSumWorldCell.innerHTML = game.global.lastClearedCell + 2;
 	elems.srSumWorldTime.innerHTML = formatSecondsForZoneTime(getZoneSeconds())
-	elems.srSumVoidMap.innerHTML = game.global.totalVoidMaps + ((stackedMaps) ? " in " + stackedMaps + " stacks" : "")
+	elems.srSumVoidMap.innerHTML = game.global.totalVoidMaps + ((stackedMaps) ? i18n.t('ui.screen_reader.summary.void_maps_stacks_suffix', { stacks: stackedMaps }) : "")
 
 	var cell = null;
 
@@ -7715,12 +7715,16 @@ function screenReaderSummary(){
 		elems.srSumMapNameContainer.style.display = "none";
 		elems.srSumMapCellContainer.style.display = "none";
 		elems.srSumMapTimeContainer.style.display = "none";
-		elems.srSumMapName.innerHTML = "None";
+		elems.srSumMapName.innerHTML = i18n.t('ui.menu.none');
 		elems.srSumMapCell.innerHTML = "0";
 		cell = getCurrentWorldCell();
 	}
 
-	elems.srSumTrimps.innerHTML = prettify(game.resources.trimps.soldiers) + " Fighting, " + prettify(game.resources.trimps.owned) + " owned, " + prettify((game.resources.trimps.owned / game.resources.trimps.realMax()) * 100) + "% full";
+	elems.srSumTrimps.innerHTML = i18n.t('ui.screen_reader.summary.trimps_status', {
+		fighting: prettify(game.resources.trimps.soldiers),
+		owned: prettify(game.resources.trimps.owned),
+		fullPercent: prettify((game.resources.trimps.owned / game.resources.trimps.realMax()) * 100)
+	});
 	elems.srSumBreed.innerHTML = srLastBreedTime;
 	if (cell){
 		var trimpAttackStr = calculateDamage(game.global.soldierCurrentAttack, true, true)
@@ -7730,8 +7734,14 @@ function screenReaderSummary(){
 		var cellAttack = calculateDamage(cell.attack, false, false, false, cell, true); // Minimum damage
 		cellAttack -= game.global.soldierCurrentBlock;
 		var cellHealth = cell.maxHealth;
-		elems.srSumAttackScore.innerHTML = trimpAttackStr + " ATK, " + prettify((trimpAttack / cellHealth) * 100) + "% of Enemy Health";
-		elems.srSumHealthScore.innerHTML = prettify(trimpHealth) + " HP, " + prettify((cellAttack / trimpHealth) * 100) + "% lost per Enemy Attack";
+		elems.srSumAttackScore.innerHTML = i18n.t('ui.screen_reader.summary.attack_score', {
+			attack: trimpAttackStr,
+			enemyHealthPercent: prettify((trimpAttack / cellHealth) * 100)
+		});
+		elems.srSumHealthScore.innerHTML = i18n.t('ui.screen_reader.summary.health_score', {
+			hp: prettify(trimpHealth),
+			lostPercent: prettify((cellAttack / trimpHealth) * 100)
+		});
 	}
 
 	// Block and Prismatic
@@ -7748,7 +7758,8 @@ function screenReaderSummary(){
 	} else {
 		blockDisplay = prettify(game.global.soldierCurrentBlock);
 	}
-	elems.srSumBlockContainer.innerHTML = `<td>${(game.global.universe == 1 ? "Block" : "Prismatic Shield")}: <span id='srSumBlock'>${blockDisplay}</span></td>` 
+	const blockLabel = (game.global.universe == 1) ? i18n.t('ui.screen_reader.summary.block') : i18n.t('ui.screen_reader.summary.prismatic_shield');
+	elems.srSumBlockContainer.innerHTML = `<td>${blockLabel}: <span id='srSumBlock'>${blockDisplay}</span></td>`
 	
 	var resources = ["food", "wood", "metal", "science", "fragments", "gems"];
 	for (var x = 0; x < resources.length; x++){
@@ -7763,7 +7774,7 @@ function screenReaderSummary(){
 		containerElem.style.display = "table-row";
 		var text = prettify(Math.floor(res.owned));
 		var max = getMaxForResource(resources[x]);
-		if (max && max > 0) text += ", " + prettify((res.owned / max) * 100) + "% full";
+		if (max && max > 0) text += i18n.t('ui.screen_reader.summary.resource_full_suffix', { fullPercent: prettify((res.owned / max) * 100) });
 		elem.innerHTML = text;
 	}
 
@@ -7773,11 +7784,11 @@ function screenReaderSummary(){
 		switch(game.global.challengeActive){
 			case "Balance":
 				hasChallengeText = true;
-				challengeText = "Balance Stacks: " + game.challenges.Balance.balanceStacks;
+				challengeText = i18n.t('ui.screen_reader.summary.balance_stacks', { stacks: game.challenges.Balance.balanceStacks });
 				break;
 			case "Unbalance":
 				hasChallengeText = true;
-				challengeText = "Unbalance stacks: " + game.challenges.Unbalance.balanceStacks;
+				challengeText = i18n.t('ui.screen_reader.summary.unbalance_stacks', { stacks: game.challenges.Unbalance.balanceStacks });
 				break;
 		}
 
