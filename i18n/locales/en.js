@@ -110,7 +110,20 @@ window.I18N_LOCALES.en = {
     },
     "kong": {
       "page_title": "Trimps 5.10.1 (Kongregate Version)",
-      "shell_title": "Kongregate Game Shell"
+      "shell_title": "Kongregate Game Shell",
+      "bone_trader": {
+        "get_more_bones": "<span class=\"kredSpan\"><img class=\"kredImg\" src=\"imgs/kred_single.png\"></img></span> Get some more bones",
+        "bundle_cta": "<span class=\"glyphicon glyphicon-star\"></span> Click to Bundle 4 Exotic Imp-orts and get 100 free bones! <span class=\"glyphicon glyphicon-star\"></span>",
+        "purchase_title": "Purchase Bones"
+      },
+      "tooltip": {
+        "confirm_purchase": {
+          "title": "Confirm Purchase",
+          "import_text": "You are about to purchase a new Exotic Import for 50 bones. This new Bad Guy will begin spawning in your next Zone or Map at an average of 3 spawns per 100 enemies. Is this what you wanted to do?",
+          "helium_text": "You are about to purchase one Instant Portal for 100 bones. Your new Helium will appear in the View Perks menu at the bottom of the screen available for immediate spending, and your Respec will be refreshed. Is this what you wanted to do?",
+          "heirloom_text": "You are about to purchase one Heirloom for 30 bones. This will be created at a random rarity, and will be just like completing a Void Map at your highest ever Zone reached. Are you sure?"
+        }
+      }
     },
     "tabs": {
       "all": "All",

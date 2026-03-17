@@ -17618,6 +17618,39 @@ function showPurchaseBones() {
 	}
 }
 
+function showImportPurchaseConfirm() {
+	tooltip(
+		i18n.t('ui.kong.tooltip.confirm_purchase.title'),
+		null,
+		'update',
+		i18n.t('ui.kong.tooltip.confirm_purchase.import_text'),
+		'purchaseImport()',
+		50
+	);
+}
+
+function showHeliumPurchaseConfirm() {
+	tooltip(
+		i18n.t('ui.kong.tooltip.confirm_purchase.title'),
+		null,
+		'update',
+		i18n.t('ui.kong.tooltip.confirm_purchase.helium_text'),
+		"purchaseMisc('helium')",
+		100
+	);
+}
+
+function showHeirloomPurchaseConfirm() {
+	tooltip(
+		i18n.t('ui.kong.tooltip.confirm_purchase.title'),
+		null,
+		'update',
+		i18n.t('ui.kong.tooltip.confirm_purchase.heirloom_text'),
+		"purchaseMisc('heirloom')",
+		30
+	);
+}
+
 function hidePurchaseBones() {
 	document.getElementById("boneWrapper0").style.display = "block";
 	var elem1 = document.getElementById("boneWrapper1");

@@ -110,7 +110,20 @@ window.I18N_LOCALES.ko = {
     },
     "kong": {
       "page_title": "Trimps 5.10.1 (콩그리게이트 버전)",
-      "shell_title": "콩그리게이트 게임 셸"
+      "shell_title": "콩그리게이트 게임 셸",
+      "bone_trader": {
+        "get_more_bones": "<span class=\"kredSpan\"><img class=\"kredImg\" src=\"imgs/kred_single.png\"></img></span> 뼈 더 얻기",
+        "bundle_cta": "<span class=\"glyphicon glyphicon-star\"></span> 특수 임프 수입 4개를 묶어 무료 뼈 100개 받기! <span class=\"glyphicon glyphicon-star\"></span>",
+        "purchase_title": "뼈 구매"
+      },
+      "tooltip": {
+        "confirm_purchase": {
+          "title": "구매 확인",
+          "import_text": "50 뼈로 새로운 특수 임프 수입을 구매하려고 합니다. 이 새로운 적은 다음 지역 또는 맵에서 적 100마리당 평균 3회 등장하기 시작합니다. 계속할까요?",
+          "helium_text": "100 뼈로 즉시 포털 1개를 구매하려고 합니다. 새 헬륨은 화면 하단의 특전 보기 메뉴에 즉시 사용 가능하게 추가되고, 재분배도 초기화됩니다. 계속할까요?",
+          "heirloom_text": "30 뼈로 가보 1개를 구매하려고 합니다. 이 가보는 무작위 등급으로 생성되며, 최고 도달 지역에서 공허 맵을 완료했을 때와 동일하게 생성됩니다. 정말 진행할까요?"
+        }
+      }
     },
     "tabs": {
       "all": "전체",

@@ -96,13 +96,13 @@ var kongregate = parent.kongregateAPI.getAPI();
 					<div id="boneOwnedContainer">
 						<span data-i18n="ui.bone_trader.owned_prefix">You have</span> <span id="bonesOwned">0</span>
 					</div>
-					<div id="getBonesBtn" class="boneBtn successColor pointer noselect" style="width: 33vw; display: inline-block" onclick="showPurchaseBones()" data-i18n-html="ui.bone_trader.get_more_bones">
+					<div id="getBonesBtn" class="boneBtn successColor pointer noselect" style="width: 33vw; display: inline-block" onclick="showPurchaseBones()" data-i18n-html="ui.kong.bone_trader.get_more_bones">
 						<span class="kredSpan"><img class="kredImg" src="imgs/kred_single.png" /></span> Get some more bones</span>
 					</div>
 					<br/>
 					<span id="bonesFrom" data-i18n="ui.bone_trader.source">You can earn bones as you progress through the world by killing Skeletimps and Megaskeletimps.</span>
 					<br/>
-					<div id="getBundleBtn" class="boneBtn pointer noselect" style="width: 33vw; display: inline-block; font-size: .9em;" onclick="showPurchaseBones(); startBundling()" data-i18n-html="ui.bone_trader.bundle_cta">
+					<div id="getBundleBtn" class="boneBtn pointer noselect" style="width: 33vw; display: inline-block; font-size: .9em;" onclick="showPurchaseBones(); startBundling()" data-i18n-html="ui.kong.bone_trader.bundle_cta">
 						<span class="glyphicon glyphicon-star"></span> Click to Bundle 4 Exotic Imp-orts and get 100 free bones! <span class="glyphicon glyphicon-star"></span>
 					</div>
 					<div id="boneFlavorRow" data-i18n="ui.bone_trader.flavor">
@@ -134,7 +134,7 @@ var kongregate = parent.kongregateAPI.getAPI();
 							</table>
 						</div>
 						<div id="purchaseContainerImports">
-							<div class="boneBtn boneBtnStateOn pointer noselect" id="importPurchaseBtn" onclick="tooltip('Confirm Purchase', null, 'update', 'You are about to purchase a new Exotic Import for 50 bones. This new Bad Guy will begin spawning in your next Zone or Map at an average of 3 spawns per 100 enemies. Is this what you wanted to do?', 'purchaseImport()', 50)"></div>
+							<div class="boneBtn boneBtnStateOn pointer noselect" id="importPurchaseBtn" onclick="showImportPurchaseConfirm()"></div>
 						</div>
 					</div>
 				</div>
@@ -142,7 +142,7 @@ var kongregate = parent.kongregateAPI.getAPI();
 					<div class="boneBuyTitle" data-i18n="ui.bone_trader.other_goodies">Other Goodies</div>
 						<div class="boostSpacer">
 						<div id="buyHeliumArea">
-							<div class="boneBtn boneBtnStateOn pointer noselect" id="heliumPurchaseBtn" onclick="tooltip('Confirm Purchase', null, 'update', 'You are about to purchase one Instant Portal for 100 bones. Your new Helium will appear in the View Perks menu at the bottom of the screen available for immediate spending, and your Respec will be refreshed. Is this what you wanted to do?', 'purchaseMisc(\'helium\')', 100)"> 
+							<div class="boneBtn boneBtnStateOn pointer noselect" id="heliumPurchaseBtn" onclick="showHeliumPurchaseConfirm()"> 
 								<span data-i18n="ui.bone_trader.buy_bone_portal">Buy Bone Portal (100 bones)</span>
 							</div>
 							<div class="miscDesc">
@@ -154,7 +154,7 @@ var kongregate = parent.kongregateAPI.getAPI();
 
 						</div>
 						<div id="buyHeirloomArea">
-							<div class="boneBtn boneBtnStateOn pointer noselect" id="heirloomPurchaseBtn" onclick="tooltip('Confirm Purchase', null, 'update', 'You are about to purchase one Heirloom for 30 bones. This will be created at a random rarity, and will be just like completing a Void Map at your highest ever Zone reached. Are you sure?', 'purchaseMisc(\'heirloom\')', 30)"> 
+							<div class="boneBtn boneBtnStateOn pointer noselect" id="heirloomPurchaseBtn" onclick="showHeirloomPurchaseConfirm()"> 
 								<span data-i18n="ui.bone_trader.buy_heirloom">Buy Heirloom (30 bones)</span>
 							</div>
 							
@@ -172,9 +172,9 @@ var kongregate = parent.kongregateAPI.getAPI();
 			<div class="col-xs-2">		
 			</div>
 			<div class="col-xs-8">
-			<div id="purchaseBonesTitle" data-i18n="ui.bone_trader.purchase_title">
-				Purchase Bones
-			</div>
+					<div id="purchaseBonesTitle" data-i18n="ui.kong.bone_trader.purchase_title">
+						Purchase Bones
+					</div>
 			<div id="purchaseBonesDesc">
 				<span data-i18n="ui.bone_trader.purchase_desc">Bones can be earned in game or purchased here.</span><br/><span data-i18n="ui.bone_trader.purchase_desc_detail">In game, you will earn bones from enemies that randomly spawn in the world</span>
 				<div class="boneBuyDesc">
@@ -489,20 +489,20 @@ var kongregate = parent.kongregateAPI.getAPI();
 				<div id="outerBuyContainer">	
 					<div id="buyTabs">
 						<ul id="buyTabsUl" class="nav nav-tabs nav-justified buyTabsUl">
-							<li role="presentation" id="allTab" onclick="filterTabs('all')" class="tabNotSelected buyTab"><a id="allA">All</a></li>
-							<li role="presentation" id="buildingsTab" onclick="filterTabs('buildings')" class="tabNotSelected buyTab"><a id="buildingsA"><span id="buildingsAlert" class="alert badge"></span>Buildings</a></li>
-							<li role="presentation" id="jobsTab" style="visibility: hidden" onclick="filterTabs('jobs')" class="tabNotSelected buyTab"><a id="jobsA"><span id="jobsAlert" class="alert badge"></span>Jobs</a></li>
-							<li role="presentation" id="upgradesTab" style="visibility: hidden" onclick="filterTabs('upgrades')" class="tabNotSelected buyTab"><a id="upgradesA"><span id="upgradesAlert" class="alert badge"></span>Upgrades</a></li>
-							<li role="presentation" id="equipmentTab" style="visibility: hidden" onclick="filterTabs('equipment')" class="tabNotSelected buyTab"><a id="equipmentA"><span id="equipmentAlert" class="alert badge"></span>Equipment</a></li>		
-						</ul>
-						<ul id="buyTabsUl2" class="nav nav-tabs nav-justified buyTabsUl">
-							<li role="presentation" id="talentsTab" style='display: none' onclick="filterTabs('talents')" class="tabNotSelected buyTab" onmouseover="tooltip('Mastery', null, event)" onmouseout="tooltip('hide')"><a id="talentA"><span id="talentsAlert" class="alert badge"></span><span id="mutatorsAlert" class="alert badge"></span><span id='MasteryTabName'>Mastery</span><span id="talentsEssenceTotal"></span></a></li>		
-							<li role="presentation" id="equalityTab" style='display: none'  onclick="tooltip('Scale Equality Scaling', null, 'update', true)" class="tabNotSelected equalityTabScaling buyTab" onmouseover="tooltip('Equality Scaling', null, event, true)" onmouseout="tooltip('hide')"><a id="equalityA">Equality</a></li>		
-							<li role="presentation" id="natureTab" style='display: none'  onclick="filterTabs('nature')" class="tabNotSelected buyTab empowerTabNone" onmouseover="tooltip('Empowerments of Nature', null, event)" onmouseout="tooltip('hide')"><a id="natureA">Nature</a></li>		
-							<li role="presentation" id="playerSpireTab" style='display: none' onclick="playerSpire.openPopup()" class="tabNotSelected buyTab pausedSpireNo"><a id="spireA">Spire</a></li>
-							<li role="presentation" id="alchemyTab" style='display: none' onclick="alchObj.openPopup()" class="tabNotSelected buyTab alchTabNone"><a id="alchemyA">Alchemy</a></li>
-							<li role="presentation" id="autoBattleTab" style='display: none' onclick="autoBattle.popup()" class="tabNotSelected buyTab abTabNone"><a id="autoBattleA">SA</a></li>
-						</ul>
+						<li role="presentation" id="allTab" onclick="filterTabs('all')" class="tabNotSelected buyTab"><a id="allA" data-i18n="ui.tabs.all">All</a></li>
+						<li role="presentation" id="buildingsTab" onclick="filterTabs('buildings')" class="tabNotSelected buyTab"><a id="buildingsA"><span id="buildingsAlert" class="alert badge"></span><span data-i18n="ui.tabs.buildings">Buildings</span></a></li>
+						<li role="presentation" id="jobsTab" style="visibility: hidden" onclick="filterTabs('jobs')" class="tabNotSelected buyTab"><a id="jobsA"><span id="jobsAlert" class="alert badge"></span><span data-i18n="ui.tabs.jobs">Jobs</span></a></li>
+						<li role="presentation" id="upgradesTab" style="visibility: hidden" onclick="filterTabs('upgrades')" class="tabNotSelected buyTab"><a id="upgradesA"><span id="upgradesAlert" class="alert badge"></span><span data-i18n="ui.tabs.upgrades">Upgrades</span></a></li>
+						<li role="presentation" id="equipmentTab" style="visibility: hidden" onclick="filterTabs('equipment')" class="tabNotSelected buyTab"><a id="equipmentA"><span id="equipmentAlert" class="alert badge"></span><span data-i18n="ui.tabs.equipment">Equipment</span></a></li>		
+					</ul>
+					<ul id="buyTabsUl2" class="nav nav-tabs nav-justified buyTabsUl">
+						<li role="presentation" id="talentsTab" style='display: none' onclick="filterTabs('talents')" class="tabNotSelected buyTab" onmouseover="tooltip('Mastery', null, event)" onmouseout="tooltip('hide')"><a id="talentA"><span id="talentsAlert" class="alert badge"></span><span id="mutatorsAlert" class="alert badge"></span><span id='MasteryTabName' data-i18n="ui.tabs.mastery">Mastery</span><span id="talentsEssenceTotal"></span></a></li>		
+						<li role="presentation" id="equalityTab" style='display: none'  onclick="tooltip('Scale Equality Scaling', null, 'update', true)" class="tabNotSelected equalityTabScaling buyTab" onmouseover="tooltip('Equality Scaling', null, event, true)" onmouseout="tooltip('hide')"><a id="equalityA" data-i18n="ui.tabs.equality">Equality</a></li>		
+						<li role="presentation" id="natureTab" style='display: none'  onclick="filterTabs('nature')" class="tabNotSelected buyTab empowerTabNone" onmouseover="tooltip('Empowerments of Nature', null, event)" onmouseout="tooltip('hide')"><a id="natureA" data-i18n="ui.tabs.nature">Nature</a></li>		
+						<li role="presentation" id="playerSpireTab" style='display: none' onclick="playerSpire.openPopup()" class="tabNotSelected buyTab pausedSpireNo"><a id="spireA" data-i18n="ui.tabs.spire">Spire</a></li>
+						<li role="presentation" id="alchemyTab" style='display: none' onclick="alchObj.openPopup()" class="tabNotSelected buyTab alchTabNone"><a id="alchemyA" data-i18n="ui.tabs.alchemy">Alchemy</a></li>
+						<li role="presentation" id="autoBattleTab" style='display: none' onclick="autoBattle.popup()" class="tabNotSelected buyTab abTabNone"><a id="autoBattleA">SA</a></li>
+					</ul>
 					</div>
 
 					<div id="numTabs" class="numTabs">
@@ -1165,7 +1165,7 @@ var kongregate = parent.kongregateAPI.getAPI();
 	</div>
 
 	<div id="portalWrapper" style="display: none" class="portalMk0">
-		<div id='swapPortalUniverseBtn' onmouseover="tooltip('Change Universe', null, event)" onmouseout="tooltip('hide')" onclick="swapPortalUniverse()">Change Universe</div>
+		<div id='swapPortalUniverseBtn' onmouseover="tooltip('Change Universe', null, event)" onmouseout="tooltip('hide')" onclick="swapPortalUniverse()" data-i18n="ui.portal.change_universe">우주 변경</div>
 		<div id='titleRow'>
 			<div id='titleCol1' class='titleCol'>
 				<div>
@@ -1175,42 +1175,42 @@ var kongregate = parent.kongregateAPI.getAPI();
 			</div>
 			<div id='titleCol2' class='titleCol'>
 				<div>
-					<div id="portalHelium"><span id="portalHeliumOwned">0</span> Helium Canisters</div>
-					<div id="portalTotalHelium"><span id="totalHeliumEarned">0</span> Earned All Time</div>
-					<div id="portalTotalSpent"><span id="totalHeliumSpent">0</span> Spent on Perks</div>
-					<div id="portalTotalPortals"><span id="totalPortals">0</span> Portals Used</div>		
+					<div id="portalHelium" data-i18n-html="ui.portal.helium_canisters"><span id="portalHeliumOwned">0</span> 헬륨 캐니스터</div>
+					<div id="portalTotalHelium" data-i18n-html="ui.portal.total_earned"><span id="totalHeliumEarned">0</span> 누적 획득</div>
+					<div id="portalTotalSpent" data-i18n-html="ui.portal.total_spent_on_perks"><span id="totalHeliumSpent">0</span> 특전에 사용</div>
+					<div id="portalTotalPortals" data-i18n-html="ui.portal.total_portals_used"><span id="totalPortals">0</span> 포털 사용</div>		
 				</div>
 			</div>
 		</div>
 		<div class="row" id="portalRow">
 			<div id="perkCol" class="col-xs-7">
-			<div class="challengeTitle">Perks</div>
+			<div class="challengeTitle" data-i18n="ui.portal.perks_title">특전</div>
 			<div id="portalStory"></div>
 			<div id="portalPresets" class="numTabs">
 				<ul class="nav nav-tabs nav-justified" id="portalPresetsTabs">
 						<li role="presentation" class="tabNotSelected" id="presetTab1" onclick="presetTab(1, true)" onmouseover="tooltip('Perk Preset', null, event, 1)" onmouseout="tooltip('hide')">
-							<a id="presetTab1Text">Preset 1</a>
+							<a id="presetTab1Text" data-i18n="ui.portal.preset.one">프리셋 1</a>
 						</li>
 						<li role="presentation" class="tabNotSelected" id="presetTab2" onclick="presetTab(2, true)" onmouseover="tooltip('Perk Preset', null, event, 2)" onmouseout="tooltip('hide')">
-							<a id="presetTab2Text">Preset 2</a>
+							<a id="presetTab2Text" data-i18n="ui.portal.preset.two">프리셋 2</a>
 						</li>
 						<li role="presentation" class="tabNotSelected" id="presetTab3" onclick="presetTab(3, true)" onmouseover="tooltip('Perk Preset', null, event, 3)" onmouseout="tooltip('hide')">
-							<a id="presetTab3Text">Preset 3</a>
+							<a id="presetTab3Text" data-i18n="ui.portal.preset.three">프리셋 3</a>
 						</li>
 						<li role="presentation" class="tabNotEnabled" id="presetTabSave" onclick="savePerkPreset()" onmouseover="tooltip('Perk Preset', null, event, 'Save')" onmouseout="tooltip('hide')">
-							<a>Save</a>
+							<a data-i18n="ui.portal.preset.save">저장</a>
 						</li>
 						<li role="presentation" class="tabNotEnabled" id="presetTabLoad" onclick="loadPerkPreset()" onmouseover="tooltip('Perk Preset', null, event, 'Load')" onmouseout="tooltip('hide')">							
-							<a>Load</a>
+							<a data-i18n="ui.portal.preset.load">불러오기</a>
 						</li>
 						<li role="presentation" class="tabNotEnabled" id="presetTabRename" onclick="renamePerkPreset(true)" onmouseover="tooltip('Perk Preset', null, event, 'Rename')" onmouseout="tooltip('hide')">
-							<a>Rename</a>
+							<a data-i18n="ui.portal.preset.rename">이름 변경</a>
 						</li>
 						<li role="presentation" class="tabNotEnabled" id="presetTabExport" onclick="tooltip('Export Perks', null, 'update')" onmouseover="tooltip('Perk Preset', null, event, 'Export')" onmouseout="tooltip('hide')">
-							<a>Export</a>
+							<a data-i18n="ui.portal.preset.export">내보내기</a>
 						</li>
 						<li role="presentation" class="tabNotEnabled" id="presetTabImport" onclick="tooltip('Import Perks', null, 'update')" onmouseover="tooltip('Perk Preset', null, event, 'Import')" onmouseout="tooltip('hide')">
-							<a>Import</a>
+							<a data-i18n="ui.portal.preset.import">가져오기</a>
 						</li>
 				</ul>
 			</div>
@@ -1247,9 +1247,9 @@ var kongregate = parent.kongregateAPI.getAPI();
 			<div id="challengeCol" class="col-xs-5">
 				<div id="viewChallenge" style="display: none">
 				<div style='text-align: center'><span class="thing thingColorSquared pointer" style='width: 50%; display: inline-block;'  onmouseover="tooltip('Challenge2', null, event, true)" onmouseout="tooltip('hide')" id='challengeSquaredViewBtn'>Challenge<sup><span id='challengeSquaredName'>2</span></sup> - <span id='challengeSquaredBonusAmtView'>0</span>% bonus</span></div>
-					<span id="viewChallengeText">You do not currently have an active challenge.</span>
+					<span id="viewChallengeText" data-i18n="ui.portal.no_active_challenge">현재 활성화된 도전이 없습니다.</span>
 				<br/><br/>
-				<div class="btn btn-warning inPortalBtn" style="display: none" id="cancelChallengeBtn" onclick="confirmAbandonChallenge()">Abandon Challenge</div>
+				<div class="btn btn-warning inPortalBtn" style="display: none" id="cancelChallengeBtn" onclick="confirmAbandonChallenge()" data-i18n="ui.portal.abandon_challenge">도전 포기</div>
 				<span id="extraChallengeStuff"></span>
 				</div>
 				<div id="challenges"  style="display: none">
@@ -1344,7 +1344,7 @@ var kongregate = parent.kongregateAPI.getAPI();
 			<div class="col-xs-4" id="statCol3">
 			</div>			
 		</div>
-		<div class="btn btn-danger inPortalBtn" id="closeStatsBtn" onclick="toggleStats()">Close</div>&nbsp;<div class="btn btn-info inPortalBtn" id="closeStatsBtn" onclick="tooltip('Trimps Info', null, 'update')">Trimps Info</div>
+		<div class="btn btn-danger inPortalBtn" id="closeStatsBtn" onclick="toggleStats()" data-i18n="ui.menu.close">닫기</div>&nbsp;<div class="btn btn-info inPortalBtn" id="closeStatsBtn" onclick="tooltip('Trimps Info', null, 'update')" data-i18n="ui.portal.trimps_info">트림프 정보</div>
 	</div>
 	<div id="mutTreeWrapper" style="display: none" class="noselect">
 	</div>
