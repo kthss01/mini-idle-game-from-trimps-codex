@@ -1,107 +1,77 @@
-# Trimps 한국어 현지화 진행도 점검 보고서
+# Trimps 한국어 현지화 진행도 점검 보고서 (업데이트)
 
-## 개요
-이 문서는 현재 저장소의 한국어 현지화(i18n) 적용 상태를 최신 코드 기준으로 점검한 결과입니다.
+## 요약
+- 로케일 키 수는 `en=285`, `ko=285`로 동일하며 누락/빈 값은 없습니다.
+- 영문/한글 값이 동일한 키는 1개(`ui.spire.preset.trap_chip`)입니다.
+- 런타임 `i18n.t(...)` 리터럴 키는 116개이며, 이 중 추출 스냅샷(`extracted-ui-strings + extracted-ui-attrs`)에 없는 `runtime-only` 키가 90개입니다.
+- 즉, **사전 완성도는 높지만 추출 스냅샷과 런타임 사용처 간 정합성 격차가 큽니다.**
 
-- 기준 로케일: `i18n/locales/en.js`
-- 한국어 로케일: `i18n/locales/ko.js`
-- 추출 스크립트: `scripts/extract-i18n.js`
-- 검증 스크립트: `scripts/validate-i18n.js`
-- 점검 범위: HTML 바인딩(`data-i18n`, `data-i18n-html`, `data-i18n-title`, `data-i18n-attr`) + JS 런타임(`i18n.t(...)`)
+## 1) 사전(번역 데이터) 품질
+기준 파일:
+- `i18n/locales/en.js`
+- `i18n/locales/ko.js`
 
----
-
-## 1) 정량 지표 (최신)
-
-### A. 로케일 사전 품질 (`en.js` vs `ko.js`)
+정량 결과:
 - en 키 수: **285**
 - ko 키 수: **285**
-- 누락(missing): **0**
-- 빈 값(empty): **0**
-- en/ko 동일값: **2** (`ui.menu.perks.unknown`, `ui.spire.preset.trap_chip`)
-- 유효 번역 키: **283 / 285**
+- ko 누락(missing): **0**
+- ko 빈 값(empty): **0**
+- en/ko 동일값: **1** (`ui.spire.preset.trap_chip`)
+- 유효 번역 키: **285/285**
 
-### B. HTML i18n 바인딩 적용 수 (`scripts/extract-i18n.js`)
-> 아래 수치는 **파일별 고유 키 수(unique)** 와 **속성 바인딩 수(binding)** 를 함께 표기합니다.
+## 2) 추출 스냅샷 기준 커버리지
+기준 파일:
+- `i18n/extracted-ui-strings.json`
+- `i18n/extracted-ui-attrs.json`
 
-| 파일 | 고유 키 수 | 바인딩 수 | 세부(`data-i18n`/`data-i18n-html`/`data-i18n-title`/`data-i18n-attr`) |
-|---|---:|---:|---|
-| `index.html` | 94 | 94 | 91 / 1 / 0 / 2 |
-| `ScreenReader.html` | 82 | 82 | 69 / 2 / 0 / 11 |
-| `indexKong.html` | 40 | 40 | 37 / 1 / 0 / 2 |
-| `Kongregate_Game_Shell.html` | 1 | 1 | 1 / 0 / 0 / 0 |
+정량 결과:
+- strings 키 수: **173**
+- attrs 키 수: **125**
+- 합집합(추출 키셋): **198**
 
-- HTML 신규 추출 키(`stringsResult`): **103**
-- 문자열 호환 누적 키(`i18n/extracted-ui-strings.json`): **157**
-- 속성 포함 키(`i18n/extracted-ui-attrs.json`): **114**
+해석:
+- HTML/속성 추출 누적 스냅샷은 198개 키를 커버합니다.
+- 현재 런타임 리터럴 키(116개) 중 90개가 스냅샷에 없으므로, 추출 파이프라인 또는 추출 대상 파일/패턴 보강이 필요합니다.
 
-### C. JS 런타임 i18n 호출 수 (`i18n.t(...)` 정적 리터럴 기준)
-- `main.js`: **23**
-- `config.js`: **10**
-- `updates.js`: **21**
-- `objects.js`: **18**
+## 3) 런타임 i18n 적용 현황 (`i18n.t(...)` 리터럴)
+스캔 대상:
+- `main.js`, `config.js`, `updates.js`, `objects.js`, `playerSpire.js`
+
+파일별 호출 수:
+- `main.js`: **30**
+- `config.js`: **18**
+- `updates.js`: **36**
+- `objects.js`: **20**
 - `playerSpire.js`: **31**
-- 합계: **103 호출**, 고유 키 **93개**
+- 합계: **135 호출 / 고유 키 116개**
 
-### D. 검증 결과 (`node scripts/validate-i18n.js`)
-- 동적 키 검증 실패: **0**
+검증 결과(`node scripts/validate-i18n.js`):
+- dynamic key 실패: **0**
 - missing: **0**
 - unused: **0**
-- runtime-only: **67** (en/ko 동일)
+- runtime-only: **90** (en/ko 동일)
 
----
+## 4) 병목/리스크 분석
+1. **추출-런타임 불일치 증가**
+   - `runtime-only 90`은 단순 경고 수준을 넘어, 관리 지표(번역 적용률/검증 자동화) 왜곡 위험이 큽니다.
 
-## 2) 카운트 기준(정의)
+2. **문서화 수치 최신화 필요**
+   - 기존 문서의 과거 지표(예: runtime-only 67, 낮은 호출 수)와 현재 코드 기준이 다릅니다.
 
-문서/스크립트 숫자 불일치를 방지하기 위해 아래 기준으로 통일합니다.
+3. **도메인 우선순위 정비 필요**
+   - `updates.js`, `main.js`, `config.js`의 호출 비중이 큰 만큼, 플레이어 체감 경로 중심으로 먼저 추출/검증 동기화를 맞추는 것이 효과적입니다.
 
-1. **HTML 적용 수**
-   - 기본 표시는 `scripts/extract-i18n.js` 출력 기준 사용.
-   - `data-i18n`, `data-i18n-html`, `data-i18n-title`, `data-i18n-attr`를 모두 포함.
-   - 문서에는 반드시
-     - 고유 키 수(중복 제거),
-     - 바인딩 수(속성 엔트리 개수)
-     를 분리해 표기.
-
-2. **JS 런타임 적용 수**
-   - `scripts/validate-i18n.js`와 동일한 파서 기준으로 `i18n.t(...)` 첫 번째 인자만 분석.
-   - 문자열 리터럴(작은따옴표/큰따옴표/템플릿 리터럴 중 `${}` 없는 경우)만 정적 키로 집계.
-
-3. **`runtime-only` 기준**
-   - `runtime-only` = `runtimeKeys - extractedKeys`.
-   - `extractedKeys`는 `extracted-ui-strings.json` + `extracted-ui-attrs.json`의 키 합집합.
-
-4. **포함/제외 규칙**
-   - **주석/비활성 코드 제외**: 정적 파서는 실제 구문 매칭 기준이며 주석 텍스트는 키로 집계하지 않음.
-   - **중복 호출/중복 바인딩**
-     - 호출/바인딩 수는 occurrence 기준,
-     - 키 수는 unique 기준으로 분리 표기.
-
----
-
-## 3) 스크립트 산출 방식 통일 사항
-
-- `scripts/extract-i18n.js`
-  - 파일별 출력에 `고유 키 수`와 `바인딩 수(속성별 breakdown)`를 함께 출력.
-  - 기존 `i18n/extracted-ui-strings.json`을 유지 병합하여 누적 키셋을 보존.
-- `scripts/validate-i18n.js`
-  - 기존과 동일하게 `extracted keys(문서/추출 기준)`와 `runtime keys(실행 경로 기준)`의 차이를 `runtime-only`로 경고.
-- 문서 지표는 위 두 스크립트의 출력값만 인용.
-
----
-
-## 4) 종합 해석
-
-- 외부화된 로케일 사전 자체는 높은 완성도(**233/235**)를 유지.
-- HTML 바인딩과 런타임 호출은 지속 확장됐으나, `runtime-only 67`이 남아 추출 스냅샷과 런타임 키셋이 완전히 일치하지는 않음.
-- 따라서 사용자 체감 품질은 높지만, 게이트를 엄격히 적용하면(예: `runtime-only=0`) 추가 정리 작업이 필요.
-
----
+## 5) 권장 액션
+- P0: `runtime-only` 90개를 도메인별(맵/전투/Spire/설정)로 분류해
+  1) HTML/속성 추출 대상에 편입할 키,
+  2) 런타임 전용 키로 의도적으로 유지할 키
+  를 분리 정의.
+- P1: `scripts/extract-i18n.js`의 대상 파일/속성 패턴을 현재 UI 구조에 맞게 확장.
+- P2: `docs/localization/*`와 본 보고서의 지표 갱신 주기를 CI 검증 결과와 맞춰 자동 업데이트.
 
 ## 측정 메타데이터
-- 측정 시각(UTC): **2026-03-17T01:49:11Z**
-- 측정 브랜치: **work**
-- 측정 기준 커밋: **1bf363576f68aa072ecfb8a361b336b649e6bb98**
-- 실행 명령:
-  - `node scripts/extract-i18n.js`
+- 측정 시각(UTC): 2026-03-17
+- 측정 명령:
   - `node scripts/validate-i18n.js`
+  - `node` 인라인 스크립트(로케일 키 수/동일값/런타임 호출 수 집계)
+  - `node` 인라인 스크립트(HTML 바인딩 개수 확인)
