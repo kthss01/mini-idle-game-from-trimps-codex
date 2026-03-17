@@ -128,6 +128,18 @@ window.I18N_LOCALES.en = {
       "build": "Build",
       "empty": "Nothing in queue..."
     },
+    "trimps": {
+      "breeding": "breeding",
+      "employed": "employed",
+      "check_traps_html": "Check&nbsp;Traps&nbsp;(<span id=\"trimpTrapText\">1</span>)",
+      "trapping_html": "Trapping (<span id=\"trimpTrapText2\">1</span>)"
+    },
+    "log_filters": {
+      "story": "Story",
+      "loot": "Loot",
+      "unlocks": "Unlocks",
+      "combat": "Combat"
+    },
     "panels": {
       "buildings": "Buildings",
       "jobs": "Jobs"

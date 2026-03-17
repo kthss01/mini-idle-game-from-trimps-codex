@@ -128,6 +128,18 @@ window.I18N_LOCALES.ko = {
       "build": "건설",
       "empty": "대기열이 비어 있습니다..."
     },
+    "trimps": {
+      "breeding": "번식 중",
+      "employed": "배치됨",
+      "check_traps_html": "함정 확인 (<span id=\"trimpTrapText\">1</span>)",
+      "trapping_html": "포획 중 (<span id=\"trimpTrapText2\">1</span>)"
+    },
+    "log_filters": {
+      "story": "스토리",
+      "loot": "전리품",
+      "unlocks": "해금",
+      "combat": "전투"
+    },
     "panels": {
       "buildings": "건물",
       "jobs": "직업"
