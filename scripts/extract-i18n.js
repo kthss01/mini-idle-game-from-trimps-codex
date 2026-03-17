@@ -232,6 +232,12 @@ for (const file of targets) {
   const src = fs.readFileSync(file, 'utf8');
   const root = parseHtml(src);
   const fileKeys = new Set();
+  const bindingCounts = {
+    dataI18n: 0,
+    dataI18nHtml: 0,
+    dataI18nTitle: 0,
+    dataI18nAttr: 0
+  };
 
   walk(root, (el) => {
     const textKey = el.attrs['data-i18n'];
@@ -240,6 +246,7 @@ for (const file of targets) {
     const attrsKeyMap = el.attrs['data-i18n-attr'];
 
     if (textKey) {
+      bindingCounts.dataI18n += 1;
       const fallbackText = extractTextContent(el);
       if (!(textKey in stringsResult)) {
         stringsResult[textKey] = fallbackText;
@@ -252,6 +259,7 @@ for (const file of targets) {
     }
 
     if (htmlKey) {
+      bindingCounts.dataI18nHtml += 1;
       const fallbackHtml = normalizeWhitespace(extractInnerHtml(el));
       if (!(htmlKey in stringsResult)) {
         stringsResult[htmlKey] = fallbackHtml;
@@ -264,6 +272,7 @@ for (const file of targets) {
     }
 
     if (titleKey) {
+      bindingCounts.dataI18nTitle += 1;
       const fallbackTitle = normalizeWhitespace(el.attrs.title || '');
       if (!attrsResult[titleKey]) attrsResult[titleKey] = {};
       if (!('text' in attrsResult[titleKey])) attrsResult[titleKey].text = null;
@@ -280,6 +289,8 @@ for (const file of targets) {
         const key = parts.join(':').trim();
         if (!attrName || !key) return;
 
+        bindingCounts.dataI18nAttr += 1;
+
         if (!attrsResult[key]) attrsResult[key] = {};
         if (!('text' in attrsResult[key])) attrsResult[key].text = null;
         if (!(attrName in attrsResult[key])) {
@@ -291,7 +302,10 @@ for (const file of targets) {
     }
   });
 
-  fileStats[file] = fileKeys.size;
+  fileStats[file] = {
+    uniqueKeys: fileKeys.size,
+    bindings: bindingCounts
+  };
 }
 
 const mergedStringsResult = { ...loadExistingJson(stringsOutput), ...stringsResult };
@@ -302,7 +316,17 @@ fs.writeFileSync(attrsOutput, JSON.stringify(attrsResult, null, 2) + '\n');
 const totalKeys = Object.keys(attrsResult).length;
 console.log(`추출 완료: 총 ${totalKeys}개 키`);
 for (const file of targets) {
-  console.log(`- ${file}: ${fileStats[file] || 0}개 키`);
+  const stats = fileStats[file] || {
+    uniqueKeys: 0,
+    bindings: { dataI18n: 0, dataI18nHtml: 0, dataI18nTitle: 0, dataI18nAttr: 0 }
+  };
+  console.log(
+    `- ${file}: 고유 키 ${stats.uniqueKeys}개 / 바인딩 ${stats.bindings.dataI18n + stats.bindings.dataI18nHtml + stats.bindings.dataI18nTitle + stats.bindings.dataI18nAttr}개 ` +
+      `(data-i18n ${stats.bindings.dataI18n}, data-i18n-html ${stats.bindings.dataI18nHtml}, data-i18n-title ${stats.bindings.dataI18nTitle}, data-i18n-attr ${stats.bindings.dataI18nAttr})`
+  );
 }
-console.log(`- 문자열 호환 파일: ${Object.keys(mergedStringsResult).length}개 키 (신규 추출 ${Object.keys(stringsResult).length}개) -> ${stringsOutput}`);
+console.log(
+  `- 문자열 호환 파일(누적): ${Object.keys(mergedStringsResult).length}개 키 ` +
+    `(이번 HTML 추출 ${Object.keys(stringsResult).length}개) -> ${stringsOutput}`
+);
 console.log(`- 속성 포함 파일: ${Object.keys(attrsResult).length}개 키 -> ${attrsOutput}`);

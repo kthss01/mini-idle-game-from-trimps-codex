@@ -1,90 +1,95 @@
-# 한국어 현지화 진행도 및 develop 병합 판단 (2026-03-16)
+# 한국어 현지화 진행도 및 develop 병합 판단 (2026-03-17)
 
 ## 1) 현재 진행도 요약
 
 ### 정량 지표
-- 로케일 키 수: en 235 / ko 235
-- 누락(missing) 0, 빈 값(empty) 0
-- en/ko 동일값 2 (`ui.menu.perks.unknown`, `ui.spire.preset.trap_chip`)
-- 유효 번역 키 233/235
-- HTML `data-i18n*` 적용 수
-  - `index.html`: 94
-  - `ScreenReader.html`: 82
-  - `indexKong.html`: 40
-  - `updates.html`: 0
-- JS 런타임 `i18n.t(...)` 적용 수
-  - `main.js`: 23
-  - `config.js`: 10
-  - `updates.js`: 21
-  - `objects.js`: 18
-  - `playerSpire.js`: 31
-- `node scripts/validate-i18n.js` 결과: `runtime-only` 67개 (en/ko 동일)
+- 로케일 키 수: en **235** / ko **235**
+- 누락(missing) **0**, 빈 값(empty) **0**
+- en/ko 동일값 **2** (`ui.menu.perks.unknown`, `ui.spire.preset.trap_chip`)
+- 유효 번역 키 **233/235**
+
+- HTML i18n 적용 (`scripts/extract-i18n.js`, 고유 키 / 바인딩)
+  - `index.html`: **94 / 94** (`data-i18n` 91, `data-i18n-html` 1, `data-i18n-title` 0, `data-i18n-attr` 2)
+  - `ScreenReader.html`: **82 / 82** (69, 2, 0, 11)
+  - `indexKong.html`: **40 / 40** (37, 1, 0, 2)
+  - `Kongregate_Game_Shell.html`: **1 / 1** (1, 0, 0, 0)
+  - HTML 신규 추출 키: **103**
+  - 문자열 호환 누적 키(`extracted-ui-strings.json`): **157**
+  - 속성 포함 키(`extracted-ui-attrs.json`): **114**
+
+- JS 런타임 `i18n.t(...)` 적용 수 (리터럴 기준)
+  - `main.js`: **23**
+  - `config.js`: **10**
+  - `updates.js`: **21**
+  - `objects.js`: **18**
+  - `playerSpire.js`: **31**
+  - 합계: **103 호출 / 고유 키 93**
+
+- `node scripts/validate-i18n.js` 결과
+  - dynamic-keys 실패: **0**
+  - `runtime-only`: **67개** (en/ko 동일)
 
 ### 해석
-- **이미 분리된 키셋(en/ko 사전) 번역 완성도는 매우 높음(233/235).**
-- 다만 추출 스냅샷(`i18n/extracted-ui-strings.json`) 기준 `runtime-only`가 67개라서, **"코드에 적용된 키"와 "추출/관리되는 키"가 완전히 일치하지는 않음**.
-- 즉, 플레이어 체감상 한글화는 상당히 진전됐지만, 릴리즈 게이트 관점에서는 아직 정리 작업(추출 범위 확장 또는 게이트 정책 완화)이 남아 있음.
+- **사전 번역 완성도는 매우 높음(233/235).**
+- 다만 추출 키셋 대비 런타임 키 차이(`runtime-only=67`)가 남아 있어, 릴리즈 게이트를 엄격히 적용하면 후속 정리가 필요.
 
 ---
 
-## 2) 게임 진행 기준 우선순위 (추천)
+## 2) 카운트 기준 (문서/스크립트 통일 정의)
 
-아래 우선순위는 "게임 플레이 진행에 즉시 필요한 정보"를 기준으로 정렬했습니다.
+1. HTML 적용 수는 `data-i18n`, `data-i18n-html`, `data-i18n-title`, `data-i18n-attr`를 모두 포함한다.
+2. 문서에는 **고유 키 수**와 **바인딩 수**를 분리 표기한다.
+3. JS 적용 수는 `i18n.t(...)`의 첫 번째 인자가 리터럴일 때만 집계한다.
+4. `runtime-only`는 `runtimeKeys - (extracted-ui-strings + extracted-ui-attrs)`로 계산한다.
+5. 주석/비활성 텍스트는 집계 대상에서 제외한다(정적 파서 매칭 기준).
+
+---
+
+## 3) 게임 진행 기준 우선순위 (추천)
 
 ### P0 (최우선): 진행/판단에 직접 영향
 1. **전투/맵/포탈 전환 메시지** (`main.js`, `updates.js`, `objects.js`)
-   - 전투 상태, 맵 진입/종료, 업적/도전 진행 메시지
-   - 플레이어가 다음 행동을 결정하는 핵심 텍스트
-2. **설정 중 즉시 플레이 효율에 영향 주는 항목** (`config.js`)
-   - 자동화/성능/전투 관련 설정 설명
-   - 잘못 이해하면 성장 루프가 느려지는 영역
+2. **즉시 플레이 효율에 영향 주는 설정 설명** (`config.js`)
 
 ### P1 (높음): 반복 사용 UI
-3. **Spire/Spire Assault UI** (`playerSpire.js`)
-   - 현재 `runtime-only` 비중이 가장 큰 영역
-   - 프리셋/설정/도움말 문구는 고레벨 플레이에서 반복 노출
-4. **맵/도전 도메인 문구 일관성** (`ui.maps.*`, `ui.challenges.*`)
-   - 이미 키는 많으나 문구 통일(용어집 반영) 필요
+3. **Spire / Spire Assault UI** (`playerSpire.js`)
+4. **맵/도전 도메인 문구 일관성** (`ui.map.*`, `ui.message.challenge.*`)
 
 ### P2 (중간): 접근성/플랫폼/부가 문서
-5. **`indexKong.html` 잔여 영어 정리**
-   - Kongregate 전용 뷰의 잔여 문자열
-6. **`ScreenReader.html` 장문 안내 문장 문체 통일**
-   - 접근성 중요도는 높지만 핵심 성장 루프 직접성은 상대적으로 낮음
-7. **`updates.html`(패치노트/계정성 UI)**
-   - 플레이 진행 자체보다는 정보 제공 성격
-
----
-
-## 3) 다음 스프린트 작업 순서 (실행안)
-1. `runtime-only` 67개를 도메인별로 분리해 추출 스냅샷에 반영
-2. P0 메시지 키에 대해 인게임 QA(길이/치환/문맥) 우선 수행
-3. P1 Spire/Spire Assault 묶음 QA
-4. P2 문체/용어 통일 및 잔여 HTML 정리
+5. `indexKong.html` 잔여 문구
+6. `ScreenReader.html` 장문 문체 통일
+7. `updates.html` 계정/문서성 UI
 
 ---
 
 ## 4) develop 브랜치 병합 가능 여부
 
-## 판단
-- **조건부 병합 권장 ("기술적으로는 가능", "정책적으로는 보류 가능").**
+### 판단
+- **조건부 병합 권장** (통합은 가능, 릴리즈 게이트는 별도 판단).
 
-### 병합해도 되는 근거
-- en/ko 키 누락이 없고, 실제 ko 번역 데이터도 높은 완성도
-- 런타임 주요 파일에 i18n 적용이 진행되어 사용자 체감 개선이 이미 존재
+### 병합 가능한 근거
+- en/ko 누락/빈 값 없음.
+- 주요 런타임 파일에서 i18n 적용이 확장되어 체감 개선이 존재.
 
-### 보류를 고려해야 하는 근거
-- 현 워크플로우 문서의 릴리즈 게이트는 `runtime-only=0`을 요구함
-- 현재 검증 결과는 `runtime-only=67`이므로, **문서상 게이트를 엄격히 적용하면 미통과**
+### 보류 근거
+- 워크플로우 게이트를 `runtime-only=0`으로 유지한다면 현재 **67개**로 미통과.
 
 ### 결론
-- **develop이 "통합/검증 브랜치" 성격이면 지금 병합 가능**
-  (이후 develop에서 추출/검증 일치화 작업 계속)
-- **develop을 곧바로 릴리즈 기준으로 운영한다면 병합 보류**
-  (`runtime-only` 정리 후 병합 권장)
+- develop이 통합/검증 브랜치라면 병합 후 정리 지속 가능.
+- develop이 릴리즈 직결 브랜치라면 `runtime-only` 축소 후 병합 권장.
 
 ---
 
 ## 5) 브랜치 상태 확인 한계
-- 현재 로컬 저장소에서는 `work` 브랜치만 확인되며, 로컬/리모트 `develop` 참조가 없어 커밋 단위의 직접 비교(`ahead/behind`)는 수행 불가.
-- 따라서 본 문서의 "병합 가능 여부"는 **로컬 품질 지표 기반 판단**이다.
+- 현재 로컬 환경에서 `develop` 리모트 비교(`ahead/behind`)는 수행하지 않았고,
+- 본 문서는 **로컬 품질 지표 기반 판단**이다.
+
+---
+
+## 측정 메타데이터
+- 측정 시각(UTC): **2026-03-17T01:04:35Z**
+- 측정 브랜치: **work**
+- 측정 기준 커밋: **414a3ea86df70cf2c41571de4a723868e900be56**
+- 실행 명령:
+  - `node scripts/extract-i18n.js`
+  - `node scripts/validate-i18n.js`
